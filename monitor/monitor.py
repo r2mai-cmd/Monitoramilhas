@@ -218,7 +218,7 @@ def extract_campaign_end_date(text, published):
 
 
 def resolve_article_url(url):
-    """Tenta resolver links do Google Notícias sem interromper o monitor."""
+    """Resolve links de notícias e evita confundir a página inicial do Google com o artigo."""
     if "news.google.com/" not in (url or ""):
         return url, None
     try:
@@ -229,17 +229,17 @@ def resolve_article_url(url):
         with urlopen(req, timeout=TIMEOUT_SECONDS) as response:
             body = response.read(MAX_BYTES).decode(response.headers.get_content_charset() or "utf-8", errors="replace")
             final_url = response.geturl()
-        parser = TextExtractor()
-        parser.feed(body)
         for pattern in (
             r"<link[^>]+rel=[\"\']canonical[\"\'][^>]+href=[\"\']([^\"\']+)",
             r"<meta[^>]+property=[\"\']og:url[\"\'][^>]+content=[\"\']([^\"\']+)",
             r"<meta[^>]+content=[\"\']([^\"\']+)[\"\'][^>]+property=[\"\']og:url[\"\']",
         ):
             match = re.search(pattern, body, re.I)
-            if match and "news.google.com/" not in match.group(1):
+            if match and "news.google.com" not in match.group(1).casefold():
                 return html.unescape(match.group(1)), final_url
-        return final_url, final_url
+        if "news.google.com" not in final_url.casefold():
+            return final_url, final_url
+        return url, final_url
     except Exception:
         return url, None
 
@@ -253,6 +253,10 @@ def inspect_candidate_article(item, now):
     try:
         original_url, resolved_url = resolve_article_url(url)
         status, content_type, body = http_get(original_url, "text/html,application/xhtml+xml,*/*")
+        if "news.google.com" in original_url.casefold():
+            item["verificacao_artigo"] = {"resultado": "link_intermediario_nao_resolvido", "url_artigo_resolvida": original_url, "url_intermediaria_resolvida": resolved_url, "http_status": status, "texto_extraido": False}
+            item["motivo_status"] = "O link permaneceu no Google Notícias; artigo original e validade não foram confirmados."
+            return item
         parser = TextExtractor()
         parser.feed(body)
         article_text = re.sub(r"\\s+", " ", " ".join(parser.parts)).strip()
