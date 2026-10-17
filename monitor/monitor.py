@@ -56,7 +56,7 @@ KEYWORDS = ("transfer", "bônus", "bonus", "milhas", "pontos", "clube", "assinan
 TRANSFER_RE = re.compile(r"transfer|transfira|transferência|transferencia|envio de pontos|enviar pontos|envie pontos", re.I)
 BONUS_RE = re.compile(r"b[oô]nus|bonificad|milhas extras|pontos extras|at[eé] \d{1,3}\s*%", re.I)
 URGENT_ENDING_RE = re.compile(r"últimas horas|ultimas horas|termina hoje|terminam hoje|acaba hoje|acabam hoje|encerra hoje|encerram hoje|último dia|ultimo dia", re.I)
-END_DATE_RE = re.compile(r"(?:válid[oa] até|valida até|válid[oa] até|até|ate|encerra(?:mento)? em|termina em)\\s*(\\d{1,2})[/-](\\d{1,2})(?:[/-](\\d{2,4}))?", re.I)
+END_DATE_RE = re.compile(r"(?:válid[oa] até|valida até|até|ate|encerra(?:mento)? em|termina em)\s*(\d{1,2})[/-](\d{1,2})(?:[/-](\d{2,4}))?", re.I)
 CAMPAIGN_RE = re.compile(r"transfer|transfira|transferência|transferencia|envio de pontos|enviar pontos", re.I)
 
 
