@@ -1,19 +1,19 @@
 #!/usr/bin/env python3
-"""Monitoramilhas — coleta conservadora de fontes oficiais e resultados públicos.
+"""Monitoramilhas — descoberta conservadora de possíveis promoções.
 
-Esta versão:
-- tenta consultar páginas oficiais diretamente;
-- consulta feeds RSS públicos do Google Notícias para descobrir campanhas;
-- guarda evidências em data/monitor_fontes.json;
-- NÃO publica candidatos em data/promocoes.json automaticamente.
+Os resultados de busca são pistas, não confirmação de campanha ativa.
+O monitor mantém evidências em data/monitor_fontes.json e nunca publica
+automaticamente candidatos em data/promocoes.json.
 """
 from __future__ import annotations
 
+import html
 import json
 import re
 import time
-import html
-from datetime import datetime
+import unicodedata
+from datetime import datetime, timedelta, timezone
+from email.utils import parsedate_to_datetime
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.error import HTTPError, URLError
@@ -27,6 +27,8 @@ OUT = ROOT / "data" / "monitor_fontes.json"
 TZ = ZoneInfo("America/Sao_Paulo")
 TIMEOUT_SECONDS = 20
 MAX_BYTES = 1_500_000
+MAX_AGE_DAYS = 30
+MAX_RESULTS_PER_QUERY = 8
 
 OFFICIAL_PAGES = [
     {"programa": "Azul Fidelidade", "parceiro": "Banco BV", "url": "https://www.voeazul.com.br/br/pt/ofertas/bv"},
@@ -38,7 +40,6 @@ OFFICIAL_PAGES = [
     {"programa": "Esfera", "parceiro": "Esfera", "url": "https://www.esfera.com.vc/"},
 ]
 
-# Consultas amplas para descoberta; os resultados são pistas, não confirmação de promoção.
 NEWS_QUERIES = [
     '"transferência bonificada" milhas clube 2026',
     'site:voeazul.com.br bônus transferência pontos clube Azul Fidelidade',
@@ -50,6 +51,10 @@ NEWS_QUERIES = [
 ]
 
 KEYWORDS = ("transfer", "bônus", "bonus", "milhas", "pontos", "clube", "assinante", "promoção", "promocao")
+TRANSFER_RE = re.compile(r"transfer|transfira|transferência|transferencia|envio de pontos|enviar pontos|envie pontos", re.I)
+BONUS_RE = re.compile(r"b[oô]nus|bonificad|milhas extras|pontos extras|at[eé] \\d{1,3}\\s*%", re.I)
+CAMPAIGN_RE = re.compile(r"transfer|transfira|transferência|transferencia|envio de pontos|enviar pontos", re.I)
+
 
 class TextExtractor(HTMLParser):
     def __init__(self):
@@ -58,12 +63,14 @@ class TextExtractor(HTMLParser):
         self.title_parts = []
         self.in_title = False
         self.skip_depth = 0
+
     def handle_starttag(self, tag, attrs):
         tag = tag.lower()
         if tag in ("script", "style", "noscript", "svg"):
             self.skip_depth += 1
         if tag == "title":
             self.in_title = True
+
     def handle_endtag(self, tag):
         tag = tag.lower()
         if tag in ("script", "style", "noscript", "svg") and self.skip_depth:
@@ -72,18 +79,20 @@ class TextExtractor(HTMLParser):
             self.in_title = False
         if tag in ("p", "div", "li", "br", "h1", "h2", "h3", "section"):
             self.parts.append(" ")
+
     def handle_data(self, data):
         if self.skip_depth:
             return
-        value = re.sub(r"\s+", " ", data).strip()
+        value = re.sub(r"\\s+", " ", data).strip()
         if value:
             self.parts.append(value)
             if self.in_title:
                 self.title_parts.append(value)
 
+
 def http_get(url, accept="text/html,application/xhtml+xml,application/rss+xml,application/xml;q=0.9,*/*;q=0.8"):
     req = Request(url, headers={
-        "User-Agent": "Mozilla/5.0 (compatible; Monitoramilhas/2.0; +https://r2mai-cmd.github.io/Monitoramilhas/)",
+        "User-Agent": "Mozilla/5.0 (compatible; Monitoramilhas/3.0; +https://r2mai-cmd.github.io/Monitoramilhas/)",
         "Accept": accept,
         "Accept-Language": "pt-BR,pt;q=0.9,en;q=0.5",
     })
@@ -92,19 +101,20 @@ def http_get(url, accept="text/html,application/xhtml+xml,application/rss+xml,ap
         charset = response.headers.get_content_charset() or "utf-8"
         return getattr(response, "status", 200), response.headers.get("Content-Type", ""), body.decode(charset, errors="replace")
 
+
 def consult_official(source, checked_at):
     base = {**source, "consultado_em": checked_at, "tipo": "pagina_oficial"}
     try:
         status, content_type, body = http_get(source["url"])
         parser = TextExtractor()
         parser.feed(body)
-        text = re.sub(r"\s+", " ", " ".join(parser.parts)).strip()
-        title = re.sub(r"\s+", " ", " ".join(parser.title_parts)).strip()
+        text = re.sub(r"\\s+", " ", " ".join(parser.parts)).strip()
+        title = re.sub(r"\\s+", " ", " ".join(parser.title_parts)).strip()
         lower = text.casefold()
         hits = [k for k in KEYWORDS if k in lower]
         excerpts = []
-        for m in re.finditer(r"transfer|b[oô]nus|clube|assinante|milhas extras|pontos extras", text, re.I):
-            snippet = text[max(0, m.start()-150):min(len(text), m.end()+250)].strip()
+        for match in re.finditer(r"transfer|b[oô]nus|clube|assinante|milhas extras|pontos extras", text, re.I):
+            snippet = text[max(0, match.start()-150):min(len(text), match.end()+250)].strip()
             if snippet and snippet not in excerpts:
                 excerpts.append(snippet)
             if len(excerpts) >= 4:
@@ -112,7 +122,7 @@ def consult_official(source, checked_at):
         return {**base, "resultado": "consultado", "http_status": status, "content_type": content_type,
                 "titulo_pagina": title[:220], "termos_encontrados": hits,
                 "trechos_para_revisao": excerpts,
-                "observacao": "Consulta à página oficial; o conteúdo não confirma por si só uma promoção ativa."}
+                "observacao": "A página foi consultada, mas isso não confirma por si só uma promoção ativa."}
     except HTTPError as e:
         return {**base, "resultado": "erro_http", "http_status": e.code, "erro": str(e)[:220]}
     except (URLError, TimeoutError, OSError, UnicodeError) as e:
@@ -120,18 +130,19 @@ def consult_official(source, checked_at):
     except Exception as e:
         return {**base, "resultado": "erro_inesperado", "erro": f"{type(e).__name__}: {str(e)[:220]}"}
 
+
 def discover_news(query, checked_at):
     url = "https://news.google.com/rss/search?q=" + quote_plus(query) + "&hl=pt-BR&gl=BR&ceid=BR:pt-419"
     found = []
     try:
-        status, content_type, body = http_get(url, "application/rss+xml,application/xml,text/xml,*/*")
+        status, _content_type, body = http_get(url, "application/rss+xml,application/xml,text/xml,*/*")
         root = ET.fromstring(body)
-        for item in root.findall(".//item")[:8]:
+        for item in root.findall(".//item")[:MAX_RESULTS_PER_QUERY]:
             title = html.unescape((item.findtext("title") or "").strip())
             link = (item.findtext("link") or "").strip()
             pubdate = (item.findtext("pubDate") or "").strip()
             description = html.unescape(re.sub(r"<[^>]+>", " ", item.findtext("description") or ""))
-            description = re.sub(r"\s+", " ", description).strip()
+            description = re.sub(r"\\s+", " ", description).strip()
             source_node = item.find("source")
             publisher = (source_node.text or "").strip() if source_node is not None else ""
             combined = (title + " " + description).casefold()
@@ -142,7 +153,7 @@ def discover_news(query, checked_at):
                 "publicado_em": pubdate, "link_resultado": link,
                 "descricao": description[:700], "consultado_em": checked_at,
                 "status_validacao": "pendente",
-                "observacao": "Resultado de busca é apenas pista. Confirmar a campanha, datas e regras na página oficial antes de publicar."
+                "observacao": "Pista de busca: confirmar campanha, validade e regras em fonte oficial antes de divulgar."
             })
         return {"consulta": query, "resultado": "consultado", "http_status": status, "candidatos": found}
     except HTTPError as e:
@@ -150,8 +161,74 @@ def discover_news(query, checked_at):
     except Exception as e:
         return {"consulta": query, "resultado": "erro_consulta", "erro": f"{type(e).__name__}: {str(e)[:220]}", "candidatos": []}
 
+
+def parse_publication_date(value):
+    if not value:
+        return None
+    try:
+        parsed = parsedate_to_datetime(value)
+        if parsed.tzinfo is None:
+            parsed = parsed.replace(tzinfo=timezone.utc)
+        return parsed.astimezone(TZ)
+    except (TypeError, ValueError, OverflowError):
+        return None
+
+
+def normalize_title(value):
+    value = unicodedata.normalize("NFKD", value.casefold())
+    value = "".join(ch for ch in value if not unicodedata.combining(ch))
+    value = re.sub(r"[^a-z0-9]+", " ", value)
+    return re.sub(r"\\s+", " ", value).strip()
+
+
+def classify_candidates(news_results, now):
+    unique = {}
+    rejected = {"antigos": 0, "data_ausente_ou_invalida": 0, "sem_sinal_de_transferencia_bonificada": 0, "duplicados": 0}
+    for result in news_results:
+        for item in result.get("candidatos", []):
+            published = parse_publication_date(item.get("publicado_em", ""))
+            if published is None:
+                rejected["data_ausente_ou_invalida"] += 1
+                continue
+            age = now - published
+            if age > timedelta(days=MAX_AGE_DAYS) or age < timedelta(days=-1):
+                rejected["antigos"] += 1
+                continue
+            combined = item.get("titulo", "") + " " + item.get("descricao", "")
+            if not TRANSFER_RE.search(combined) or not BONUS_RE.search(combined):
+                rejected["sem_sinal_de_transferencia_bonificada"] += 1
+                continue
+
+            item["idade_dias"] = max(0, age.days)
+            item["status_validacao"] = "pendente_confirmacao_oficial"
+            item["observacao"] = (
+                "Publicação recente com sinais de transferência bonificada. "
+                "Ainda não está confirmada como ativa; verificar regulamento oficial e validade."
+            )
+            key = normalize_title(item.get("titulo", ""))
+            if not key:
+                key = item.get("link_resultado", "")
+            if key in unique:
+                rejected["duplicados"] += 1
+                # Preferir item com link não vazio e preservar as consultas que o encontraram.
+                existing = unique[key]
+                queries = set(existing.get("consultas_encontradas", [existing.get("consulta", "")]))
+                queries.add(item.get("consulta", ""))
+                existing["consultas_encontradas"] = sorted(q for q in queries if q)
+                if len(item.get("descricao", "")) > len(existing.get("descricao", "")):
+                    existing["descricao"] = item.get("descricao", "")
+                continue
+            item["consultas_encontradas"] = [item.get("consulta", "")]
+            unique[key] = item
+
+    candidates = list(unique.values())
+    candidates.sort(key=lambda x: (x.get("idade_dias", 9999), x.get("titulo", "").casefold()))
+    return candidates, rejected
+
+
 def main():
-    checked_at = datetime.now(TZ).isoformat(timespec="seconds")
+    now = datetime.now(TZ)
+    checked_at = now.isoformat(timespec="seconds")
     official_results = []
     for i, source in enumerate(OFFICIAL_PAGES):
         print(f"[Página oficial {i+1}/{len(OFFICIAL_PAGES)}] {source['programa']} — {source['url']}")
@@ -165,30 +242,37 @@ def main():
     for i, query in enumerate(NEWS_QUERIES):
         print(f"[Busca pública {i+1}/{len(NEWS_QUERIES)}] {query}")
         result = discover_news(query, checked_at)
-        print(f"    {result['resultado']}; candidatos: {len(result.get('candidatos', []))}")
+        print(f"    {result['resultado']}; pistas brutas: {len(result.get('candidatos', []))}")
         news_results.append(result)
         if i < len(NEWS_QUERIES)-1:
             time.sleep(1)
 
-    candidates = []
-    seen = set()
-    for result in news_results:
-        for item in result.get("candidatos", []):
-            key = (item.get("titulo", "").casefold(), item.get("link_resultado", ""))
-            if key not in seen:
-                seen.add(key)
-                candidates.append(item)
+    raw_count = sum(len(x.get("candidatos", [])) for x in news_results)
+    candidates, rejected = classify_candidates(news_results, now)
 
     OUT.parent.mkdir(parents=True, exist_ok=True)
     payload = {
         "atualizado_em": checked_at,
         "fuso_horario": "America/Sao_Paulo",
+        "criterios_triagem": {
+            "idade_maxima_dias": MAX_AGE_DAYS,
+            "exige_sinal_de_transferencia": True,
+            "exige_sinal_de_bonus": True,
+            "deduplicacao": "título normalizado sem acentos e pontuação",
+            "publicacao_automatica": False
+        },
         "total_paginas_oficiais": len(official_results),
         "paginas_oficiais_ok": sum(x["resultado"] == "consultado" for x in official_results),
         "total_buscas_publicas": len(news_results),
         "buscas_publicas_ok": sum(x["resultado"] == "consultado" for x in news_results),
-        "total_candidatos_busca": len(candidates),
-        "aviso": "Este relatório não é uma lista de promoções ativas. Resultados de busca e páginas consultadas precisam de validação oficial antes de publicação. Não são extraídos nem inferidos automaticamente percentuais, datas de validade ou elegibilidade de clubes.",
+        "total_pistas_brutas": raw_count,
+        "total_candidatos_triados": len(candidates),
+        "motivos_exclusao": rejected,
+        "aviso": (
+            "Candidatos triados não equivalem a promoções ativas. A data de publicação é apenas um filtro de recência, "
+            "não a validade da campanha. Antes de divulgar, confirmar regulamento, período, bônus por perfil e elegibilidade "
+            "em fonte oficial. O monitor não altera data/promocoes.json automaticamente."
+        ),
         "paginas_oficiais": official_results,
         "buscas_publicas": news_results,
         "candidatos": candidates,
@@ -197,9 +281,11 @@ def main():
     print(f"Relatório salvo em: {OUT}")
     print(f"Páginas oficiais acessíveis: {payload['paginas_oficiais_ok']}/{len(official_results)}")
     print(f"Buscas públicas acessíveis: {payload['buscas_publicas_ok']}/{len(news_results)}")
-    print(f"Candidatos para revisão: {len(candidates)}")
+    print(f"Pistas brutas: {raw_count}; candidatos após triagem: {len(candidates)}")
+    print(f"Exclusões: {json.dumps(rejected, ensure_ascii=False)}")
     if payload["paginas_oficiais_ok"] == 0 and payload["buscas_publicas_ok"] == 0:
         raise SystemExit("Nenhuma fonte de consulta respondeu.")
+
 
 if __name__ == "__main__":
     main()
