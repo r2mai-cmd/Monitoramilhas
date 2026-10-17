@@ -1,1 +1,39 @@
 
+name: Monitor de promoções
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 11,23 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Baixar repositório
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Executar monitor
+        run: python monitor/monitor.py
+
+      - name: Salvar dados atualizados
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/promocoes.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Atualiza monitor de promoções"
+            git push
+          else
+            echo "Nenhuma alteração nos dados."
+          fi
+
