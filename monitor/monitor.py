@@ -52,7 +52,7 @@ NEWS_QUERIES = [
 
 KEYWORDS = ("transfer", "bônus", "bonus", "milhas", "pontos", "clube", "assinante", "promoção", "promocao")
 TRANSFER_RE = re.compile(r"transfer|transfira|transferência|transferencia|envio de pontos|enviar pontos|envie pontos", re.I)
-BONUS_RE = re.compile(r"b[oô]nus|bonificad|milhas extras|pontos extras|at[eé] \\d{1,3}\\s*%", re.I)
+BONUS_RE = re.compile(r"b[oô]nus|bonificad|milhas extras|pontos extras|at[eé] \d{1,3}\s*%", re.I)
 CAMPAIGN_RE = re.compile(r"transfer|transfira|transferência|transferencia|envio de pontos|enviar pontos", re.I)
 
 
@@ -83,7 +83,7 @@ class TextExtractor(HTMLParser):
     def handle_data(self, data):
         if self.skip_depth:
             return
-        value = re.sub(r"\\s+", " ", data).strip()
+        value = re.sub(r"\s+", " ", data).strip()
         if value:
             self.parts.append(value)
             if self.in_title:
@@ -108,8 +108,8 @@ def consult_official(source, checked_at):
         status, content_type, body = http_get(source["url"])
         parser = TextExtractor()
         parser.feed(body)
-        text = re.sub(r"\\s+", " ", " ".join(parser.parts)).strip()
-        title = re.sub(r"\\s+", " ", " ".join(parser.title_parts)).strip()
+        text = re.sub(r"\s+", " ", " ".join(parser.parts)).strip()
+        title = re.sub(r"\s+", " ", " ".join(parser.title_parts)).strip()
         lower = text.casefold()
         hits = [k for k in KEYWORDS if k in lower]
         excerpts = []
@@ -142,7 +142,7 @@ def discover_news(query, checked_at):
             link = (item.findtext("link") or "").strip()
             pubdate = (item.findtext("pubDate") or "").strip()
             description = html.unescape(re.sub(r"<[^>]+>", " ", item.findtext("description") or ""))
-            description = re.sub(r"\\s+", " ", description).strip()
+            description = re.sub(r"\s+", " ", description).strip()
             source_node = item.find("source")
             publisher = (source_node.text or "").strip() if source_node is not None else ""
             combined = (title + " " + description).casefold()
@@ -178,7 +178,7 @@ def normalize_title(value):
     value = unicodedata.normalize("NFKD", value.casefold())
     value = "".join(ch for ch in value if not unicodedata.combining(ch))
     value = re.sub(r"[^a-z0-9]+", " ", value)
-    return re.sub(r"\\s+", " ", value).strip()
+    return re.sub(r"\s+", " ", value).strip()
 
 
 def classify_candidates(news_results, now):
