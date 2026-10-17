@@ -205,6 +205,32 @@ def extract_campaign_end_date(text, published):
         return None
 
 
+def resolve_article_url(url):
+    """Tenta resolver links intermediários do Google Notícias para o artigo original."""
+    if "news.google.com/" not in (url or ""):
+        return url, None
+    try:
+        req = Request(url, headers={
+            "User-Agent": "Mozilla/5.0 (compatible; Monitoramilhas/3.0)",
+            "Accept-Language": "pt-BR,pt;q=0.9,en;q=0.5",
+        })
+        with urlopen(req, timeout=TIMEOUT_SECONDS) as response:
+            body = response.read(MAX_BYTES).decode(response.headers.get_content_charset() or "utf-8", errors="replace")
+            final_url = response.geturl()
+        # Algumas páginas intermediárias expõem o destino no canonical/og:url.
+        for pattern in (
+            r'<link[^>]+rel=["\\']canonical["\\'][^>]+href=["\\']([^"\\']+)',
+            r'<meta[^>]+property=["\\']og:url["\\'][^>]+content=["\\']([^"\\']+)',
+            r'<meta[^>]+content=["\\']([^"\\']+)["\\'][^>]+property=["\\']og:url["\\']',
+        ):
+            match = re.search(pattern, body, re.I)
+            if match and "news.google.com/" not in match.group(1):
+                return html.unescape(match.group(1)), final_url
+        return final_url, final_url
+    except Exception:
+        return url, None
+
+
 def inspect_candidate_article(item, now):
     """Tenta ler a notícia de origem para obter evidências adicionais de validade."""
     url = item.get("link_resultado", "")
@@ -212,7 +238,8 @@ def inspect_candidate_article(item, now):
         item["verificacao_artigo"] = {"resultado": "sem_link"}
         return item
     try:
-        status, content_type, body = http_get(url, "text/html,application/xhtml+xml,*/*")
+        original_url, resolved_url = resolve_article_url(url)
+        status, content_type, body = http_get(original_url, "text/html,application/xhtml+xml,*/*")
         parser = TextExtractor()
         parser.feed(body)
         article_text = re.sub(r"\\s+", " ", " ".join(parser.parts)).strip()
@@ -221,6 +248,8 @@ def inspect_candidate_article(item, now):
         end_date = extract_campaign_end_date(article_text, published)
         item["verificacao_artigo"] = {
             "resultado": "consultado",
+            "url_artigo_resolvida": original_url,
+            "url_intermediaria_resolvida": resolved_url,
             "http_status": status,
             "content_type": content_type,
             "texto_extraido": bool(article_text),
