@@ -62,6 +62,7 @@ URGENT_ENDING_RE = re.compile(r"últimas horas|ultimas horas|termina hoje|termin
 END_DATE_RE = re.compile(r"(?:válid[oa] até|valida até|até|ate|encerra(?:mento)? em|termina em)\s*(\d{1,2})[/-](\d{1,2})(?:[/-](\d{2,4}))?", re.I)
 MONTH_NAMES = {"janeiro": 1, "fevereiro": 2, "março": 3, "marco": 3, "abril": 4, "maio": 5, "junho": 6, "julho": 7, "agosto": 8, "setembro": 9, "outubro": 10, "novembro": 11, "dezembro": 12}
 END_DATE_WORD_RE = re.compile(r"(?:válid[oa] até|valida até|até|ate|encerra(?:mento)? em|termina em)\s*(\d{1,2})\s+de\s+(janeiro|fevereiro|março|marco|abril|maio|junho|julho|agosto|setembro|outubro|novembro|dezembro)(?:\s+de\s+(\d{4}))?", re.I)
+END_DATE_WEEKDAY_RE = re.compile(r"\bat[eé]\s+(?:na|nesta|esta\s+)?(?:segunda(?:-feira)?|ter[cç]a(?:-feira)?|quarta(?:-feira)?|quinta(?:-feira)?|sexta(?:-feira)?|s[áa]bado|domingo)\s*\(?(\d{1,2})\)?", re.I)
 CAMPAIGN_RE = re.compile(r"transfer|transfira|transferência|transferencia|envio de pontos|enviar pontos", re.I)
 
 
@@ -78,37 +79,67 @@ class LinkExtractor(HTMLParser):
 
 
 class TextExtractor(HTMLParser):
+    VOID_TAGS = {'area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'link', 'meta', 'param', 'source', 'track', 'wbr'}
+    CONTENT_CLASSES = {'entry-content', 'article-content', 'post-content', 'article-body', 'post-body', 'news-article-content', 'single-content'}
+
     def __init__(self):
         super().__init__(convert_charrefs=True)
         self.parts = []
         self.title_parts = []
+        self.h1_parts = []
+        self.article_parts = []
         self.in_title = False
+        self.in_h1 = False
         self.skip_depth = 0
+        self.article_scope_depth = 0
 
     def handle_starttag(self, tag, attrs):
         tag = tag.lower()
-        if tag in ("script", "style", "noscript", "svg"):
+        attrs_dict = dict(attrs)
+        classes = set((attrs_dict.get('class') or '').casefold().split())
+        if tag in ('script', 'style', 'noscript', 'svg'):
             self.skip_depth += 1
-        if tag == "title":
+        if tag == 'title':
             self.in_title = True
+        if tag == 'h1':
+            self.in_h1 = True
+        if self.article_scope_depth == 0:
+            if tag == 'article' or classes.intersection(self.CONTENT_CLASSES):
+                self.article_scope_depth = 1
+        elif tag not in self.VOID_TAGS:
+            self.article_scope_depth += 1
+
+    def handle_startendtag(self, tag, attrs):
+        self.handle_starttag(tag, attrs)
+        self.handle_endtag(tag)
 
     def handle_endtag(self, tag):
         tag = tag.lower()
-        if tag in ("script", "style", "noscript", "svg") and self.skip_depth:
+        if tag in ('script', 'style', 'noscript', 'svg') and self.skip_depth:
             self.skip_depth -= 1
-        if tag == "title":
+        if tag == 'title':
             self.in_title = False
-        if tag in ("p", "div", "li", "br", "h1", "h2", "h3", "section"):
-            self.parts.append(" ")
+        if tag == 'h1':
+            self.in_h1 = False
+        if self.article_scope_depth and tag not in self.VOID_TAGS:
+            self.article_scope_depth -= 1
+        if tag in ('p', 'div', 'li', 'br', 'h1', 'h2', 'h3', 'section', 'article'):
+            self.parts.append(' ')
+            if self.article_scope_depth or tag == 'article':
+                self.article_parts.append(' ')
 
     def handle_data(self, data):
         if self.skip_depth:
             return
-        value = re.sub(r"\s+", " ", data).strip()
+        value = re.sub(r'\s+', ' ', data).strip()
         if value:
             self.parts.append(value)
             if self.in_title:
                 self.title_parts.append(value)
+            if self.in_h1:
+                self.h1_parts.append(value)
+            if self.article_scope_depth:
+                self.article_parts.append(value)
 
 
 def http_get(url, accept="text/html,application/xhtml+xml,application/rss+xml,application/xml;q=0.9,*/*;q=0.8"):
@@ -282,18 +313,31 @@ def parse_publication_date(value):
 
 
 def extract_campaign_end_date(text, published):
-    """Extrai datas explícitas de encerramento em formato numérico ou por extenso."""
-    text = text or ""
+    """Extrai prazos explícitos, inclusive formatos por extenso e dia da semana."""
+    text = text or ''
     match = END_DATE_RE.search(text)
     if match:
         day, month, year = match.groups()
         month_num = int(month)
     else:
         match = END_DATE_WORD_RE.search(text)
-        if not match:
-            return None
-        day, month_name, year = match.groups()
-        month_num = MONTH_NAMES.get(month_name.casefold())
+        if match:
+            day, month_name, year = match.groups()
+            month_num = MONTH_NAMES.get(month_name.casefold())
+        else:
+            match = END_DATE_WEEKDAY_RE.search(text)
+            if not match:
+                return None
+            day = match.group(1)
+            year = str(published.year)
+            month_num = published.month
+            # Em expressões como 'até quarta-feira (7)', assume o mês da publicação;
+            # se o dia já passou, usa o mês seguinte.
+            if int(day) < published.day:
+                month_num += 1
+                if month_num > 12:
+                    month_num = 1
+                    year = str(published.year + 1)
     year_num = int(year) if year else published.year
     if year_num < 100:
         year_num += 2000
@@ -301,7 +345,6 @@ def extract_campaign_end_date(text, published):
         return datetime(year_num, month_num, int(day), 23, 59, tzinfo=TZ)
     except (ValueError, TypeError):
         return None
-
 
 def resolve_article_url(url, publisher=''):
     """Resolve redirecionadores de notícias para a página original do artigo."""
@@ -371,11 +414,16 @@ def inspect_candidate_article(item, now):
         parser = TextExtractor()
         parser.feed(body)
         full_text = re.sub(r"\\s+", " ", " ".join(parser.parts)).strip()
-        # Priorizar o trecho próximo ao título do artigo. O restante da página costuma
-        # conter cupons, banners e ofertas laterais com datas que não pertencem à campanha.
+        scoped_text = re.sub(r"\\s+", " ", " ".join(parser.article_parts)).strip()
+        # Prefere o corpo semântico do artigo; evita banners e cupons laterais.
         article_title = re.sub(r"\\s+", " ", item.get("titulo", "")).strip()
-        title_position = full_text.casefold().find(article_title.casefold()) if article_title else -1
-        article_text = full_text[title_position:title_position + 6500] if title_position >= 0 else full_text[:6500]
+        h1_text = re.sub(r"\\s+", " ", " ".join(parser.h1_parts)).strip()
+        if scoped_text:
+            article_text = scoped_text[:12000]
+        else:
+            title_for_anchor = h1_text or article_title
+            title_position = full_text.casefold().find(title_for_anchor.casefold()) if title_for_anchor else -1
+            article_text = full_text[title_position:title_position + 5000] if title_position >= 0 else ""
         # Limitar o texto analisado ao corpo próximo ao artigo e manter evidência rastreável.
         published = parse_publication_date(item.get("publicado_em", "")) or now
         end_date = extract_campaign_end_date(article_text, published)
@@ -387,7 +435,7 @@ def inspect_candidate_article(item, now):
             "content_type": content_type,
             "texto_extraido": bool(article_text),
             "trecho_validade": (article_text[max(0, match.start()-100):min(len(article_text), match.end()+180)]
-                                if (match := (END_DATE_RE.search(article_text) or END_DATE_WORD_RE.search(article_text))) else None),
+                                if (match := (END_DATE_RE.search(article_text) or END_DATE_WORD_RE.search(article_text) or END_DATE_WEEKDAY_RE.search(article_text))) else None),
         }
         if end_date:
             item["data_encerramento_detectada"] = end_date.isoformat()
