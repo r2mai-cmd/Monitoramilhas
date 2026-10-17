@@ -48,12 +48,15 @@ NEWS_QUERIES = [
     'site:livelo.com.br transferência bonificada milhas',
     'site:esfera.com.vc transferência bonificada milhas',
     'bônus transferência pontos milhas assinantes clube outubro 2026',
+    'site:voeazul.com.br Banco BV transferência pontos bônus outubro 2026',
+    'C6 Átomos transferência bonificada milhas outubro 2026',
 ]
 
 KEYWORDS = ("transfer", "bônus", "bonus", "milhas", "pontos", "clube", "assinante", "promoção", "promocao")
 TRANSFER_RE = re.compile(r"transfer|transfira|transferência|transferencia|envio de pontos|enviar pontos|envie pontos", re.I)
 BONUS_RE = re.compile(r"b[oô]nus|bonificad|milhas extras|pontos extras|at[eé] \d{1,3}\s*%", re.I)
 URGENT_ENDING_RE = re.compile(r"últimas horas|ultimas horas|termina hoje|terminam hoje|acaba hoje|acabam hoje|encerra hoje|encerram hoje|último dia|ultimo dia", re.I)
+END_DATE_RE = re.compile(r"(?:válid[oa] até|valida até|válid[oa] até|até|ate|encerra(?:mento)? em|termina em)\\s*(\\d{1,2})[/-](\\d{1,2})(?:[/-](\\d{2,4}))?", re.I)
 CAMPAIGN_RE = re.compile(r"transfer|transfira|transferência|transferencia|envio de pontos|enviar pontos", re.I)
 
 
@@ -175,6 +178,21 @@ def parse_publication_date(value):
         return None
 
 
+def extract_campaign_end_date(text, published):
+    """Extrai datas explícitas de encerramento; sem ano, usa o ano da publicação."""
+    match = END_DATE_RE.search(text or "")
+    if not match:
+        return None
+    day, month, year = match.groups()
+    year_num = int(year) if year else published.year
+    if year_num < 100:
+        year_num += 2000
+    try:
+        return datetime(year_num, int(month), int(day), 23, 59, tzinfo=TZ)
+    except ValueError:
+        return None
+
+
 def normalize_title(value):
     value = unicodedata.normalize("NFKD", value.casefold())
     value = "".join(ch for ch in value if not unicodedata.combining(ch))
@@ -196,6 +214,10 @@ def classify_candidates(news_results, now):
                 rejected["antigos"] += 1
                 continue
             combined = item.get("titulo", "") + " " + item.get("descricao", "")
+            end_date = extract_campaign_end_date(combined, published)
+            if end_date and now > end_date:
+                rejected["provavelmente_encerrados"] += 1
+                continue
             # Manchetes urgentes envelhecem rapidamente; após 24h não entram como candidatos prioritários.
             if URGENT_ENDING_RE.search(item.get("titulo", "")) and age > timedelta(hours=24):
                 rejected["provavelmente_encerrados"] += 1
@@ -205,6 +227,7 @@ def classify_candidates(news_results, now):
                 continue
 
             item["idade_dias"] = max(0, age.days)
+            item["data_encerramento_detectada"] = end_date.isoformat() if end_date else None
             item["status_validacao"] = "pendente_confirmacao_oficial"
             item["observacao"] = (
                 "Publicação recente com sinais de transferência bonificada. "
@@ -264,6 +287,7 @@ def main():
             "exige_sinal_de_transferencia": True,
             "exige_sinal_de_bonus": True,
             "deduplicacao": "título normalizado sem acentos e pontuação",
+            "datas_de_encerramento": "descarta candidatos quando encontra data explícita já vencida",
             "publicacao_automatica": False
         },
         "total_paginas_oficiais": len(official_results),
