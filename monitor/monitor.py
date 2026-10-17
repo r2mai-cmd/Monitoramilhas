@@ -250,8 +250,28 @@ def classify_candidates(news_results, now):
             unique[key] = item
 
     candidates = list(unique.values())
-    candidates.sort(key=lambda x: (x.get("idade_dias", 9999), x.get("titulo", "").casefold()))
-    return candidates, rejected
+    # Uma pista recente não prova que a promoção ainda está ativa. Separe títulos
+    # que indicam encerramento iminente para evitar tratá-los como oportunidades.
+    active_possible = []
+    likely_expired = []
+    needs_validation = []
+    for item in candidates:
+        title = item.get("titulo", "")
+        combined = title + " " + item.get("descricao", "")
+        if URGENT_ENDING_RE.search(title):
+            item["status_validacao"] = "provavelmente_encerrada"
+            item["motivo_status"] = "Título menciona últimas horas, termina hoje ou último dia."
+            likely_expired.append(item)
+        else:
+            item["status_validacao"] = "pendente_confirmacao_oficial"
+            item["motivo_status"] = "Não foi possível confirmar a validade em fonte oficial."
+            needs_validation.append(item)
+            active_possible.append(item)
+    key = lambda x: (x.get("idade_dias", 9999), x.get("titulo", "").casefold())
+    active_possible.sort(key=key)
+    likely_expired.sort(key=key)
+    needs_validation.sort(key=key)
+    return active_possible, rejected, likely_expired, needs_validation
 
 
 def main():
@@ -276,7 +296,7 @@ def main():
             time.sleep(1)
 
     raw_count = sum(len(x.get("candidatos", [])) for x in news_results)
-    candidates, rejected = classify_candidates(news_results, now)
+    candidates, rejected, likely_expired, needs_validation = classify_candidates(news_results, now)
 
     OUT.parent.mkdir(parents=True, exist_ok=True)
     payload = {
@@ -296,15 +316,20 @@ def main():
         "buscas_publicas_ok": sum(x["resultado"] == "consultado" for x in news_results),
         "total_pistas_brutas": raw_count,
         "total_candidatos_triados": len(candidates),
+        "total_campanhas_provavelmente_encerradas": len(likely_expired),
+        "total_campanhas_aguardando_validacao": len(needs_validation),
         "motivos_exclusao": rejected,
         "aviso": (
-            "Candidatos triados não equivalem a promoções ativas. A data de publicação é apenas um filtro de recência, "
+            "Candidatos triados não equivalem a promoções ativas. Campanhas com linguagem de encerramento iminente são separadas como provavelmente encerradas; " 
+            "as demais permanecem pendentes de validação oficial. A data de publicação é apenas um filtro de recência, "
             "não a validade da campanha. Antes de divulgar, confirmar regulamento, período, bônus por perfil e elegibilidade "
             "em fonte oficial. O monitor não altera data/promocoes.json automaticamente."
         ),
         "paginas_oficiais": official_results,
         "buscas_publicas": news_results,
         "candidatos": candidates,
+        "campanhas_provavelmente_encerradas": likely_expired,
+        "campanhas_aguardando_validacao": needs_validation,
     }
     OUT.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"Relatório salvo em: {OUT}")
