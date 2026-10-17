@@ -17,7 +17,7 @@ from email.utils import parsedate_to_datetime
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.error import HTTPError, URLError
-from urllib.parse import quote_plus
+from urllib.parse import parse_qs, quote_plus, urlparse
 from urllib.request import Request, urlopen
 from zoneinfo import ZoneInfo
 import xml.etree.ElementTree as ET
@@ -305,8 +305,16 @@ def extract_campaign_end_date(text, published):
 
 
 def resolve_article_url(url):
-    """Resolve links de notícias e evita confundir a página inicial do Google com o artigo."""
-    if "news.google.com/" not in (url or ""):
+    """Resolve redirecionadores de notícias para a página original do artigo."""
+    if not url:
+        return url, None
+    parsed = urlparse(url)
+    host = (parsed.netloc or "").casefold()
+    if "bing.com" in host and parsed.path.endswith("/news/apiclick.aspx"):
+        target = parse_qs(parsed.query).get("url", [""])[0]
+        if target.startswith(("https://", "http://")):
+            return target, url
+    if "news.google.com/" not in url:
         return url, None
     try:
         req = Request(url, headers={
@@ -434,7 +442,17 @@ def classify_candidates(news_results, now):
                 queries = set(existing.get("consultas_encontradas", [existing.get("consulta", "")]))
                 queries.add(item.get("consulta", ""))
                 existing["consultas_encontradas"] = sorted(q for q in queries if q)
-                if len(item.get("descricao", "")) > len(existing.get("descricao", "")):
+                # Se a mesma notícia veio de um agregador e depois de uma fonte direta,
+                # preferir o link original para permitir ler o corpo e a validade da campanha.
+                old_url = existing.get("link_resultado", "")
+                new_url = item.get("link_resultado", "")
+                old_is_aggregator = "news.google.com/" in old_url or "bing.com/news/apiclick.aspx" in old_url
+                new_is_direct = bool(new_url) and "news.google.com/" not in new_url and "bing.com/news/apiclick.aspx" not in new_url
+                if old_is_aggregator and new_is_direct:
+                    for field in ("link_resultado", "publicado_em", "publicador", "fonte_busca", "descricao"):
+                        if item.get(field):
+                            existing[field] = item[field]
+                elif len(item.get("descricao", "")) > len(existing.get("descricao", "")):
                     existing["descricao"] = item.get("descricao", "")
                 continue
             item["consultas_encontradas"] = [item.get("consulta", "")]
