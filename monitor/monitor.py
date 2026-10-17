@@ -458,6 +458,49 @@ def classify_candidates(news_results, now):
             item["consultas_encontradas"] = [item.get("consulta", "")]
             unique[key] = item
 
+    # Se o agregador e uma fonte direta noticiam a mesma campanha, preferir o link direto.
+    direct_items = [
+        item for item in unique.values()
+        if item.get("link_resultado")
+        and "news.google.com/" not in item.get("link_resultado", "")
+        and "bing.com/news/apiclick.aspx" not in item.get("link_resultado", "")
+    ]
+    partner_tokens = (
+        ("livelo", ("livelo",)),
+        ("itau", ("itau", "itaú", "credicard")),
+        ("banestes", ("banestes",)),
+        ("banco bv", ("banco bv", "bv")),
+        ("c6", ("c6",)),
+        ("banco do nordeste", ("banco do nordeste", "bnb")),
+    )
+    for item in unique.values():
+        url = item.get("link_resultado", "")
+        if "news.google.com/" not in url and "bing.com/news/apiclick.aspx" not in url:
+            continue
+        title = item.get("titulo", "").casefold()
+        matched = []
+        for direct in direct_items:
+            direct_title = direct.get("titulo", "").casefold()
+            common_partner = any(
+                any(token in title for token in tokens) and any(token in direct_title for token in tokens)
+                for _label, tokens in partner_tokens
+            )
+            common_program = (
+                ("azul" in title and "azul" in direct_title)
+                or ("latam" in title and "latam" in direct_title)
+                or ("smiles" in title and "smiles" in direct_title)
+            )
+            if common_partner and common_program:
+                matched.append(direct)
+        if len(matched) == 1:
+            direct = matched[0]
+            item["link_agregador_original"] = url
+            for field in ("link_resultado", "publicado_em", "publicador", "fonte_busca", "descricao"):
+                if direct.get(field):
+                    item[field] = direct[field]
+            item["substituido_por_fonte_direta"] = True
+            item["observacao_link"] = "Link do agregador substituído por artigo direto da mesma campanha."
+
     candidates = list(unique.values())
     # Uma pista recente não prova que a promoção ainda está ativa. Separe títulos
     # que indicam encerramento iminente para evitar tratá-los como oportunidades.
