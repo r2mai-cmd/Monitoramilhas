@@ -242,75 +242,112 @@ def discover_news(query, checked_at):
 
 
 def discover_direct_source(source, checked_at):
-    """Busca nos portais especializados usando consultas recentes e genéricas."""
-    base = source['url'].rstrip('/')
-    search_terms = ['transferência bonificada outubro 2026', 'bônus transferência pontos outubro 2026', 'transferência bonificada milhas']
+    """Procura artigos por RSS de busca e usa a pesquisa HTML como fallback."""
+    base = source["url"].rstrip("/")
+    search_terms = [
+        "transferência bonificada outubro 2026",
+        "bônus transferência pontos outubro 2026",
+        "transferência bonificada milhas",
+    ]
     results = []
     seen = set()
     attempts = []
     from urllib.parse import urljoin
+    base_host = (urlparse(base).netloc or "").casefold()
+
+    def add_result(title, href, published_at, description, search_url, provider):
+        title = re.sub(r"\s+", " ", html.unescape(title or "")).strip()
+        href = urljoin(base + "/", html.unescape(href or "").strip())
+        description = re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", " ", description or ""))).strip()
+        href_host = (urlparse(href).netloc or "").casefold()
+        if not title or not href.startswith(("https://", "http://")):
+            return
+        if not (href_host == base_host or href_host.endswith("." + base_host)):
+            return
+        if href.rstrip("/") == base or href in seen:
+            return
+        combined = title + " " + description
+        if not TRANSFER_RE.search(combined) or not BONUS_RE.search(combined):
+            return
+        published_dt = parse_publication_date(published_at) if published_at else None
+        checked_dt = parse_publication_date(checked_at) if checked_at else None
+        if published_dt and checked_dt and (checked_dt - published_dt).days > MAX_AGE_DAYS:
+            return
+        seen.add(href)
+        results.append({
+            "consulta": search_url,
+            "titulo": title[:300],
+            "publicador": source["nome"],
+            "publicado_em": published_at or "",
+            "link_resultado": href,
+            "descricao": description[:900],
+            "consultado_em": checked_at,
+            "fonte_busca": provider,
+            "status_validacao": "pendente_confirmacao_oficial",
+            "observacao": "Artigo encontrado diretamente; confirmar prazo e regulamento oficial."
+        })
+
     for term in search_terms:
-        search_url = base + '/?s=' + quote_plus(term) + '&orderby=date&order=desc'
+        search_url = base + "/?s=" + quote_plus(term) + "&orderby=date&order=desc"
+        feed_url = base + "/?s=" + quote_plus(term) + "&feed=rss2"
+        feed_count_before = len(results)
         try:
-            status, content_type, body = http_get(search_url)
-            parser = LinkExtractor()
-            parser.feed(body)
-            for link in parser.links:
-                href = urljoin(base + '/', html.unescape(link['href']).strip())
-                title = re.sub(r'\s+', ' ', html.unescape(link['title'])).strip()
-                if not href.startswith(base) or href.rstrip('/') == base or href in seen or not title:
-                    continue
-                # Título deve sinalizar milhas/pontos e bônus; o artigo será validado por data.
-                if not (TRANSFER_RE.search(title) and BONUS_RE.search(title)):
-                    continue
-                seen.add(href)
-                article_title, published_at, description = title, '', ''
-                article_status = 'nao_consultado'
-                try:
-                    article_status_code, _article_type, article_body = http_get(href)
-                    article_status = str(article_status_code)
-                    date_patterns = [
-                        r"<meta[^>]+property=['\"]article:published_time['\"][^>]+content=['\"]([^'\"]+)",
-                        r"<meta[^>]+name=['\"]datePublished['\"][^>]+content=['\"]([^'\"]+)",
-                        r'"datePublished"\s*:\s*"([^"]+)"',
-                        r"<time[^>]+datetime=['\"]([^'\"]+)",
-                    ]
-                    for date_pattern in date_patterns:
-                        date_match = re.search(date_pattern, article_body, re.I)
-                        if date_match:
-                            published_at = date_match.group(1).strip()
-                            break
-                    og_title = re.search(r"<meta[^>]+property=['\"]og:title['\"][^>]+content=['\"]([^'\"]+)", article_body, re.I)
-                    if og_title:
-                        article_title = html.unescape(og_title.group(1)).strip() or article_title
-                    article_parser = TextExtractor()
-                    article_parser.feed(article_body)
-                    description = re.sub(r'\s+', ' ', ' '.join(article_parser.parts)).strip()[:700]
-                except Exception:
-                    pass
-                publication_dt = parse_publication_date(published_at) if published_at else None
-                checked_dt = parse_publication_date(checked_at) if checked_at else None
-                if publication_dt and checked_dt and (checked_dt - publication_dt).days > MAX_AGE_DAYS:
-                    # Artigos antigos ficam no histórico das buscas, mas não entram na descoberta de oportunidades recentes.
-                    continue
-                results.append({'consulta': search_url, 'titulo': article_title[:300], 'publicador': source['nome'],
-                    'publicado_em': published_at, 'link_resultado': href, 'descricao': description, 'consultado_em': checked_at,
-                    'fonte_busca': 'busca_direta_site', 'status_validacao': 'pendente_confirmacao_oficial',
-                    'http_artigo': article_status,
-                    'observacao': 'Artigo encontrado diretamente; confirmar validade no regulamento oficial.'})
+            status, _content_type, feed_body = http_get(feed_url, "application/rss+xml,application/xml,text/xml,*/*")
+            root = ET.fromstring(feed_body)
+            feed_items = root.findall(".//item")
+            for rss_item in feed_items[:MAX_RESULTS_PER_QUERY]:
+                add_result(
+                    rss_item.findtext("title") or "",
+                    rss_item.findtext("link") or "",
+                    rss_item.findtext("pubDate") or "",
+                    rss_item.findtext("description") or "",
+                    feed_url,
+                    "RSS direto: " + source["nome"]
+                )
                 if len(results) >= MAX_RESULTS_PER_QUERY:
                     break
-            attempts.append({'consulta': search_url, 'resultado': 'consultado', 'http_status': status, 'itens': len(results)})
-        except HTTPError as e:
-            attempts.append({'consulta': search_url, 'resultado': 'erro_http', 'http_status': e.code})
-        except Exception as e:
-            attempts.append({'consulta': search_url, 'resultado': 'erro_consulta', 'erro': f'{type(e).__name__}: {str(e)[:140]}'})
+            attempts.append({"consulta": feed_url, "tipo": "rss", "resultado": "consultado",
+                             "http_status": status, "itens_feed": len(feed_items),
+                             "candidatos_novos": len(results) - feed_count_before})
+        except HTTPError as exc:
+            attempts.append({"consulta": feed_url, "tipo": "rss", "resultado": "erro_http",
+                             "http_status": exc.code})
+        except Exception as exc:
+            attempts.append({"consulta": feed_url, "tipo": "rss", "resultado": "erro_consulta",
+                             "erro": f"{type(exc).__name__}: {str(exc)[:130]}"})
+
+        # O RSS de busca nem sempre é implementado pelo portal. Se não trouxer
+        # nenhum candidato novo, tenta a página HTML já usada pela versão anterior.
+        if len(results) == feed_count_before and len(results) < MAX_RESULTS_PER_QUERY:
+            try:
+                status, _content_type, body = http_get(search_url)
+                parser = LinkExtractor()
+                parser.feed(body)
+                html_count_before = len(results)
+                for link in parser.links:
+                    add_result(link.get("title", ""), link.get("href", ""), "", "",
+                               search_url, "busca_direta_site")
+                    if len(results) >= MAX_RESULTS_PER_QUERY:
+                        break
+                attempts.append({"consulta": search_url, "tipo": "html", "resultado": "consultado",
+                                 "http_status": status, "candidatos_novos": len(results) - html_count_before})
+            except HTTPError as exc:
+                attempts.append({"consulta": search_url, "tipo": "html", "resultado": "erro_http",
+                                 "http_status": exc.code})
+            except Exception as exc:
+                attempts.append({"consulta": search_url, "tipo": "html", "resultado": "erro_consulta",
+                                 "erro": f"{type(exc).__name__}: {str(exc)[:130]}"})
+
         if len(results) >= MAX_RESULTS_PER_QUERY:
             break
         time.sleep(0.5)
+
     if results:
-        return {'consulta': base, 'resultado': 'consultado', 'fonte': source['nome'], 'tentativas': attempts, 'candidatos': results}
-    return {'consulta': base, 'resultado': 'sem_resultados', 'fonte': source['nome'], 'tentativas': attempts, 'candidatos': []}
+        return {"consulta": base, "resultado": "consultado", "fonte": source["nome"],
+                "tentativas": attempts, "candidatos": results}
+    return {"consulta": base, "resultado": "sem_resultados", "fonte": source["nome"],
+            "tentativas": attempts, "candidatos": []}
+
 
 
 def parse_publication_date(value):
@@ -329,55 +366,74 @@ def parse_publication_date(value):
 
 
 def extract_campaign_end_date(text, published):
-    """Extrai prazos explícitos por data, dia da semana ou referência a amanhã."""
-    text = text or ''
-    match = END_DATE_RE.search(text)
-    if match:
-        day, month, year = match.groups()
-        month_num = int(month)
-    else:
-        match = END_DATE_CONTEXT_RE.search(text)
-        if match:
+    """Extrai prazos da campanha, ignorando datas de crédito/validade dos pontos bônus."""
+    text = text or ""
+    # Datas de crédito dos pontos ou validade das milhas não são o fim da campanha.
+    text = re.sub(
+        r"(?is)(?:milhas?\s+|pontos?\s+)?b[oô]nus[^.;!?]{0,220}?(?:ser[aã]o\s+)?creditad[oa]s?[^.;!?]{0,180}",
+        " ",
+        text,
+    )
+    patterns = (
+        END_DATE_RE,
+        END_DATE_CONTEXT_RE,
+        END_DATE_WORD_RE,
+        END_DATE_TOMORROW_RE,
+        END_DATE_WEEKDAY_RE,
+    )
+    # Tenta cada formato e ignora um possível falso positivo se o contexto indicar
+    # crédito, validade ou expiração das milhas, e não o prazo para transferir.
+    matches = []
+    for pattern in patterns:
+        matches.extend(pattern.finditer(text))
+    matches.sort(key=lambda match: match.start())
+    for match in matches:
+        before = text[max(0, match.start() - 180):match.start()].casefold()
+        after = text[match.end():min(len(text), match.end() + 100)].casefold()
+        if re.search(r"(?:milhas?|pontos?)\s+b[oô]nus.{0,130}(?:creditad|válid[oa]s?\s+por|expir|venc)", before):
+            continue
+        if re.search(r"(?:creditad|crédito|validade das milhas|válid[oa]s?\s+por|expira|vencimento).{0,100}$", before):
+            continue
+
+        day = month = year = None
+        if pattern is END_DATE_RE:
+            day, month, year = match.groups()
+            month_num = int(month)
+        elif pattern in (END_DATE_CONTEXT_RE, END_DATE_WORD_RE):
             day, month_name, year = match.groups()
             month_num = MONTH_NAMES.get(month_name.casefold())
+        elif pattern is END_DATE_TOMORROW_RE:
+            day = match.group(1)
+            year = str(published.year)
+            month_num = published.month
+            if day is None:
+                tomorrow = published + timedelta(days=1)
+                day, month_num, year = str(tomorrow.day), tomorrow.month, str(tomorrow.year)
+            elif int(day) < published.day:
+                month_num += 1
+                if month_num > 12:
+                    month_num = 1
+                    year = str(published.year + 1)
         else:
-            match = END_DATE_WORD_RE.search(text)
-            if match:
-                day, month_name, year = match.groups()
-                month_num = MONTH_NAMES.get(month_name.casefold())
-            else:
-                match = END_DATE_TOMORROW_RE.search(text)
-                if match:
-                    day = match.group(1)
-                    year = str(published.year)
-                    month_num = published.month
-                    if day is None:
-                        tomorrow = published + timedelta(days=1)
-                        day, month_num, year = str(tomorrow.day), tomorrow.month, str(tomorrow.year)
-                    elif int(day) < published.day:
-                        month_num += 1
-                        if month_num > 12:
-                            month_num = 1
-                            year = str(published.year + 1)
-                else:
-                    match = END_DATE_WEEKDAY_RE.search(text)
-                    if not match:
-                        return None
-                    day = match.group(1)
-                    year = str(published.year)
-                    month_num = published.month
-                    if int(day) < published.day:
-                        month_num += 1
-                        if month_num > 12:
-                            month_num = 1
-                            year = str(published.year + 1)
-    year_num = int(year) if year else published.year
-    if year_num < 100:
-        year_num += 2000
-    try:
-        return datetime(year_num, month_num, int(day), 23, 59, tzinfo=TZ)
-    except (ValueError, TypeError):
-        return None
+            day = match.group(1)
+            year = str(published.year)
+            month_num = published.month
+            if int(day) < published.day:
+                month_num += 1
+                if month_num > 12:
+                    month_num = 1
+                    year = str(published.year + 1)
+
+        year_num = int(year) if year else published.year
+        if year_num < 100:
+            year_num += 2000
+        try:
+            return datetime(year_num, month_num, int(day), 23, 59, tzinfo=TZ)
+        except (ValueError, TypeError):
+            continue
+    return None
+
+
 
 def resolve_article_url(url, publisher=''):
     """Resolve redirecionadores de notícias para a página original do artigo."""
