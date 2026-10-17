@@ -141,10 +141,25 @@ def consult_official(source, checked_at):
 
 
 def discover_news(query, checked_at):
-    url = "https://news.google.com/rss/search?q=" + quote_plus(query) + "&hl=pt-BR&gl=BR&ceid=BR:pt-419"
+    google_url = "https://news.google.com/rss/search?q=" + quote_plus(query) + "&hl=pt-BR&gl=BR&ceid=BR:pt-419"
+    bing_url = "https://www.bing.com/news/search?q=" + quote_plus(query) + "&format=rss"
     found = []
+    attempts = []
+    body = ""
+    status = None
+    provider = None
+    for provider_name, url in (("Google News RSS", google_url), ("Bing News RSS", bing_url)):
+        try:
+            status, _content_type, body = http_get(url, "application/rss+xml,application/xml,text/xml,*/*")
+            provider = provider_name
+            break
+        except HTTPError as e:
+            attempts.append({"fonte": provider_name, "http_status": e.code})
+        except Exception as e:
+            attempts.append({"fonte": provider_name, "erro": f"{type(e).__name__}: {str(e)[:160]}"})
+    if provider is None:
+        return {"consulta": query, "resultado": "erro_consulta", "tentativas": attempts, "candidatos": []}
     try:
-        status, _content_type, body = http_get(url, "application/rss+xml,application/xml,text/xml,*/*")
         root = ET.fromstring(body)
         for item in root.findall(".//item")[:MAX_RESULTS_PER_QUERY]:
             title = html.unescape((item.findtext("title") or "").strip())
@@ -161,16 +176,13 @@ def discover_news(query, checked_at):
                 "consulta": query, "titulo": title[:300], "publicador": publisher[:160],
                 "publicado_em": pubdate, "link_resultado": link,
                 "descricao": description[:700], "consultado_em": checked_at,
+                "fonte_busca": provider,
                 "status_validacao": "pendente",
-                "observacao": "Pista de busca: confirmar campanha, validade e regras em fonte oficial antes de divulgar."
+                "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
             })
-        return {"consulta": query, "resultado": "consultado", "http_status": status, "candidatos": found}
-    except HTTPError as e:
-        return {"consulta": query, "resultado": "erro_http", "http_status": e.code, "candidatos": []}
+        return {"consulta": query, "resultado": "consultado", "fonte": provider, "http_status": status, "tentativas_anteriores": attempts, "candidatos": found}
     except Exception as e:
-        return {"consulta": query, "resultado": "erro_consulta", "erro": f"{type(e).__name__}: {str(e)[:220]}", "candidatos": []}
-
-
+        return {"consulta": query, "resultado": "erro_consulta", "fonte": provider, "erro": f"{type(e).__name__}: {str(e)[:220]}", "tentativas_anteriores": attempts, "candidatos": []}
 def parse_publication_date(value):
     if not value:
         return None
