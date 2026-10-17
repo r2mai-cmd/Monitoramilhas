@@ -198,13 +198,13 @@ def discover_news(query, checked_at):
 def discover_direct_source(source, checked_at):
     """Busca nos portais especializados usando consultas recentes e genéricas."""
     base = source['url'].rstrip('/')
-    search_terms = ['transferência bonificada outubro 2026', 'bônus transferência pontos 2026', 'transferência bonificada milhas']
+    search_terms = ['transferência bonificada outubro 2026', 'bônus transferência pontos outubro 2026', 'transferência bonificada milhas']
     results = []
     seen = set()
     attempts = []
     from urllib.parse import urljoin
     for term in search_terms:
-        search_url = base + '/?s=' + quote_plus(term)
+        search_url = base + '/?s=' + quote_plus(term) + '&orderby=date&order=desc'
         try:
             status, content_type, body = http_get(search_url)
             parser = LinkExtractor()
