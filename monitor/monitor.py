@@ -196,6 +196,44 @@ def extract_campaign_end_date(text, published):
         return None
 
 
+def inspect_candidate_article(item, now):
+    """Tenta ler a notícia de origem para obter evidências adicionais de validade."""
+    url = item.get("link_resultado", "")
+    if not url:
+        item["verificacao_artigo"] = {"resultado": "sem_link"}
+        return item
+    try:
+        status, content_type, body = http_get(url, "text/html,application/xhtml+xml,*/*")
+        parser = TextExtractor()
+        parser.feed(body)
+        article_text = re.sub(r"\\s+", " ", " ".join(parser.parts)).strip()
+        # Limitar o texto guardado no relatório e manter a evidência rastreável.
+        published = parse_publication_date(item.get("publicado_em", "")) or now
+        end_date = extract_campaign_end_date(article_text, published)
+        item["verificacao_artigo"] = {
+            "resultado": "consultado",
+            "http_status": status,
+            "content_type": content_type,
+            "texto_extraido": bool(article_text),
+            "trecho_validade": (article_text[max(0, match.start()-100):min(len(article_text), match.end()+180)]
+                                if (match := END_DATE_RE.search(article_text)) else None),
+        }
+        if end_date:
+            item["data_encerramento_detectada"] = end_date.isoformat()
+            if now > end_date:
+                item["status_validacao"] = "provavelmente_encerrada"
+                item["motivo_status"] = "A notícia contém uma data explícita de encerramento anterior à consulta; confirmar no regulamento."
+            else:
+                item["motivo_status"] = "A notícia contém uma data futura de encerramento, mas a atividade ainda requer confirmação oficial."
+        else:
+            item["motivo_status"] = "Artigo consultado, mas não foi encontrada uma data de encerramento reconhecível."
+    except HTTPError as e:
+        item["verificacao_artigo"] = {"resultado": "erro_http", "http_status": e.code}
+    except Exception as e:
+        item["verificacao_artigo"] = {"resultado": "erro_consulta", "erro": f"{type(e).__name__}: {str(e)[:180]}"}
+    return item
+
+
 def normalize_title(value):
     value = unicodedata.normalize("NFKD", value.casefold())
     value = "".join(ch for ch in value if not unicodedata.combining(ch))
@@ -300,6 +338,24 @@ def main():
 
     raw_count = sum(len(x.get("candidatos", [])) for x in news_results)
     candidates, rejected, likely_expired, needs_validation = classify_candidates(news_results, now)
+
+    # Consulta os artigos dos candidatos triados para procurar validade explícita.
+    # Falhas de acesso não eliminam a pista: ela continua pendente de confirmação.
+    enriched = []
+    for i, item in enumerate(candidates):
+        print(f"[Leitura de artigo {i+1}/{len(candidates)}] {item.get('titulo', '')[:100]}")
+        enriched.append(inspect_candidate_article(item, now))
+        if i < len(candidates)-1:
+            time.sleep(1)
+    candidates = [x for x in enriched if x.get("status_validacao") != "provavelmente_encerrada"]
+    newly_expired = [x for x in enriched if x.get("status_validacao") == "provavelmente_encerrada"]
+    likely_expired.extend(newly_expired)
+    expired_keys = {normalize_title(x.get("titulo", "")) for x in likely_expired}
+    needs_validation = [x for x in candidates if x.get("status_validacao") == "pendente_confirmacao_oficial"]
+    for item in candidates:
+        if item.get("data_encerramento_detectada") and item not in needs_validation:
+            item["status_validacao"] = "validade_futura_nao_confirmada"
+    candidates.sort(key=lambda x: (x.get("idade_dias", 9999), x.get("titulo", "").casefold()))
 
     OUT.parent.mkdir(parents=True, exist_ok=True)
     payload = {
