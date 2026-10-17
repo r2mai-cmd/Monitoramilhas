@@ -153,48 +153,47 @@ def consult_official(source, checked_at):
 
 
 def discover_news(query, checked_at):
-    google_url = "https://news.google.com/rss/search?q=" + quote_plus(query) + "&hl=pt-BR&gl=BR&ceid=BR:pt-419"
-    bing_url = "https://www.bing.com/news/search?q=" + quote_plus(query) + "&format=rss"
+    """Consulta Google News e Bing News; preserva links para que Bing possa ser resolvido ao artigo original."""
+    urls = (
+        ('Google News RSS', 'https://news.google.com/rss/search?q=' + quote_plus(query) + '&hl=pt-BR&gl=BR&ceid=BR:pt-419'),
+        ('Bing News RSS', 'https://www.bing.com/news/search?q=' + quote_plus(query) + '&format=rss'),
+    )
     found = []
     attempts = []
-    body = ""
-    status = None
-    provider = None
-    for provider_name, url in (("Google News RSS", google_url), ("Bing News RSS", bing_url)):
+    successes = []
+    for provider_name, url in urls:
         try:
-            status, _content_type, body = http_get(url, "application/rss+xml,application/xml,text/xml,*/*")
-            provider = provider_name
-            break
+            status, _content_type, body = http_get(url, 'application/rss+xml,application/xml,text/xml,*/*')
+            root = ET.fromstring(body)
+            count_before = len(found)
+            for rss_item in root.findall('.//item')[:MAX_RESULTS_PER_QUERY]:
+                title = html.unescape((rss_item.findtext('title') or '').strip())
+                link = (rss_item.findtext('link') or '').strip()
+                pubdate = (rss_item.findtext('pubDate') or '').strip()
+                description = html.unescape(re.sub(r'<[^>]+>', ' ', rss_item.findtext('description') or ''))
+                description = re.sub(r'\s+', ' ', description).strip()
+                source_node = rss_item.find('source')
+                publisher = (source_node.text or '').strip() if source_node is not None else ''
+                combined = (title + ' ' + description).casefold()
+                if not title or not any(k in combined for k in KEYWORDS):
+                    continue
+                found.append({
+                    'consulta': query, 'titulo': title[:300], 'publicador': publisher[:160],
+                    'publicado_em': pubdate, 'link_resultado': link, 'descricao': description[:700],
+                    'consultado_em': checked_at, 'fonte_busca': provider_name,
+                    'status_validacao': 'pendente',
+                    'observacao': 'Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar.'
+                })
+            successes.append({'fonte': provider_name, 'http_status': status, 'pistas': len(found)-count_before})
         except HTTPError as e:
-            attempts.append({"fonte": provider_name, "http_status": e.code})
+            attempts.append({'fonte': provider_name, 'http_status': e.code})
         except Exception as e:
-            attempts.append({"fonte": provider_name, "erro": f"{type(e).__name__}: {str(e)[:160]}"})
-    if provider is None:
-        return {"consulta": query, "resultado": "erro_consulta", "tentativas": attempts, "candidatos": []}
-    try:
-        root = ET.fromstring(body)
-        for item in root.findall(".//item")[:MAX_RESULTS_PER_QUERY]:
-            title = html.unescape((item.findtext("title") or "").strip())
-            link = (item.findtext("link") or "").strip()
-            pubdate = (item.findtext("pubDate") or "").strip()
-            description = html.unescape(re.sub(r"<[^>]+>", " ", item.findtext("description") or ""))
-            description = re.sub(r"\s+", " ", description).strip()
-            source_node = item.find("source")
-            publisher = (source_node.text or "").strip() if source_node is not None else ""
-            combined = (title + " " + description).casefold()
-            if not title or not any(k in combined for k in KEYWORDS):
-                continue
-            found.append({
-                "consulta": query, "titulo": title[:300], "publicador": publisher[:160],
-                "publicado_em": pubdate, "link_resultado": link,
-                "descricao": description[:700], "consultado_em": checked_at,
-                "fonte_busca": provider,
-                "status_validacao": "pendente",
-                "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
-            })
-        return {"consulta": query, "resultado": "consultado", "fonte": provider, "http_status": status, "tentativas_anteriores": attempts, "candidatos": found}
-    except Exception as e:
-        return {"consulta": query, "resultado": "erro_consulta", "fonte": provider, "erro": f"{type(e).__name__}: {str(e)[:220]}", "tentativas_anteriores": attempts, "candidatos": []}
+            attempts.append({'fonte': provider_name, 'erro': f'{type(e).__name__}: {str(e)[:160]}'})
+    if successes:
+        return {'consulta': query, 'resultado': 'consultado', 'fontes': successes, 'tentativas': attempts, 'candidatos': found}
+    return {'consulta': query, 'resultado': 'erro_consulta', 'tentativas': attempts, 'candidatos': []}
+
+
 def discover_direct_source(source, checked_at):
     """Busca nos portais especializados usando consultas recentes e genéricas."""
     base = source['url'].rstrip('/')
@@ -465,7 +464,13 @@ def classify_candidates(news_results, now):
                 new_url = item.get("link_resultado", "")
                 old_is_aggregator = "news.google.com/" in old_url or "bing.com/news/apiclick.aspx" in old_url
                 new_is_direct = bool(new_url) and "news.google.com/" not in new_url and "bing.com/news/apiclick.aspx" not in new_url
+                new_is_bing = "bing.com/news/apiclick.aspx" in new_url
+                old_is_google = "news.google.com/" in old_url
                 if old_is_aggregator and new_is_direct:
+                    for field in ("link_resultado", "publicado_em", "publicador", "fonte_busca", "descricao"):
+                        if item.get(field):
+                            existing[field] = item[field]
+                elif old_is_google and new_is_bing:
                     for field in ("link_resultado", "publicado_em", "publicador", "fonte_busca", "descricao"):
                         if item.get(field):
                             existing[field] = item[field]
