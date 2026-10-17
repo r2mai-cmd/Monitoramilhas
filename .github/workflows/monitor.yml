@@ -32,6 +32,8 @@ jobs:
           git add data/monitor_fontes.json
           if ! git diff --cached --quiet; then
             git commit -m "Atualiza relatório do monitor"
+            # Sincroniza commits feitos diretamente no GitHub durante a execução.
+            git pull --rebase origin "${GITHUB_REF_NAME:-main}"
             git push
           else
             echo "Nenhuma alteração no relatório."
