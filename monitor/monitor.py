@@ -377,10 +377,13 @@ def inspect_candidate_article(item, now):
 
 
 def normalize_title(value):
-    value = unicodedata.normalize("NFKD", value.casefold())
-    value = "".join(ch for ch in value if not unicodedata.combining(ch))
-    value = re.sub(r"[^a-z0-9]+", " ", value)
-    return re.sub(r"\s+", " ", value).strip()
+    value = unicodedata.normalize('NFKD', value.casefold())
+    value = ''.join(ch for ch in value if not unicodedata.combining(ch))
+    # Remove sufixos editoriais para reconhecer a mesma notícia em fontes diferentes.
+    value = re.sub(r'\s+-\s+(melhores destinos|passageiro de primeira|pontos pra voar|mestre das milhas)\s*$', '', value)
+    value = re.sub(r'\s*\|\s*(melhores destinos|passageiro de primeira|mestre das milhas)\s*$', '', value)
+    value = re.sub(r'[^a-z0-9]+', ' ', value)
+    return re.sub(r'\s+', ' ', value).strip()
 
 
 def classify_candidates(news_results, now):
