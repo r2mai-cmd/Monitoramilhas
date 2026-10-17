@@ -65,6 +65,18 @@ END_DATE_WORD_RE = re.compile(r"(?:válid[oa] até|valida até|até|ate|encerra(
 CAMPAIGN_RE = re.compile(r"transfer|transfira|transferência|transferencia|envio de pontos|enviar pontos", re.I)
 
 
+class LinkExtractor(HTMLParser):
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.links = []
+    def handle_starttag(self, tag, attrs):
+        if tag.lower() == 'a':
+            data = dict(attrs)
+            href = data.get('href', '')
+            if href:
+                self.links.append({'href': href, 'title': data.get('title', '')})
+
+
 class TextExtractor(HTMLParser):
     def __init__(self):
         super().__init__(convert_charrefs=True)
@@ -183,6 +195,40 @@ def discover_news(query, checked_at):
         return {"consulta": query, "resultado": "consultado", "fonte": provider, "http_status": status, "tentativas_anteriores": attempts, "candidatos": found}
     except Exception as e:
         return {"consulta": query, "resultado": "erro_consulta", "fonte": provider, "erro": f"{type(e).__name__}: {str(e)[:220]}", "tentativas_anteriores": attempts, "candidatos": []}
+def discover_direct_source(source, checked_at):
+    """Busca artigos na pesquisa interna de um portal especializado."""
+    base = source['url'].rstrip('/')
+    search_url = base + '/?s=' + quote_plus('transferência bonificada milhas')
+    results = []
+    try:
+        status, content_type, body = http_get(search_url)
+        parser = LinkExtractor()
+        parser.feed(body)
+        seen = set()
+        from urllib.parse import urljoin
+        for link in parser.links:
+            href = urljoin(base + '/', html.unescape(link['href']).strip())
+            title = re.sub(r'\s+', ' ', html.unescape(link['title'])).strip()
+            if not href.startswith(base) or href.rstrip('/') == base or href in seen or not title:
+                continue
+            if not (TRANSFER_RE.search(title) and BONUS_RE.search(title)):
+                continue
+            seen.add(href)
+            results.append({'consulta': search_url, 'titulo': title[:300], 'publicador': source['nome'],
+                'publicado_em': '', 'link_resultado': href, 'descricao': '', 'consultado_em': checked_at,
+                'fonte_busca': 'busca_direta_site', 'status_validacao': 'pendente_confirmacao_oficial',
+                'observacao': 'Artigo encontrado na busca interna; confirmar data e regulamento oficial.'})
+            if len(results) >= MAX_RESULTS_PER_QUERY:
+                break
+        return {'consulta': search_url, 'resultado': 'consultado', 'fonte': source['nome'],
+                'http_status': status, 'content_type': content_type, 'candidatos': results}
+    except HTTPError as e:
+        return {'consulta': search_url, 'resultado': 'erro_http', 'fonte': source['nome'], 'http_status': e.code, 'candidatos': []}
+    except Exception as e:
+        return {'consulta': search_url, 'resultado': 'erro_consulta', 'fonte': source['nome'],
+                'erro': f'{type(e).__name__}: {str(e)[:180]}', 'candidatos': []}
+
+
 def parse_publication_date(value):
     if not value:
         return None
@@ -391,6 +437,21 @@ def main():
         if i < len(NEWS_QUERIES)-1:
             time.sleep(1)
 
+    direct_sources = [
+        {'nome': 'Melhores Destinos', 'url': 'https://www.melhoresdestinos.com.br'},
+        {'nome': 'Mestre das Milhas', 'url': 'https://mestredasmilhas.com'},
+        {'nome': 'Passageiro de Primeira', 'url': 'https://passageirodeprimeira.com'},
+    ]
+    direct_results = []
+    for i, source in enumerate(direct_sources):
+        print(f"[Busca direta {i+1}/{len(direct_sources)}] {source['nome']}")
+        result = discover_direct_source(source, checked_at)
+        print(f"    {result['resultado']}; artigos encontrados: {len(result.get('candidatos', []))}")
+        direct_results.append(result)
+        if i < len(direct_sources)-1:
+            time.sleep(1)
+    news_results.extend(direct_results)
+
     raw_count = sum(len(x.get("candidatos", [])) for x in news_results)
     candidates, rejected, likely_expired, needs_validation = classify_candidates(news_results, now)
 
@@ -443,6 +504,7 @@ def main():
         ),
         "paginas_oficiais": official_results,
         "buscas_publicas": news_results,
+        "buscas_diretas_fontes_especializadas": direct_results,
         "candidatos": candidates,
         "campanhas_provavelmente_encerradas": likely_expired,
         "campanhas_aguardando_validacao": needs_validation,
