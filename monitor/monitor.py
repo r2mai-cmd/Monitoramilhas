@@ -27,7 +27,7 @@ OUT = ROOT / "data" / "monitor_fontes.json"
 TZ = ZoneInfo("America/Sao_Paulo")
 TIMEOUT_SECONDS = 20
 MAX_BYTES = 1_500_000
-MAX_AGE_DAYS = 30
+MAX_AGE_DAYS = 14
 MAX_RESULTS_PER_QUERY = 8
 
 OFFICIAL_PAGES = [
@@ -183,7 +183,7 @@ def normalize_title(value):
 
 def classify_candidates(news_results, now):
     unique = {}
-    rejected = {"antigos": 0, "data_ausente_ou_invalida": 0, "sem_sinal_de_transferencia_bonificada": 0, "duplicados": 0}
+    rejected = {"antigos": 0, "data_ausente_ou_invalida": 0, "sem_sinal_de_transferencia_bonificada": 0, "provavelmente_encerrados": 0, "duplicados": 0}
     for result in news_results:
         for item in result.get("candidatos", []):
             published = parse_publication_date(item.get("publicado_em", ""))
@@ -195,6 +195,10 @@ def classify_candidates(news_results, now):
                 rejected["antigos"] += 1
                 continue
             combined = item.get("titulo", "") + " " + item.get("descricao", "")
+            # Manchetes urgentes envelhecem rapidamente; após 24h não entram como candidatos prioritários.
+            if URGENT_ENDING_RE.search(item.get("titulo", "")) and age > timedelta(hours=24):
+                rejected["provavelmente_encerrados"] += 1
+                continue
             if not TRANSFER_RE.search(combined) or not BONUS_RE.search(combined):
                 rejected["sem_sinal_de_transferencia_bonificada"] += 1
                 continue
