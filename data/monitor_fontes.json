@@ -1,0 +1,1061 @@
+{
+  "atualizado_em": "2026-10-17T18:26:45-03:00",
+  "fuso_horario": "America/Sao_Paulo",
+  "total_paginas_oficiais": 7,
+  "paginas_oficiais_ok": 2,
+  "total_buscas_publicas": 7,
+  "buscas_publicas_ok": 7,
+  "total_candidatos_busca": 41,
+  "aviso": "Este relatório não é uma lista de promoções ativas. Resultados de busca e páginas consultadas precisam de validação oficial antes de publicação. Não são extraídos nem inferidos automaticamente percentuais, datas de validade ou elegibilidade de clubes.",
+  "paginas_oficiais": [
+    {
+      "programa": "Azul Fidelidade",
+      "parceiro": "Banco BV",
+      "url": "https://www.voeazul.com.br/br/pt/ofertas/bv",
+      "consultado_em": "2026-10-17T18:26:45-03:00",
+      "tipo": "pagina_oficial",
+      "resultado": "erro_http",
+      "http_status": 403,
+      "erro": "HTTP Error 403: Forbidden"
+    },
+    {
+      "programa": "Azul Fidelidade",
+      "parceiro": "Ofertas Azul",
+      "url": "https://www.voeazul.com.br/br/pt/ofertas",
+      "consultado_em": "2026-10-17T18:26:45-03:00",
+      "tipo": "pagina_oficial",
+      "resultado": "erro_http",
+      "http_status": 403,
+      "erro": "HTTP Error 403: Forbidden"
+    },
+    {
+      "programa": "LATAM Pass",
+      "parceiro": "Promoções LATAM Pass",
+      "url": "https://latampass.latam.com/pt_br/promocoes",
+      "consultado_em": "2026-10-17T18:26:45-03:00",
+      "tipo": "pagina_oficial",
+      "resultado": "erro_http",
+      "http_status": 403,
+      "erro": "HTTP Error 403: Forbidden"
+    },
+    {
+      "programa": "LATAM Pass",
+      "parceiro": "Promoções de bancos LATAM Pass",
+      "url": "https://web.latampass.latam.com/pt_br/promocao/bancos-milhas-extras",
+      "consultado_em": "2026-10-17T18:26:45-03:00",
+      "tipo": "pagina_oficial",
+      "resultado": "erro_http",
+      "http_status": 403,
+      "erro": "HTTP Error 403: Forbidden"
+    },
+    {
+      "programa": "Smiles",
+      "parceiro": "Campanhas Smiles",
+      "url": "https://www.smiles.com.br/portal/campanhas",
+      "consultado_em": "2026-10-17T18:26:45-03:00",
+      "tipo": "pagina_oficial",
+      "resultado": "erro_http",
+      "http_status": 404,
+      "erro": "HTTP Error 404: Not Found"
+    },
+    {
+      "programa": "Livelo",
+      "parceiro": "Livelo",
+      "url": "https://www.livelo.com.br/",
+      "consultado_em": "2026-10-17T18:26:45-03:00",
+      "tipo": "pagina_oficial",
+      "resultado": "consultado",
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "titulo_pagina": "Livelo: Programa de Pontos e Milhas | Viva. Pontue. Repita.",
+      "termos_encontrados": [
+        "transfer",
+        "bônus",
+        "milhas",
+        "pontos",
+        "clube"
+      ],
+      "trechos_para_revisao": [
+        "cado Livre e ganhe pontos Livelo. Compre e Pontue Compre e Pontue Criar Conta Fazer login Ofertas Trocar pontos Juntar pontos Shopping Livelo Viagens Clube Livelo Compra e Turbo Central de ajuda Para empresas Encontre as melhores oportunidades de viagem com a Livelo! Voos Hotéis Carros Pacotes Radar de Voos Ida e volta 1 viajante Econômica Exibir valor em: Pontos ou pontos + dinheiro Somente em dinheir",
+        "heiro Somente em dinheiro para juntar pontos Qual é a sua origem? Qual é o seu destino? Datas de ida e volta Buscar voos Encontre ingressos, seguros, transfers e outros produtos para a sua viagem! 2 hóspedes | 1 quarto Exibir valor em: Pontos ou pontos + dinheiro Somente em dinheiro para juntar pontos Destino Datas de entrada e saída Buscar hotéis Encontre ingressos, seguros, transfers e outros produtos p",
+        "or em: Pontos ou pontos + dinheiro Somente em dinheiro para juntar pontos Destino Datas de entrada e saída Buscar hotéis Encontre ingressos, seguros, transfers e outros produtos para a sua viagem! Devolver no mesmo local Exibir valor em: Pontos ou pontos + dinheiro Somente em dinheiro para juntar pontos Onde você quer retirar o carro? Datas Horários Buscar carros Encontre ingressos, seguros, transfers e o",
+        "ou pontos + dinheiro Somente em dinheiro para juntar pontos Onde você quer retirar o carro? Datas Horários Buscar carros Encontre ingressos, seguros, transfers e outros produtos para a sua viagem! Exibir valor em: Pontos ou pontos + dinheiro Somente em dinheiro para juntar pontos Qual é a sua origem? Qual é o seu destino? Datas de ida e volta Hóspedes Buscar pacotes Encontre ingressos, seguros, transfers"
+      ],
+      "observacao": "Consulta à página oficial; o conteúdo não confirma por si só uma promoção ativa."
+    },
+    {
+      "programa": "Esfera",
+      "parceiro": "Esfera",
+      "url": "https://www.esfera.com.vc/",
+      "consultado_em": "2026-10-17T18:26:45-03:00",
+      "tipo": "pagina_oficial",
+      "resultado": "consultado",
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "titulo_pagina": "Esfera: O programa de pontos e recompensas do Santander",
+      "termos_encontrados": [
+        "pontos",
+        "clube"
+      ],
+      "trechos_para_revisao": [
+        "hos Lazer e Diversão Viagens Bem-estar Usar pontos Produtos Viagens Vales-compra Pagar fatura com pontos Juntar pontos Lojas Parceiras Comprar Pontos Clube Restaurantes Descontos Parceiros Minha conta Meu Perfil Meus Pedidos Segurança Sobre Quem somos Termos e Condições Política de Privacidade Regulamentos, Termos e Condições Ajuda Precisa de ajuda? Esfera no WhatsApp Nos siga nas redes: Banco Santande"
+      ],
+      "observacao": "Consulta à página oficial; o conteúdo não confirma por si só uma promoção ativa."
+    }
+  ],
+  "buscas_publicas": [
+    {
+      "consulta": "\"transferência bonificada\" milhas clube 2026",
+      "resultado": "consultado",
+      "http_status": 200,
+      "candidatos": [
+        {
+          "consulta": "\"transferência bonificada\" milhas clube 2026",
+          "titulo": "Smiles e Livelo: milheiro a partir de R$ 15,46 transferindo pontos mais dinheiro com bônus - Melhores Destinos",
+          "publicador": "Melhores Destinos",
+          "publicado_em": "Thu, 17 Sep 2026 07:00:00 GMT",
+          "link_resultado": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPMmc3YkNJY00yb2pCMGdDZFBKZ0l0cFdQZ18tU3pQVVdOSi1PaGVnMEQ4cGc1Qjl6OHl6U2lLVVJIa2FRN1Rma1FNTWd0eV82Mzc5Y204SUluQi0wcjA1M0ZxSUhWNjJ5UFVndGZqRWN5ZVUzMnE3YzNKdzZJbzNSQnhFQ1BBc3pNaEhuRFc5eVQ?oc=5",
+          "descricao": "Smiles e Livelo: milheiro a partir de R$ 15,46 transferindo pontos mais dinheiro com bônus Melhores Destinos",
+          "consultado_em": "2026-10-17T18:26:45-03:00",
+          "status_validacao": "pendente",
+          "observacao": "Resultado de busca é apenas pista. Confirmar a campanha, datas e regras na página oficial antes de publicar."
+        },
+        {
+          "consulta": "\"transferência bonificada\" milhas clube 2026",
+          "titulo": "Azul, Smiles e Latam Pass: 3 ofertas de transferência com até 133% de bônus que terminam hoje! - Melhores Cartões",
+          "publicador": "Melhores Cartões",
+          "publicado_em": "Thu, 05 Mar 2026 08:00:00 GMT",
+          "link_resultado": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNdDVaZFExbDgtUVNMN29zWEJrY3NXaEozdEFNbWVGazM2dFpNYlRmRHZrTnQ2cVJYSjhlV0llYlBmZ3FBb2lmakFwcGtEdWxnMDVUUGhvVHROczZybTRfbU9vM2x1bVptN0dHbTBRbkRHaGUwcW9HQjE2aVJPQkx3NUhzRlNWclJ0Y3hoYg?oc=5",
+          "descricao": "Azul, Smiles e Latam Pass: 3 ofertas de transferência com até 133% de bônus que terminam hoje! Melhores Cartões",
+          "consultado_em": "2026-10-17T18:26:45-03:00",
+          "status_validacao": "pendente",
+          "observacao": "Resultado de busca é apenas pista. Confirmar a campanha, datas e regras na página oficial antes de publicar."
+        },
+        {
+          "consulta": "\"transferência bonificada\" milhas clube 2026",
+          "titulo": "Assine o Clube Smiles e ganhe 20.000 milhas na hora + 70% de bônus ao enviar pontos Esfera - Passageiro de Primeira",
+          "publicador": "Passageiro de Primeira",
+          "publicado_em": "Fri, 15 May 2026 07:00:00 GMT",
+          "link_resultado": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQTWF6RVA0aWItU0JsbTNDeUloV01CeW9xSTA3SHlBU05tNkhBekFwSU4xQjRpM1hRWU1ZZ21wX3V5NVoyZl9Qa0dGNzBBRDJ2Vmp2NGUzQVZ5bFRIdHlTZ3pnVHNYanM4T1RZRDk1bVhQOGU3SmVMS0FqMEtseHIzZ3RKOHlDVm9aTU5aXzJpUThjd2hZc1lpWmFSRHVVM0VzNk5WcHhaWnRPMERZTC1GUEVrVDRSbWhWci16cWNn?oc=5",
+          "descricao": "Assine o Clube Smiles e ganhe 20.000 milhas na hora + 70% de bônus ao enviar pontos Esfera Passageiro de Primeira",
+          "consultado_em": "2026-10-17T18:26:45-03:00",
+          "status_validacao": "pendente",
+          "observacao": "Resultado de busca é apenas pista. Confirmar a campanha, datas e regras na página oficial antes de publicar."
+        },
+        {
+          "consulta": "\"transferência bonificada\" milhas clube 2026",
+          "titulo": "Smiles com até 70% de bônus na transferência + cupom de milhas - Pontos pra Voar",
+          "publicador": "Pontos pra Voar",
+          "publicado_em": "Tue, 07 Jul 2026 07:00:00 GMT",
+          "link_resultado": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNelNtbG1ubmduYU9xeE1ySmNSU1hiWFhocDNGNm9pVEtXS2FjUWVOLUhoY2JBbUxleEZiNWVXTl9pQmUyV00zV2NNYm9wbFFzdGFpWnRrTWc4Q0o4MDJBd292ZXdyQXBWNVRTejdfNlE4b2R2YWJmTktndjdCcklRZDV4SmZzR0NVdTJGN2RsMjZoM3RSNHFsR2tSdWEtSUplQXFsbDFWaDhWNG1ORHJYLUE2R1hOSW9jWHVybGw0MWlDWm9iQzJmUGdRUkNBbHdYTWc?oc=5",
+          "descricao": "Smiles com até 70% de bônus na transferência + cupom de milhas Pontos pra Voar",
+          "consultado_em": "2026-10-17T18:26:45-03:00",
+          "status_validacao": "pendente",
+          "observacao": "Resultado de busca é apenas pista. Confirmar a campanha, datas e regras na página oficial antes de publicar."
+        },
+        {
+          "consulta": "\"transferência bonificada\" milhas clube 2026",
+          "titulo": "Milheiro Smiles por R$ 14,67: envie pontos Livelo com bônus usando pontos mais dinheiro - Melhores Destinos",
+          "publicador": "Melhores Destinos",
+          "publicado_em": "Mon, 15 Jun 2026 07:00:00 GMT",
+          "link_resultado": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQUm9od1NoWWpiejRfT0NSSklFS0hnbGR3UzIxMTNCUTlIc0h2QjUzV1BHbUNOMFRoWWlHeW9PM1FLemZOYnlEYzFzNm1UcllGeUQwWlphUHpsMjNnQVlMSGF2UUZrTU1iQWJKMUh2eHc0OGk4cVgzRm52aDlFcXJ0Q2ZNUUs?oc=5",
+          "descricao": "Milheiro Smiles por R$ 14,67: envie pontos Livelo com bônus usando pontos mais dinheiro Melhores Destinos",
+          "consultado_em": "2026-10-17T18:26:45-03:00",
+          "status_validacao": "pendente",
+          "observacao": "Resultado de busca é apenas pista. Confirmar a campanha, datas e regras na página oficial antes de publicar."
+        },
+        {
+          "consulta": "\"transferência bonificada\" milhas clube 2026",
+          "titulo": "50% de bônus! Latam prorroga oferta de pontuação turbinada nos cartões Latam Pass Itaú – peça o seu e ganhe até 70.000 milhas! - Melhores Cartões",
+          "publicador": "Melhores Cartões",
+          "publicado_em": "Thu, 23 Jul 2026 07:00:00 GMT",
+          "link_resultado": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOeGp2NVZwMG1ia1ZUbUlldW96Vm9rd0p2bGhMb0FFZTloVjVJazBFYUNmUGhPSmNvNERZWnhVQk9OLXZ5S2JFVVRXdVZOV3I3YWFYOUp1UVIxVHdPaXBmUnJBaGJ2YXlEQ29BRllzWHZkd0pPMThIQzVUWS03a05JVXhFSU5wTUlmbVZF?oc=5",
+          "descricao": "50% de bônus! Latam prorroga oferta de pontuação turbinada nos cartões Latam Pass Itaú – peça o seu e ganhe até 70.000 milhas! Melhores Cartões",
+          "consultado_em": "2026-10-17T18:26:45-03:00",
+          "status_validacao": "pendente",
+          "observacao": "Resultado de busca é apenas pista. Confirmar a campanha, datas e regras na página oficial antes de publicar."
+        },
+        {
+          "consulta": "\"transferência bonificada\" milhas clube 2026",
+          "titulo": "Últimas horas para assinar o Clube Smiles e ganhar 15 mil milhas na hora - Passageiro de Primeira",
+          "publicador": "Passageiro de Primeira",
+          "publicado_em": "Sun, 22 Feb 2026 08:00:00 GMT",
+          "link_resultado": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNRXJ3NW9WNzU1OEFJTHo1cFp0aWlJcWZqR1hqbHFQQ2hyWHd2UWRVb0UwZUE3R0xUVDB6Qkk3MnlmUHJvZGI5SEZUdTRzSVU2cW0wbS1mNERrR0tZZ0FXQVJRaTVMckgzUFkwY04tOThNUDZSNEh6cTYwRFZmZ2VrNzlPbks2cEdNdlN0eUt5ckFydmF2UlNZdTlGVGFOZHZ1VFNySG9kRVdkUQ?oc=5",
+          "descricao": "Últimas horas para assinar o Clube Smiles e ganhar 15 mil milhas na hora Passageiro de Primeira",
+          "consultado_em": "2026-10-17T18:26:45-03:00",
+          "status_validacao": "pendente",
+          "observacao": "Resultado de busca é apenas pista. Confirmar a campanha, datas e regras na página oficial antes de publicar."
+        },
+        {
+          "consulta": "\"transferência bonificada\" milhas clube 2026",
+          "titulo": "Prorrogou! Smiles e Livelo oferecem até 80% de bônus na transferência de pontos - Pontos pra Voar",
+          "publicador": "Pontos pra Voar",
+          "publicado_em": "Tue, 16 Jun 2026 07:00:00 GMT",
+          "link_resultado": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQWjRVbnJRR2I2a0RtdGlnai13ekUzX2wxX0VyVzZqbGE1UXpZOHB0Wk1lRFo3VzJDOGF0NXpzT09iSUlqbVQyNlAxUnI0WkN2RHpFMXVmLUxfSXVmUUVtRjZ2bEtLaXhhZm15VE9MelZlcXptWUUyU2ZhazNuREtaelVHaDlwVjJvWWhnWmlRNVFBcXV0aDJ2Q0F5Q044QVo0NHNyWQ?oc=5",
+          "descricao": "Prorrogou! Smiles e Livelo oferecem até 80% de bônus na transferência de pontos Pontos pra Voar",
+          "consultado_em": "2026-10-17T18:26:45-03:00",
+          "status_validacao": "pendente",
+          "observacao": "Resultado de busca é apenas pista. Confirmar a campanha, datas e regras na página oficial antes de publicar."
+        }
+      ]
+    },
+    {
+      "consulta": "site:voeazul.com.br bônus transferência pontos clube Azul Fidelidade",
+      "resultado": "consultado",
+      "http_status": 200,
+      "candidatos": [
+        {
+          "consulta": "site:voeazul.com.br bônus transferência pontos clube Azul Fidelidade",
+          "titulo": "Azul Fidelidade - Promoções em pontos e parceiros - Azul",
+          "publicador": "Azul",
+          "publicado_em": "Sat, 23 Aug 2025 00:59:30 GMT",
+          "link_resultado": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1aZjRoYm90MFhDUWVGd1pnczNReWdmcnZpb2M1Uld6bW82WEEtY2JJalZ2VlpCMmVXSXYyRm81ZDdlNjRPWU5RczgzT2ZmSVFSYXU0Ui1lc2dlZEk?oc=5",
+          "descricao": "Azul Fidelidade - Promoções em pontos e parceiros Azul",
+          "consultado_em": "2026-10-17T18:26:45-03:00",
+          "status_validacao": "pendente",
+          "observacao": "Resultado de busca é apenas pista. Confirmar a campanha, datas e regras na página oficial antes de publicar."
+        },
+        {
+          "consulta": "site:voeazul.com.br bônus transferência pontos clube Azul Fidelidade",
+          "titulo": "Clube Azul - Azul",
+          "publicador": "Azul",
+          "publicado_em": "Wed, 03 May 2023 20:54:23 GMT",
+          "link_resultado": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBYazlkbEFjMWdXcF9BUjkxT2EweFVPTm01OEtObUNVMU8tS0JSVnFnZGZPcHhVVTM4eDFwU1hrS3BUcXZIMHBkc25oVXlDak9NUlRseHZIbk1jTmR1bHBlUVhPY3ZlTzBwV19WOHNfR2k?oc=5",
+          "descricao": "Clube Azul Azul",
+          "consultado_em": "2026-10-17T18:26:45-03:00",
+          "status_validacao": "pendente",
+          "observacao": "Resultado de busca é apenas pista. Confirmar a campanha, datas e regras na página oficial antes de publicar."
+        }
+      ]
+    },
+    {
+      "consulta": "site:smiles.com.br bônus transferência pontos Clube Smiles",
+      "resultado": "consultado",
+      "http_status": 200,
+      "candidatos": [
+        {
+          "consulta": "site:smiles.com.br bônus transferência pontos Clube Smiles",
+          "titulo": "Clube Smiles - Smiles",
+          "publicador": "Smiles",
+          "publicado_em": "Wed, 14 Oct 2026 13:45:16 GMT",
+          "link_resultado": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5Qdk9oaTZMWUIzMFl0dVlIaVFfMXZtUTVQTGl0c0xTQzh1RGJZOWU2VFRXY2J4M25fNUo5VHROMFZ4bXBfeDJsaFJDcG9LNmJvYVRVdDUxcGRFUFRkbi1vSWRxVFhwdUk5MlgweDdvU3Q0U2Ntbnc?oc=5",
+          "descricao": "Clube Smiles Smiles",
+          "consultado_em": "2026-10-17T18:26:45-03:00",
+          "status_validacao": "pendente",
+          "observacao": "Resultado de busca é apenas pista. Confirmar a campanha, datas e regras na página oficial antes de publicar."
+        },
+        {
+          "consulta": "site:smiles.com.br bônus transferência pontos Clube Smiles",
+          "titulo": "Comprar Milhas - Smiles",
+          "publicador": "Smiles",
+          "publicado_em": "Tue, 30 Dec 2014 16:16:49 GMT",
+          "link_resultado": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9iV1RLS0lmR3BtaVc2WGZLTnlCVDQ3emlQcVJjNGkzaGphMzRuaHJpNTZzVWtrRlQ5a3RqNUlNUVM5TTJNdXhnLWUzR3RvejRlOGc?oc=5",
+          "descricao": "Comprar Milhas Smiles",
+          "consultado_em": "2026-10-17T18:26:45-03:00",
+          "status_validacao": "pendente",
+          "observacao": "Resultado de busca é apenas pista. Confirmar a campanha, datas e regras na página oficial antes de publicar."
+        },
+        {
+          "consulta": "site:smiles.com.br bônus transferência pontos Clube Smiles",
+          "titulo": "Milhas para quem é feito de viagens - Smiles - Smiles",
+          "publicador": "Smiles",
+          "publicado_em": "Wed, 15 Mar 2006 23:47:53 GMT",
+          "link_resultado": "https://news.google.com/rss/articles/CBMiP0FVX3lxTE0tdlhLZGxSSnpTMlRTUVNQVldsdFVELVAyUjl6d0Y2MHZ3UV9uclk1aFhIdXp1OFE1cE1yejBGNA?oc=5",
+          "descricao": "Milhas para quem é feito de viagens - Smiles Smiles",
+          "consultado_em": "2026-10-17T18:26:45-03:00",
+          "status_validacao": "pendente",
+          "observacao": "Resultado de busca é apenas pista. Confirmar a campanha, datas e regras na página oficial antes de publicar."
+        },
+        {
+          "consulta": "site:smiles.com.br bônus transferência pontos Clube Smiles",
+          "titulo": "Milhas para quem é feito de viagens - Liferay DXP - Smiles",
+          "publicador": "Smiles",
+          "publicado_em": "Tue, 30 Dec 2014 12:13:28 GMT",
+          "link_resultado": "https://news.google.com/rss/articles/CBMiREFVX3lxTFB1eXc3U1h6dWVuZmpabDcyb0RreHlNVVpWRGhYMGFLZXpCS1VzZi1ZcFdfSGtMNzFrbjRsYzJkLTNOajIw?oc=5",
+          "descricao": "Milhas para quem é feito de viagens - Liferay DXP Smiles",
+          "consultado_em": "2026-10-17T18:26:45-03:00",
+          "status_validacao": "pendente",
+          "observacao": "Resultado de busca é apenas pista. Confirmar a campanha, datas e regras na página oficial antes de publicar."
+        },
+        {
+          "consulta": "site:smiles.com.br bônus transferência pontos Clube Smiles",
+          "titulo": "Transferência de Pontos - Smiles",
+          "publicador": "Smiles",
+          "publicado_em": "Tue, 13 Oct 2026 13:27:33 GMT",
+          "link_resultado": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5ETENjOFBWaUg3eFg4czhKajhhT3BJOW1ES2QtWFJmZVkzMkFKaFV1YXpjN1JKOVBxMjRTSzBycXVDdGR5bHJvb0dtb0d2VFQ1cDBPUjZXYXlXb1lUNzJDTzBYb1VaSWRCdkNIR0FHSzlKVm5Y?oc=5",
+          "descricao": "Transferência de Pontos Smiles",
+          "consultado_em": "2026-10-17T18:26:45-03:00",
+          "status_validacao": "pendente",
+          "observacao": "Resultado de busca é apenas pista. Confirmar a campanha, datas e regras na página oficial antes de publicar."
+        },
+        {
+          "consulta": "site:smiles.com.br bônus transferência pontos Clube Smiles",
+          "titulo": "Clube Smiles - Smiles",
+          "publicador": "Smiles",
+          "publicado_em": "Wed, 30 Sep 2026 02:40:59 GMT",
+          "link_resultado": "https://news.google.com/rss/articles/CBMidEFVX3lxTE05LUJFMndsbmtrakVzUG51MkFDMVFJekwwMk9SODd0UzdydmJ4LXgzVU4xUnR4RHpUMmtyWjBwYUc0Z0lTdlhLN0VmOElQejBjUjRjd0NpVGdNUk9aUUNQdDF6OWRWcGc2R3UtVVM0REdOWjZH?oc=5",
+          "descricao": "Clube Smiles Smiles",
+          "consultado_em": "2026-10-17T18:26:45-03:00",
+          "status_validacao": "pendente",
+          "observacao": "Resultado de busca é apenas pista. Confirmar a campanha, datas e regras na página oficial antes de publicar."
+        }
+      ]
+    },
+    {
+      "consulta": "site:latampass.latam.com bônus transferência pontos clube LATAM Pass",
+      "resultado": "consultado",
+      "http_status": 200,
+      "candidatos": [
+        {
+          "consulta": "site:latampass.latam.com bônus transferência pontos clube LATAM Pass",
+          "titulo": "Clube LATAM Pass: Preços e Planos - LATAM Pass",
+          "publicador": "LATAM Pass",
+          "publicado_em": "Fri, 04 Sep 2026 08:39:13 GMT",
+          "link_resultado": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9MV2VlZm9xdjdubkt4MXQtM3R1RXhYd2dLVU1ieENaQ3UxbjFLSVBqaUpjSUE0WkFmLWdoMUlsZl9saUtMNWV4UHIxU1Q3bEZRYUhwMjV6dktsNkY0VmdaaHFNalFUS1hHdU1z?oc=5",
+          "descricao": "Clube LATAM Pass: Preços e Planos LATAM Pass",
+          "consultado_em": "2026-10-17T18:26:45-03:00",
+          "status_validacao": "pendente",
+          "observacao": "Resultado de busca é apenas pista. Confirmar a campanha, datas e regras na página oficial antes de publicar."
+        },
+        {
+          "consulta": "site:latampass.latam.com bônus transferência pontos clube LATAM Pass",
+          "titulo": "Assine o Clube LATAM Pass e Acumule Milhas Mensais - LATAM Pass",
+          "publicador": "LATAM Pass",
+          "publicado_em": "Fri, 04 Sep 2026 08:39:12 GMT",
+          "link_resultado": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBwRFpZNkQwaW1LTEhUYzFhM1dJTUp5Z2tiaTNTWEI4ZDQtUnhqSEdNM0pPSDVMVDd3MjZreWdpT3NvZURVZXBwRXFxNmVaVmdwVXBLYlZR?oc=5",
+          "descricao": "Assine o Clube LATAM Pass e Acumule Milhas Mensais LATAM Pass",
+          "consultado_em": "2026-10-17T18:26:45-03:00",
+          "status_validacao": "pendente",
+          "observacao": "Resultado de busca é apenas pista. Confirmar a campanha, datas e regras na página oficial antes de publicar."
+        },
+        {
+          "consulta": "site:latampass.latam.com bônus transferência pontos clube LATAM Pass",
+          "titulo": "Cartões LATAM Pass: acumule milhas - LATAM Pass",
+          "publicador": "LATAM Pass",
+          "publicado_em": "Sun, 06 Sep 2026 22:22:01 GMT",
+          "link_resultado": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBPbTdKU2Q5eERnMHJPN0Ryem44QmlkczdQeWRWb082RTBMVjNpV0x6S25ueWd4RWhMQ0MxTkZtUVNNbFN2WWs4TXR4QlFJUzBzSDlwZUhwWUhXYzRXWDE3Y2xlTjNDaTlqaF9UT3hsRllJVlN0MEVv?oc=5",
+          "descricao": "Cartões LATAM Pass: acumule milhas LATAM Pass",
+          "consultado_em": "2026-10-17T18:26:45-03:00",
+          "status_validacao": "pendente",
+          "observacao": "Resultado de busca é apenas pista. Confirmar a campanha, datas e regras na página oficial antes de publicar."
+        },
+        {
+          "consulta": "site:latampass.latam.com bônus transferência pontos clube LATAM Pass",
+          "titulo": "Cartão LATAM Pass Itaú: acumule milhas - LATAM Pass",
+          "publicador": "LATAM Pass",
+          "publicado_em": "Thu, 17 Sep 2026 14:05:59 GMT",
+          "link_resultado": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBPS1ptdWhGVFdzR1pRV2tSbHJzZFdSbjJfbDZSUUFRVU5BNVRFNUJFOHZxdlBkRDNFSF9rU1J2QXRjalNqUVl0NUV5UFpIeEJJN1c4NE81djRaQnh5?oc=5",
+          "descricao": "Cartão LATAM Pass Itaú: acumule milhas LATAM Pass",
+          "consultado_em": "2026-10-17T18:26:45-03:00",
+          "status_validacao": "pendente",
+          "observacao": "Resultado de busca é apenas pista. Confirmar a campanha, datas e regras na página oficial antes de publicar."
+        },
+        {
+          "consulta": "site:latampass.latam.com bônus transferência pontos clube LATAM Pass",
+          "titulo": "Transferir pontos para milhas - LATAM Pass",
+          "publicador": "LATAM Pass",
+          "publicado_em": "Tue, 08 Sep 2026 19:44:50 GMT",
+          "link_resultado": "https://news.google.com/rss/articles/CBMickFVX3lxTE80LXpVUGJVSEpnelo4ZXZJSlpKdG41MVFIUEdIbThPV0w4clB3bzJHTkd0TnBhX19jczI2eHBZQm53MzEyYmgydzVvOVVRYnAwM1h6bWt4UkVId1VtZER0SU5lTDZvNU04ZzNCV1FWaTVNQQ?oc=5",
+          "descricao": "Transferir pontos para milhas LATAM Pass",
+          "consultado_em": "2026-10-17T18:26:45-03:00",
+          "status_validacao": "pendente",
+          "observacao": "Resultado de busca é apenas pista. Confirmar a campanha, datas e regras na página oficial antes de publicar."
+        },
+        {
+          "consulta": "site:latampass.latam.com bônus transferência pontos clube LATAM Pass",
+          "titulo": "Junte e Troque Pontos | Shopping | LATAM Pass - LATAM Airlines",
+          "publicador": "LATAM Airlines",
+          "publicado_em": "Wed, 05 Jun 2024 04:31:18 GMT",
+          "link_resultado": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE96V1RNbW84MGZMR0tCTy02STZwbnpwY3BKOFNWNDZkY21WMzFpM1RnNTNya1pncDdwTndvLVBXaVZTdnBhQ1JXRHQ5aFhvdU1yMDhWd2JKZnZoYlU?oc=5",
+          "descricao": "Junte e Troque Pontos | Shopping | LATAM Pass LATAM Airlines",
+          "consultado_em": "2026-10-17T18:26:45-03:00",
+          "status_validacao": "pendente",
+          "observacao": "Resultado de busca é apenas pista. Confirmar a campanha, datas e regras na página oficial antes de publicar."
+        },
+        {
+          "consulta": "site:latampass.latam.com bônus transferência pontos clube LATAM Pass",
+          "titulo": "Hotéis e hospedagens: acumule milhas - LATAM Pass",
+          "publicador": "LATAM Pass",
+          "publicado_em": "Mon, 07 Sep 2026 01:58:12 GMT",
+          "link_resultado": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFBnaTZ2RHNjWTRaX3BaVkx6SzZoVkhRXzlncGJPSzZmQ1R0WGNIMUlrMlVZbVpCZXQxeTMxeVgtRUhzT0hFWW0tZ1pSOVMzTS1TaC1QLUpwYw?oc=5",
+          "descricao": "Hotéis e hospedagens: acumule milhas LATAM Pass",
+          "consultado_em": "2026-10-17T18:26:45-03:00",
+          "status_validacao": "pendente",
+          "observacao": "Resultado de busca é apenas pista. Confirmar a campanha, datas e regras na página oficial antes de publicar."
+        }
+      ]
+    },
+    {
+      "consulta": "site:livelo.com.br transferência bonificada milhas",
+      "resultado": "consultado",
+      "http_status": 200,
+      "candidatos": [
+        {
+          "consulta": "site:livelo.com.br transferência bonificada milhas",
+          "titulo": "Livelo: Programa de Pontos e Milhas | Viva. Pontue. Repita. - Livelo",
+          "publicador": "Livelo",
+          "publicado_em": "Tue, 02 Aug 2016 19:33:48 GMT",
+          "link_resultado": "https://news.google.com/rss/articles/CBMiP0FVX3lxTFAwQ240QXVQYVZGRnl6a2hWOXZTc2lxS0hNcWlBTVVrV2F1a25BTHA0eVozYkw3UXY2RzN2STJiNA?oc=5",
+          "descricao": "Livelo: Programa de Pontos e Milhas | Viva. Pontue. Repita. Livelo",
+          "consultado_em": "2026-10-17T18:26:45-03:00",
+          "status_validacao": "pendente",
+          "observacao": "Resultado de busca é apenas pista. Confirmar a campanha, datas e regras na página oficial antes de publicar."
+        },
+        {
+          "consulta": "site:livelo.com.br transferência bonificada milhas",
+          "titulo": "Programa de pontos que você troca por recompensas - Livelo",
+          "publicador": "Livelo",
+          "publicado_em": "Fri, 23 May 2025 08:38:01 GMT",
+          "link_resultado": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBQY2JIZ0tCVDBwblhRZkgyY3owdW1tenNBTlZSMkdPY0ZRck15QlFjSlh5S2xCNnJ6Z1AzekZtNjdIVmhRTjMtVXJEdXY3aHVEWEVTR0NsRVA1aVVuU3VFM0k5VlYtQmdja190S2dGQ194R1NqSm93?oc=5",
+          "descricao": "Programa de pontos que você troca por recompensas Livelo",
+          "consultado_em": "2026-10-17T18:26:45-03:00",
+          "status_validacao": "pendente",
+          "observacao": "Resultado de busca é apenas pista. Confirmar a campanha, datas e regras na página oficial antes de publicar."
+        },
+        {
+          "consulta": "site:livelo.com.br transferência bonificada milhas",
+          "titulo": "Bônus na transferência de pontos Livelo: como calcular o valor final - Livelo",
+          "publicador": "Livelo",
+          "publicado_em": "Wed, 26 Aug 2026 19:14:25 GMT",
+          "link_resultado": "https://news.google.com/rss/articles/CBMifkFVX3lxTE0xOHRzWFdFNWhHZjQxUDRCTFpKbUg3MENWc21xaENLalV3RmhNTTdtRDRGLUx4X1VMSTJsLUNGWUxUTzZoWlZhODh3WHFNSGp5eGtkWENseFllSjBWdHY3VERoQnBjTEVseW9oWGs4UFphSFZiQjNMeFRPblk2dw?oc=5",
+          "descricao": "Bônus na transferência de pontos Livelo: como calcular o valor final Livelo",
+          "consultado_em": "2026-10-17T18:26:45-03:00",
+          "status_validacao": "pendente",
+          "observacao": "Resultado de busca é apenas pista. Confirmar a campanha, datas e regras na página oficial antes de publicar."
+        },
+        {
+          "consulta": "site:livelo.com.br transferência bonificada milhas",
+          "titulo": "Transferindo para LATAM Pass - Livelo",
+          "publicador": "Livelo",
+          "publicado_em": "Fri, 23 May 2025 09:07:51 GMT",
+          "link_resultado": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9LanhEdzUxM2doWFdVTVI5UkhHNWVfQzFXcE1MNEF6TUQ1SnBFbXRVa0M4anR5STByNjRjMnBRazZWUDNYSlJERkJ5ZWI3OEVDYXVVR3BVOFNST0UzYWZsRFVLYWZLQjFhQjJMNjY0UWlEZlE?oc=5",
+          "descricao": "Transferindo para LATAM Pass Livelo",
+          "consultado_em": "2026-10-17T18:26:45-03:00",
+          "status_validacao": "pendente",
+          "observacao": "Resultado de busca é apenas pista. Confirmar a campanha, datas e regras na página oficial antes de publicar."
+        },
+        {
+          "consulta": "site:livelo.com.br transferência bonificada milhas",
+          "titulo": "Transferência para parceiros - Livelo",
+          "publicador": "Livelo",
+          "publicado_em": "Tue, 03 Jun 2025 18:56:56 GMT",
+          "link_resultado": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBBb0xROVhsM2QtYUdyRFJ4cmU0V2xkS2lCS0tOeEliUTJMYzN3U2V5Y2VkckhCQURwSEV2VzU4ejdRNDVlbFJSZFprX1BLeWp1MkNXbTlQTHM2WHc?oc=5",
+          "descricao": "Transferência para parceiros Livelo",
+          "consultado_em": "2026-10-17T18:26:45-03:00",
+          "status_validacao": "pendente",
+          "observacao": "Resultado de busca é apenas pista. Confirmar a campanha, datas e regras na página oficial antes de publicar."
+        },
+        {
+          "consulta": "site:livelo.com.br transferência bonificada milhas",
+          "titulo": "Smiles lança funcionalidade de transferência expressa de milhas entre programas de fidelidade - Livelo",
+          "publicador": "Livelo",
+          "publicado_em": "Fri, 23 May 2025 08:37:41 GMT",
+          "link_resultado": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5lMXhqckZlbXR4VFp3V3BidnN2eXRRcUtjajZHNkozaEJDR1J1eUV2UFI2QjJ2MzFzQ2lNb210b0Rhb0NLOE1SX1FOVGtXYlU1cnJXMEp0d1k2ODNsVEhxTU1aNnRabjNvU1ZSd2VsSHR2Z3J6WE9HSnJIRzIwQQ?oc=5",
+          "descricao": "Smiles lança funcionalidade de transferência expressa de milhas entre programas de fidelidade Livelo",
+          "consultado_em": "2026-10-17T18:26:45-03:00",
+          "status_validacao": "pendente",
+          "observacao": "Resultado de busca é apenas pista. Confirmar a campanha, datas e regras na página oficial antes de publicar."
+        },
+        {
+          "consulta": "site:livelo.com.br transferência bonificada milhas",
+          "titulo": "Transferindo para Smiles - Livelo",
+          "publicador": "Livelo",
+          "publicado_em": "Fri, 23 May 2025 09:48:46 GMT",
+          "link_resultado": "https://news.google.com/rss/articles/CBMidEFVX3lxTE4weWNfMGFIVHAyenhzYmdoUjBuRExrTGt5U18xOUJjNlFqc0ZJZkhiWV9WSTdOZ08wR01vLWlqd2hDNkVVZUsyNXJCT0tjUWZnODN4WHlzbjliZnZUcERveWNhenQ3T0IwTTFld0V4bldUWjlv?oc=5",
+          "descricao": "Transferindo para Smiles Livelo",
+          "consultado_em": "2026-10-17T18:26:45-03:00",
+          "status_validacao": "pendente",
+          "observacao": "Resultado de busca é apenas pista. Confirmar a campanha, datas e regras na página oficial antes de publicar."
+        }
+      ]
+    },
+    {
+      "consulta": "site:esfera.com.vc transferência bonificada milhas",
+      "resultado": "consultado",
+      "http_status": 200,
+      "candidatos": [
+        {
+          "consulta": "site:esfera.com.vc transferência bonificada milhas",
+          "titulo": "Esfera: O programa de pontos e recompensas do Santander - Esfera",
+          "publicador": "Esfera",
+          "publicado_em": "Mon, 14 Oct 2019 00:55:39 GMT",
+          "link_resultado": "https://news.google.com/rss/articles/CBMiP0FVX3lxTFB1Z0VQeGFvaWwxbnJHb1JzSlZaMGx3Q0Y2Q0J6Q2ViQk1KZ3Y2cGlEMl9ma1pvVWEtS0ZmRVhobw?oc=5",
+          "descricao": "Esfera: O programa de pontos e recompensas do Santander Esfera",
+          "consultado_em": "2026-10-17T18:26:45-03:00",
+          "status_validacao": "pendente",
+          "observacao": "Resultado de busca é apenas pista. Confirmar a campanha, datas e regras na página oficial antes de publicar."
+        },
+        {
+          "consulta": "site:esfera.com.vc transferência bonificada milhas",
+          "titulo": "Transfira pontos Esfera - Esfera",
+          "publicador": "Esfera",
+          "publicado_em": "Mon, 05 Jun 2023 06:35:54 GMT",
+          "link_resultado": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE1sOVhTbF9xNEUycGtURFRpRzJheUI2OWFTTlAyRmpxbElzWnp3SWdKTThaYjdLUDZQT2hXR2RvbXRTSkJHVVNzS3ZwN0FoU2d4MmVJN2thYkUyZjE4WHc?oc=5",
+          "descricao": "Transfira pontos Esfera Esfera",
+          "consultado_em": "2026-10-17T18:26:45-03:00",
+          "status_validacao": "pendente",
+          "observacao": "Resultado de busca é apenas pista. Confirmar a campanha, datas e regras na página oficial antes de publicar."
+        },
+        {
+          "consulta": "site:esfera.com.vc transferência bonificada milhas",
+          "titulo": "Compra de Pontos - Esfera",
+          "publicador": "Esfera",
+          "publicado_em": "Wed, 29 Jan 2020 15:11:27 GMT",
+          "link_resultado": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE5zWlBtT0VieFJxaEx0eW5JdVNGNlJWNXRmRFdJN2R6WHRtMm9RaHdhVE1saUZyTEZYR25taTFRbURMak0zUVdjUHRnVzVBRFFiUFJYckJ4Rnhwc2RuOGZweWxXdDlidw?oc=5",
+          "descricao": "Compra de Pontos Esfera",
+          "consultado_em": "2026-10-17T18:26:45-03:00",
+          "status_validacao": "pendente",
+          "observacao": "Resultado de busca é apenas pista. Confirmar a campanha, datas e regras na página oficial antes de publicar."
+        }
+      ]
+    },
+    {
+      "consulta": "bônus transferência pontos milhas assinantes clube outubro 2026",
+      "resultado": "consultado",
+      "http_status": 200,
+      "candidatos": [
+        {
+          "consulta": "bônus transferência pontos milhas assinantes clube outubro 2026",
+          "titulo": "Azul Fidelidade e Banestes oferecem até 100% de bônus na transferência de pontos + 2.000 pontos extras - Pontos pra Voar",
+          "publicador": "Pontos pra Voar",
+          "publicado_em": "Wed, 14 Oct 2026 17:00:18 GMT",
+          "link_resultado": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNQjRBc2gtTUNraEdlRXZpWThhOFhRaUM0bmJFdTFrcHNSZEdSUzhxaGtqdlJqSHdGSGNxUFNucUxueDdqZnZBR1N4QzBQSDUwR3FRdE55VFdMYmt2OWtxWk1OYzExTFAySVNBTTctLXFrXzh6bTF4ZlpwQktBdUZ4T0VmMVpRUDRvVVhOWUxEcjNoSzJ5QmxWWExPYXRROXBjZ0ZXZWM2ZG9NYVNuelZJNGlFQUt1TmFXQkZiZl9CeXM?oc=5",
+          "descricao": "Azul Fidelidade e Banestes oferecem até 100% de bônus na transferência de pontos + 2.000 pontos extras Pontos pra Voar",
+          "consultado_em": "2026-10-17T18:26:45-03:00",
+          "status_validacao": "pendente",
+          "observacao": "Resultado de busca é apenas pista. Confirmar a campanha, datas e regras na página oficial antes de publicar."
+        },
+        {
+          "consulta": "bônus transferência pontos milhas assinantes clube outubro 2026",
+          "titulo": "Latam Pass: ganhe 25% de bônus no envio de pontos Itaú e Credicard - Melhores Destinos",
+          "publicador": "Melhores Destinos",
+          "publicado_em": "Mon, 05 Oct 2026 07:00:00 GMT",
+          "link_resultado": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQbDdScGZGQ1ZUb2tUbEhCZGpPUFgyaUxneEx4VDlkMFRmUVphLTVBcmc5bnl1YmN5MHNrbGNmamNmSDBNekZ2VE1yNktRRjcwbkpLc21oYnNVWTFvUEN1ZFhSc01BYWZ1VmtYbE9HRlVzMkx0eXNpbTlWMWNCeDBJZGZjZU5WcXJRRTBB?oc=5",
+          "descricao": "Latam Pass: ganhe 25% de bônus no envio de pontos Itaú e Credicard Melhores Destinos",
+          "consultado_em": "2026-10-17T18:26:45-03:00",
+          "status_validacao": "pendente",
+          "observacao": "Resultado de busca é apenas pista. Confirmar a campanha, datas e regras na página oficial antes de publicar."
+        },
+        {
+          "consulta": "bônus transferência pontos milhas assinantes clube outubro 2026",
+          "titulo": "Azul Fidelidade oferece até 100% de bônus nas transferências de pontos Livelo - Passageiro de Primeira",
+          "publicador": "Passageiro de Primeira",
+          "publicado_em": "Mon, 05 Oct 2026 07:00:00 GMT",
+          "link_resultado": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNeXk4MTFsRFJpa210VDBPZC1Ma1ZjMUI2azNJM0xWVm9DV3ZKWjhpTnptTUQ1X1RPVzlrNHhwSEdlYjBaZTBDUkh1cE1WWnBrbU1YSm9Ya0tRN0h3ekV0UEVSV1p4NXFhNGRrVzVrZy1HQVZnakJSS3JXQWVkbnJuWERFMTk4eDVWYnFDRnk5MVhXdmRCRE1mU29tNWxrSzE0R1JJbkdyNmRJbDVqQ1dR?oc=5",
+          "descricao": "Azul Fidelidade oferece até 100% de bônus nas transferências de pontos Livelo Passageiro de Primeira",
+          "consultado_em": "2026-10-17T18:26:45-03:00",
+          "status_validacao": "pendente",
+          "observacao": "Resultado de busca é apenas pista. Confirmar a campanha, datas e regras na página oficial antes de publicar."
+        },
+        {
+          "consulta": "bônus transferência pontos milhas assinantes clube outubro 2026",
+          "titulo": "Últimas horas! Transfira pontos do Sem Parar Mais para Smiles com até 80% de bônus - Pontos pra Voar",
+          "publicador": "Pontos pra Voar",
+          "publicado_em": "Wed, 14 Oct 2026 21:00:27 GMT",
+          "link_resultado": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQMENiQ0VaN1JTbTIwbG5YamxSTm8tTlJ4QlVJX2hwYTgxTkRQMHZFbWY0dTZ5ckJCVEx2b2lQLVgzRlJBNDJUVGNQZTFyaUhPekFFWU9XYk1kODNMQWxvQjE2bU1wcWEtNWFmX0gtWFJ0SGh5cVhmMG04bUJqQnVkSGNOajlocDNDOV9EYUsxanhSeExTMF95SzMwSEdWcFV0b3Rr?oc=5",
+          "descricao": "Últimas horas! Transfira pontos do Sem Parar Mais para Smiles com até 80% de bônus Pontos pra Voar",
+          "consultado_em": "2026-10-17T18:26:45-03:00",
+          "status_validacao": "pendente",
+          "observacao": "Resultado de busca é apenas pista. Confirmar a campanha, datas e regras na página oficial antes de publicar."
+        },
+        {
+          "consulta": "bônus transferência pontos milhas assinantes clube outubro 2026",
+          "titulo": "Smiles oferece até 80% de bônus nas transferências de pontos do Banestes - Passageiro de Primeira",
+          "publicador": "Passageiro de Primeira",
+          "publicado_em": "Thu, 08 Oct 2026 07:00:00 GMT",
+          "link_resultado": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPbnM4LUpvcDRMVnZqYUJfcUp3MmY4UURIMmp3aDBOSElBOF9NUjFxV2RLT1IxcUk0eGVZbjBEQU1OUVlvM29XN2ZzTjhueXNMcHpRNG9BWFE3WHdoNmVzRWRsdFZrZjZKalhGV250cnBBVEtpek5ZOW5SREpQYWNjbTlnVk5XRXBqVFVXRXFIc0xGRWdDUjZYOTVkOEtaQWszQzYtZzNHeGQ?oc=5",
+          "descricao": "Smiles oferece até 80% de bônus nas transferências de pontos do Banestes Passageiro de Primeira",
+          "consultado_em": "2026-10-17T18:26:45-03:00",
+          "status_validacao": "pendente",
+          "observacao": "Resultado de busca é apenas pista. Confirmar a campanha, datas e regras na página oficial antes de publicar."
+        },
+        {
+          "consulta": "bônus transferência pontos milhas assinantes clube outubro 2026",
+          "titulo": "Prorrogado! Smiles oferece até 80% de bônus na transferência de pontos Livelo - Melhores Destinos",
+          "publicador": "Melhores Destinos",
+          "publicado_em": "Fri, 18 Sep 2026 07:00:00 GMT",
+          "link_resultado": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9aZFlYV1Btb3BJTF83VWg1WlFnWXkwdVAtR0RCVDFoOXRyLWVTNmx1aFNkMnRfTTJkNGUweHNLd2dDQTVZVVVlLURWTHZtdUgzWEZtQjh1cjhrbWtlQ3BKQ2dqdkphWEt1azY5N05wa0RBNlVhMzFaaGRLZw?oc=5",
+          "descricao": "Prorrogado! Smiles oferece até 80% de bônus na transferência de pontos Livelo Melhores Destinos",
+          "consultado_em": "2026-10-17T18:26:45-03:00",
+          "status_validacao": "pendente",
+          "observacao": "Resultado de busca é apenas pista. Confirmar a campanha, datas e regras na página oficial antes de publicar."
+        },
+        {
+          "consulta": "bônus transferência pontos milhas assinantes clube outubro 2026",
+          "titulo": "Confira promoções no Azul Fidelidade, Esfera e LATAM Pass que acabam hoje - Pontos pra Voar",
+          "publicador": "Pontos pra Voar",
+          "publicado_em": "Fri, 16 Oct 2026 22:00:32 GMT",
+          "link_resultado": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQSlVlU3JJUE14a0xZR2ZPal9Wb0R0dWlNb2ZtRTdHZnJaTzAxc0N0b1FDY09oZlB2UXFmUFpkTlhZcmNfMEo3all5OG5iN2FGVzVtZWhZbGNfcWkxWGU2clpmSy1wN0g5dE9TNU9IZlFCNFpZRUQ4R2JUUTVrZ09Pby1yOVAtelc4cWJDNjRrY180Q2FV?oc=5",
+          "descricao": "Confira promoções no Azul Fidelidade, Esfera e LATAM Pass que acabam hoje Pontos pra Voar",
+          "consultado_em": "2026-10-17T18:26:45-03:00",
+          "status_validacao": "pendente",
+          "observacao": "Resultado de busca é apenas pista. Confirmar a campanha, datas e regras na página oficial antes de publicar."
+        },
+        {
+          "consulta": "bônus transferência pontos milhas assinantes clube outubro 2026",
+          "titulo": "Smiles oferece até 70% de bônus nas transferências de pontos do Banco do Nordeste - Passageiro de Primeira",
+          "publicador": "Passageiro de Primeira",
+          "publicado_em": "Thu, 08 Oct 2026 07:00:00 GMT",
+          "link_resultado": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQNkkxdjJVbFFiZUVyUTRNaTVQYkdMa1k2MjRuRDdGRHFMNGJTanQ5R21jOEVzSVhENVVoX2d5UE1vVm5GQ1dQV3FIWEFHQXpSaWM1WTRKMV9pOWdjc2NzRUhmQTdmNER0Sy02VGNwck9XVE9vRUdscjJJRTI2NTFwSk55VnBtZmFkOGpIcXgwREQ4LVVNM05TUWQzVGdUVUI5WGIw?oc=5",
+          "descricao": "Smiles oferece até 70% de bônus nas transferências de pontos do Banco do Nordeste Passageiro de Primeira",
+          "consultado_em": "2026-10-17T18:26:45-03:00",
+          "status_validacao": "pendente",
+          "observacao": "Resultado de busca é apenas pista. Confirmar a campanha, datas e regras na página oficial antes de publicar."
+        }
+      ]
+    }
+  ],
+  "candidatos": [
+    {
+      "consulta": "\"transferência bonificada\" milhas clube 2026",
+      "titulo": "Smiles e Livelo: milheiro a partir de R$ 15,46 transferindo pontos mais dinheiro com bônus - Melhores Destinos",
+      "publicador": "Melhores Destinos",
+      "publicado_em": "Thu, 17 Sep 2026 07:00:00 GMT",
+      "link_resultado": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPMmc3YkNJY00yb2pCMGdDZFBKZ0l0cFdQZ18tU3pQVVdOSi1PaGVnMEQ4cGc1Qjl6OHl6U2lLVVJIa2FRN1Rma1FNTWd0eV82Mzc5Y204SUluQi0wcjA1M0ZxSUhWNjJ5UFVndGZqRWN5ZVUzMnE3YzNKdzZJbzNSQnhFQ1BBc3pNaEhuRFc5eVQ?oc=5",
+      "descricao": "Smiles e Livelo: milheiro a partir de R$ 15,46 transferindo pontos mais dinheiro com bônus Melhores Destinos",
+      "consultado_em": "2026-10-17T18:26:45-03:00",
+      "status_validacao": "pendente",
+      "observacao": "Resultado de busca é apenas pista. Confirmar a campanha, datas e regras na página oficial antes de publicar."
+    },
+    {
+      "consulta": "\"transferência bonificada\" milhas clube 2026",
+      "titulo": "Azul, Smiles e Latam Pass: 3 ofertas de transferência com até 133% de bônus que terminam hoje! - Melhores Cartões",
+      "publicador": "Melhores Cartões",
+      "publicado_em": "Thu, 05 Mar 2026 08:00:00 GMT",
+      "link_resultado": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNdDVaZFExbDgtUVNMN29zWEJrY3NXaEozdEFNbWVGazM2dFpNYlRmRHZrTnQ2cVJYSjhlV0llYlBmZ3FBb2lmakFwcGtEdWxnMDVUUGhvVHROczZybTRfbU9vM2x1bVptN0dHbTBRbkRHaGUwcW9HQjE2aVJPQkx3NUhzRlNWclJ0Y3hoYg?oc=5",
+      "descricao": "Azul, Smiles e Latam Pass: 3 ofertas de transferência com até 133% de bônus que terminam hoje! Melhores Cartões",
+      "consultado_em": "2026-10-17T18:26:45-03:00",
+      "status_validacao": "pendente",
+      "observacao": "Resultado de busca é apenas pista. Confirmar a campanha, datas e regras na página oficial antes de publicar."
+    },
+    {
+      "consulta": "\"transferência bonificada\" milhas clube 2026",
+      "titulo": "Assine o Clube Smiles e ganhe 20.000 milhas na hora + 70% de bônus ao enviar pontos Esfera - Passageiro de Primeira",
+      "publicador": "Passageiro de Primeira",
+      "publicado_em": "Fri, 15 May 2026 07:00:00 GMT",
+      "link_resultado": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQTWF6RVA0aWItU0JsbTNDeUloV01CeW9xSTA3SHlBU05tNkhBekFwSU4xQjRpM1hRWU1ZZ21wX3V5NVoyZl9Qa0dGNzBBRDJ2Vmp2NGUzQVZ5bFRIdHlTZ3pnVHNYanM4T1RZRDk1bVhQOGU3SmVMS0FqMEtseHIzZ3RKOHlDVm9aTU5aXzJpUThjd2hZc1lpWmFSRHVVM0VzNk5WcHhaWnRPMERZTC1GUEVrVDRSbWhWci16cWNn?oc=5",
+      "descricao": "Assine o Clube Smiles e ganhe 20.000 milhas na hora + 70% de bônus ao enviar pontos Esfera Passageiro de Primeira",
+      "consultado_em": "2026-10-17T18:26:45-03:00",
+      "status_validacao": "pendente",
+      "observacao": "Resultado de busca é apenas pista. Confirmar a campanha, datas e regras na página oficial antes de publicar."
+    },
+    {
+      "consulta": "\"transferência bonificada\" milhas clube 2026",
+      "titulo": "Smiles com até 70% de bônus na transferência + cupom de milhas - Pontos pra Voar",
+      "publicador": "Pontos pra Voar",
+      "publicado_em": "Tue, 07 Jul 2026 07:00:00 GMT",
+      "link_resultado": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNelNtbG1ubmduYU9xeE1ySmNSU1hiWFhocDNGNm9pVEtXS2FjUWVOLUhoY2JBbUxleEZiNWVXTl9pQmUyV00zV2NNYm9wbFFzdGFpWnRrTWc4Q0o4MDJBd292ZXdyQXBWNVRTejdfNlE4b2R2YWJmTktndjdCcklRZDV4SmZzR0NVdTJGN2RsMjZoM3RSNHFsR2tSdWEtSUplQXFsbDFWaDhWNG1ORHJYLUE2R1hOSW9jWHVybGw0MWlDWm9iQzJmUGdRUkNBbHdYTWc?oc=5",
+      "descricao": "Smiles com até 70% de bônus na transferência + cupom de milhas Pontos pra Voar",
+      "consultado_em": "2026-10-17T18:26:45-03:00",
+      "status_validacao": "pendente",
+      "observacao": "Resultado de busca é apenas pista. Confirmar a campanha, datas e regras na página oficial antes de publicar."
+    },
+    {
+      "consulta": "\"transferência bonificada\" milhas clube 2026",
+      "titulo": "Milheiro Smiles por R$ 14,67: envie pontos Livelo com bônus usando pontos mais dinheiro - Melhores Destinos",
+      "publicador": "Melhores Destinos",
+      "publicado_em": "Mon, 15 Jun 2026 07:00:00 GMT",
+      "link_resultado": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQUm9od1NoWWpiejRfT0NSSklFS0hnbGR3UzIxMTNCUTlIc0h2QjUzV1BHbUNOMFRoWWlHeW9PM1FLemZOYnlEYzFzNm1UcllGeUQwWlphUHpsMjNnQVlMSGF2UUZrTU1iQWJKMUh2eHc0OGk4cVgzRm52aDlFcXJ0Q2ZNUUs?oc=5",
+      "descricao": "Milheiro Smiles por R$ 14,67: envie pontos Livelo com bônus usando pontos mais dinheiro Melhores Destinos",
+      "consultado_em": "2026-10-17T18:26:45-03:00",
+      "status_validacao": "pendente",
+      "observacao": "Resultado de busca é apenas pista. Confirmar a campanha, datas e regras na página oficial antes de publicar."
+    },
+    {
+      "consulta": "\"transferência bonificada\" milhas clube 2026",
+      "titulo": "50% de bônus! Latam prorroga oferta de pontuação turbinada nos cartões Latam Pass Itaú – peça o seu e ganhe até 70.000 milhas! - Melhores Cartões",
+      "publicador": "Melhores Cartões",
+      "publicado_em": "Thu, 23 Jul 2026 07:00:00 GMT",
+      "link_resultado": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOeGp2NVZwMG1ia1ZUbUlldW96Vm9rd0p2bGhMb0FFZTloVjVJazBFYUNmUGhPSmNvNERZWnhVQk9OLXZ5S2JFVVRXdVZOV3I3YWFYOUp1UVIxVHdPaXBmUnJBaGJ2YXlEQ29BRllzWHZkd0pPMThIQzVUWS03a05JVXhFSU5wTUlmbVZF?oc=5",
+      "descricao": "50% de bônus! Latam prorroga oferta de pontuação turbinada nos cartões Latam Pass Itaú – peça o seu e ganhe até 70.000 milhas! Melhores Cartões",
+      "consultado_em": "2026-10-17T18:26:45-03:00",
+      "status_validacao": "pendente",
+      "observacao": "Resultado de busca é apenas pista. Confirmar a campanha, datas e regras na página oficial antes de publicar."
+    },
+    {
+      "consulta": "\"transferência bonificada\" milhas clube 2026",
+      "titulo": "Últimas horas para assinar o Clube Smiles e ganhar 15 mil milhas na hora - Passageiro de Primeira",
+      "publicador": "Passageiro de Primeira",
+      "publicado_em": "Sun, 22 Feb 2026 08:00:00 GMT",
+      "link_resultado": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNRXJ3NW9WNzU1OEFJTHo1cFp0aWlJcWZqR1hqbHFQQ2hyWHd2UWRVb0UwZUE3R0xUVDB6Qkk3MnlmUHJvZGI5SEZUdTRzSVU2cW0wbS1mNERrR0tZZ0FXQVJRaTVMckgzUFkwY04tOThNUDZSNEh6cTYwRFZmZ2VrNzlPbks2cEdNdlN0eUt5ckFydmF2UlNZdTlGVGFOZHZ1VFNySG9kRVdkUQ?oc=5",
+      "descricao": "Últimas horas para assinar o Clube Smiles e ganhar 15 mil milhas na hora Passageiro de Primeira",
+      "consultado_em": "2026-10-17T18:26:45-03:00",
+      "status_validacao": "pendente",
+      "observacao": "Resultado de busca é apenas pista. Confirmar a campanha, datas e regras na página oficial antes de publicar."
+    },
+    {
+      "consulta": "\"transferência bonificada\" milhas clube 2026",
+      "titulo": "Prorrogou! Smiles e Livelo oferecem até 80% de bônus na transferência de pontos - Pontos pra Voar",
+      "publicador": "Pontos pra Voar",
+      "publicado_em": "Tue, 16 Jun 2026 07:00:00 GMT",
+      "link_resultado": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQWjRVbnJRR2I2a0RtdGlnai13ekUzX2wxX0VyVzZqbGE1UXpZOHB0Wk1lRFo3VzJDOGF0NXpzT09iSUlqbVQyNlAxUnI0WkN2RHpFMXVmLUxfSXVmUUVtRjZ2bEtLaXhhZm15VE9MelZlcXptWUUyU2ZhazNuREtaelVHaDlwVjJvWWhnWmlRNVFBcXV0aDJ2Q0F5Q044QVo0NHNyWQ?oc=5",
+      "descricao": "Prorrogou! Smiles e Livelo oferecem até 80% de bônus na transferência de pontos Pontos pra Voar",
+      "consultado_em": "2026-10-17T18:26:45-03:00",
+      "status_validacao": "pendente",
+      "observacao": "Resultado de busca é apenas pista. Confirmar a campanha, datas e regras na página oficial antes de publicar."
+    },
+    {
+      "consulta": "site:voeazul.com.br bônus transferência pontos clube Azul Fidelidade",
+      "titulo": "Azul Fidelidade - Promoções em pontos e parceiros - Azul",
+      "publicador": "Azul",
+      "publicado_em": "Sat, 23 Aug 2025 00:59:30 GMT",
+      "link_resultado": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1aZjRoYm90MFhDUWVGd1pnczNReWdmcnZpb2M1Uld6bW82WEEtY2JJalZ2VlpCMmVXSXYyRm81ZDdlNjRPWU5RczgzT2ZmSVFSYXU0Ui1lc2dlZEk?oc=5",
+      "descricao": "Azul Fidelidade - Promoções em pontos e parceiros Azul",
+      "consultado_em": "2026-10-17T18:26:45-03:00",
+      "status_validacao": "pendente",
+      "observacao": "Resultado de busca é apenas pista. Confirmar a campanha, datas e regras na página oficial antes de publicar."
+    },
+    {
+      "consulta": "site:voeazul.com.br bônus transferência pontos clube Azul Fidelidade",
+      "titulo": "Clube Azul - Azul",
+      "publicador": "Azul",
+      "publicado_em": "Wed, 03 May 2023 20:54:23 GMT",
+      "link_resultado": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBYazlkbEFjMWdXcF9BUjkxT2EweFVPTm01OEtObUNVMU8tS0JSVnFnZGZPcHhVVTM4eDFwU1hrS3BUcXZIMHBkc25oVXlDak9NUlRseHZIbk1jTmR1bHBlUVhPY3ZlTzBwV19WOHNfR2k?oc=5",
+      "descricao": "Clube Azul Azul",
+      "consultado_em": "2026-10-17T18:26:45-03:00",
+      "status_validacao": "pendente",
+      "observacao": "Resultado de busca é apenas pista. Confirmar a campanha, datas e regras na página oficial antes de publicar."
+    },
+    {
+      "consulta": "site:smiles.com.br bônus transferência pontos Clube Smiles",
+      "titulo": "Clube Smiles - Smiles",
+      "publicador": "Smiles",
+      "publicado_em": "Wed, 14 Oct 2026 13:45:16 GMT",
+      "link_resultado": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5Qdk9oaTZMWUIzMFl0dVlIaVFfMXZtUTVQTGl0c0xTQzh1RGJZOWU2VFRXY2J4M25fNUo5VHROMFZ4bXBfeDJsaFJDcG9LNmJvYVRVdDUxcGRFUFRkbi1vSWRxVFhwdUk5MlgweDdvU3Q0U2Ntbnc?oc=5",
+      "descricao": "Clube Smiles Smiles",
+      "consultado_em": "2026-10-17T18:26:45-03:00",
+      "status_validacao": "pendente",
+      "observacao": "Resultado de busca é apenas pista. Confirmar a campanha, datas e regras na página oficial antes de publicar."
+    },
+    {
+      "consulta": "site:smiles.com.br bônus transferência pontos Clube Smiles",
+      "titulo": "Comprar Milhas - Smiles",
+      "publicador": "Smiles",
+      "publicado_em": "Tue, 30 Dec 2014 16:16:49 GMT",
+      "link_resultado": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9iV1RLS0lmR3BtaVc2WGZLTnlCVDQ3emlQcVJjNGkzaGphMzRuaHJpNTZzVWtrRlQ5a3RqNUlNUVM5TTJNdXhnLWUzR3RvejRlOGc?oc=5",
+      "descricao": "Comprar Milhas Smiles",
+      "consultado_em": "2026-10-17T18:26:45-03:00",
+      "status_validacao": "pendente",
+      "observacao": "Resultado de busca é apenas pista. Confirmar a campanha, datas e regras na página oficial antes de publicar."
+    },
+    {
+      "consulta": "site:smiles.com.br bônus transferência pontos Clube Smiles",
+      "titulo": "Milhas para quem é feito de viagens - Smiles - Smiles",
+      "publicador": "Smiles",
+      "publicado_em": "Wed, 15 Mar 2006 23:47:53 GMT",
+      "link_resultado": "https://news.google.com/rss/articles/CBMiP0FVX3lxTE0tdlhLZGxSSnpTMlRTUVNQVldsdFVELVAyUjl6d0Y2MHZ3UV9uclk1aFhIdXp1OFE1cE1yejBGNA?oc=5",
+      "descricao": "Milhas para quem é feito de viagens - Smiles Smiles",
+      "consultado_em": "2026-10-17T18:26:45-03:00",
+      "status_validacao": "pendente",
+      "observacao": "Resultado de busca é apenas pista. Confirmar a campanha, datas e regras na página oficial antes de publicar."
+    },
+    {
+      "consulta": "site:smiles.com.br bônus transferência pontos Clube Smiles",
+      "titulo": "Milhas para quem é feito de viagens - Liferay DXP - Smiles",
+      "publicador": "Smiles",
+      "publicado_em": "Tue, 30 Dec 2014 12:13:28 GMT",
+      "link_resultado": "https://news.google.com/rss/articles/CBMiREFVX3lxTFB1eXc3U1h6dWVuZmpabDcyb0RreHlNVVpWRGhYMGFLZXpCS1VzZi1ZcFdfSGtMNzFrbjRsYzJkLTNOajIw?oc=5",
+      "descricao": "Milhas para quem é feito de viagens - Liferay DXP Smiles",
+      "consultado_em": "2026-10-17T18:26:45-03:00",
+      "status_validacao": "pendente",
+      "observacao": "Resultado de busca é apenas pista. Confirmar a campanha, datas e regras na página oficial antes de publicar."
+    },
+    {
+      "consulta": "site:smiles.com.br bônus transferência pontos Clube Smiles",
+      "titulo": "Transferência de Pontos - Smiles",
+      "publicador": "Smiles",
+      "publicado_em": "Tue, 13 Oct 2026 13:27:33 GMT",
+      "link_resultado": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5ETENjOFBWaUg3eFg4czhKajhhT3BJOW1ES2QtWFJmZVkzMkFKaFV1YXpjN1JKOVBxMjRTSzBycXVDdGR5bHJvb0dtb0d2VFQ1cDBPUjZXYXlXb1lUNzJDTzBYb1VaSWRCdkNIR0FHSzlKVm5Y?oc=5",
+      "descricao": "Transferência de Pontos Smiles",
+      "consultado_em": "2026-10-17T18:26:45-03:00",
+      "status_validacao": "pendente",
+      "observacao": "Resultado de busca é apenas pista. Confirmar a campanha, datas e regras na página oficial antes de publicar."
+    },
+    {
+      "consulta": "site:smiles.com.br bônus transferência pontos Clube Smiles",
+      "titulo": "Clube Smiles - Smiles",
+      "publicador": "Smiles",
+      "publicado_em": "Wed, 30 Sep 2026 02:40:59 GMT",
+      "link_resultado": "https://news.google.com/rss/articles/CBMidEFVX3lxTE05LUJFMndsbmtrakVzUG51MkFDMVFJekwwMk9SODd0UzdydmJ4LXgzVU4xUnR4RHpUMmtyWjBwYUc0Z0lTdlhLN0VmOElQejBjUjRjd0NpVGdNUk9aUUNQdDF6OWRWcGc2R3UtVVM0REdOWjZH?oc=5",
+      "descricao": "Clube Smiles Smiles",
+      "consultado_em": "2026-10-17T18:26:45-03:00",
+      "status_validacao": "pendente",
+      "observacao": "Resultado de busca é apenas pista. Confirmar a campanha, datas e regras na página oficial antes de publicar."
+    },
+    {
+      "consulta": "site:latampass.latam.com bônus transferência pontos clube LATAM Pass",
+      "titulo": "Clube LATAM Pass: Preços e Planos - LATAM Pass",
+      "publicador": "LATAM Pass",
+      "publicado_em": "Fri, 04 Sep 2026 08:39:13 GMT",
+      "link_resultado": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9MV2VlZm9xdjdubkt4MXQtM3R1RXhYd2dLVU1ieENaQ3UxbjFLSVBqaUpjSUE0WkFmLWdoMUlsZl9saUtMNWV4UHIxU1Q3bEZRYUhwMjV6dktsNkY0VmdaaHFNalFUS1hHdU1z?oc=5",
+      "descricao": "Clube LATAM Pass: Preços e Planos LATAM Pass",
+      "consultado_em": "2026-10-17T18:26:45-03:00",
+      "status_validacao": "pendente",
+      "observacao": "Resultado de busca é apenas pista. Confirmar a campanha, datas e regras na página oficial antes de publicar."
+    },
+    {
+      "consulta": "site:latampass.latam.com bônus transferência pontos clube LATAM Pass",
+      "titulo": "Assine o Clube LATAM Pass e Acumule Milhas Mensais - LATAM Pass",
+      "publicador": "LATAM Pass",
+      "publicado_em": "Fri, 04 Sep 2026 08:39:12 GMT",
+      "link_resultado": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBwRFpZNkQwaW1LTEhUYzFhM1dJTUp5Z2tiaTNTWEI4ZDQtUnhqSEdNM0pPSDVMVDd3MjZreWdpT3NvZURVZXBwRXFxNmVaVmdwVXBLYlZR?oc=5",
+      "descricao": "Assine o Clube LATAM Pass e Acumule Milhas Mensais LATAM Pass",
+      "consultado_em": "2026-10-17T18:26:45-03:00",
+      "status_validacao": "pendente",
+      "observacao": "Resultado de busca é apenas pista. Confirmar a campanha, datas e regras na página oficial antes de publicar."
+    },
+    {
+      "consulta": "site:latampass.latam.com bônus transferência pontos clube LATAM Pass",
+      "titulo": "Cartões LATAM Pass: acumule milhas - LATAM Pass",
+      "publicador": "LATAM Pass",
+      "publicado_em": "Sun, 06 Sep 2026 22:22:01 GMT",
+      "link_resultado": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBPbTdKU2Q5eERnMHJPN0Ryem44QmlkczdQeWRWb082RTBMVjNpV0x6S25ueWd4RWhMQ0MxTkZtUVNNbFN2WWs4TXR4QlFJUzBzSDlwZUhwWUhXYzRXWDE3Y2xlTjNDaTlqaF9UT3hsRllJVlN0MEVv?oc=5",
+      "descricao": "Cartões LATAM Pass: acumule milhas LATAM Pass",
+      "consultado_em": "2026-10-17T18:26:45-03:00",
+      "status_validacao": "pendente",
+      "observacao": "Resultado de busca é apenas pista. Confirmar a campanha, datas e regras na página oficial antes de publicar."
+    },
+    {
+      "consulta": "site:latampass.latam.com bônus transferência pontos clube LATAM Pass",
+      "titulo": "Cartão LATAM Pass Itaú: acumule milhas - LATAM Pass",
+      "publicador": "LATAM Pass",
+      "publicado_em": "Thu, 17 Sep 2026 14:05:59 GMT",
+      "link_resultado": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBPS1ptdWhGVFdzR1pRV2tSbHJzZFdSbjJfbDZSUUFRVU5BNVRFNUJFOHZxdlBkRDNFSF9rU1J2QXRjalNqUVl0NUV5UFpIeEJJN1c4NE81djRaQnh5?oc=5",
+      "descricao": "Cartão LATAM Pass Itaú: acumule milhas LATAM Pass",
+      "consultado_em": "2026-10-17T18:26:45-03:00",
+      "status_validacao": "pendente",
+      "observacao": "Resultado de busca é apenas pista. Confirmar a campanha, datas e regras na página oficial antes de publicar."
+    },
+    {
+      "consulta": "site:latampass.latam.com bônus transferência pontos clube LATAM Pass",
+      "titulo": "Transferir pontos para milhas - LATAM Pass",
+      "publicador": "LATAM Pass",
+      "publicado_em": "Tue, 08 Sep 2026 19:44:50 GMT",
+      "link_resultado": "https://news.google.com/rss/articles/CBMickFVX3lxTE80LXpVUGJVSEpnelo4ZXZJSlpKdG41MVFIUEdIbThPV0w4clB3bzJHTkd0TnBhX19jczI2eHBZQm53MzEyYmgydzVvOVVRYnAwM1h6bWt4UkVId1VtZER0SU5lTDZvNU04ZzNCV1FWaTVNQQ?oc=5",
+      "descricao": "Transferir pontos para milhas LATAM Pass",
+      "consultado_em": "2026-10-17T18:26:45-03:00",
+      "status_validacao": "pendente",
+      "observacao": "Resultado de busca é apenas pista. Confirmar a campanha, datas e regras na página oficial antes de publicar."
+    },
+    {
+      "consulta": "site:latampass.latam.com bônus transferência pontos clube LATAM Pass",
+      "titulo": "Junte e Troque Pontos | Shopping | LATAM Pass - LATAM Airlines",
+      "publicador": "LATAM Airlines",
+      "publicado_em": "Wed, 05 Jun 2024 04:31:18 GMT",
+      "link_resultado": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE96V1RNbW84MGZMR0tCTy02STZwbnpwY3BKOFNWNDZkY21WMzFpM1RnNTNya1pncDdwTndvLVBXaVZTdnBhQ1JXRHQ5aFhvdU1yMDhWd2JKZnZoYlU?oc=5",
+      "descricao": "Junte e Troque Pontos | Shopping | LATAM Pass LATAM Airlines",
+      "consultado_em": "2026-10-17T18:26:45-03:00",
+      "status_validacao": "pendente",
+      "observacao": "Resultado de busca é apenas pista. Confirmar a campanha, datas e regras na página oficial antes de publicar."
+    },
+    {
+      "consulta": "site:latampass.latam.com bônus transferência pontos clube LATAM Pass",
+      "titulo": "Hotéis e hospedagens: acumule milhas - LATAM Pass",
+      "publicador": "LATAM Pass",
+      "publicado_em": "Mon, 07 Sep 2026 01:58:12 GMT",
+      "link_resultado": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFBnaTZ2RHNjWTRaX3BaVkx6SzZoVkhRXzlncGJPSzZmQ1R0WGNIMUlrMlVZbVpCZXQxeTMxeVgtRUhzT0hFWW0tZ1pSOVMzTS1TaC1QLUpwYw?oc=5",
+      "descricao": "Hotéis e hospedagens: acumule milhas LATAM Pass",
+      "consultado_em": "2026-10-17T18:26:45-03:00",
+      "status_validacao": "pendente",
+      "observacao": "Resultado de busca é apenas pista. Confirmar a campanha, datas e regras na página oficial antes de publicar."
+    },
+    {
+      "consulta": "site:livelo.com.br transferência bonificada milhas",
+      "titulo": "Livelo: Programa de Pontos e Milhas | Viva. Pontue. Repita. - Livelo",
+      "publicador": "Livelo",
+      "publicado_em": "Tue, 02 Aug 2016 19:33:48 GMT",
+      "link_resultado": "https://news.google.com/rss/articles/CBMiP0FVX3lxTFAwQ240QXVQYVZGRnl6a2hWOXZTc2lxS0hNcWlBTVVrV2F1a25BTHA0eVozYkw3UXY2RzN2STJiNA?oc=5",
+      "descricao": "Livelo: Programa de Pontos e Milhas | Viva. Pontue. Repita. Livelo",
+      "consultado_em": "2026-10-17T18:26:45-03:00",
+      "status_validacao": "pendente",
+      "observacao": "Resultado de busca é apenas pista. Confirmar a campanha, datas e regras na página oficial antes de publicar."
+    },
+    {
+      "consulta": "site:livelo.com.br transferência bonificada milhas",
+      "titulo": "Programa de pontos que você troca por recompensas - Livelo",
+      "publicador": "Livelo",
+      "publicado_em": "Fri, 23 May 2025 08:38:01 GMT",
+      "link_resultado": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBQY2JIZ0tCVDBwblhRZkgyY3owdW1tenNBTlZSMkdPY0ZRck15QlFjSlh5S2xCNnJ6Z1AzekZtNjdIVmhRTjMtVXJEdXY3aHVEWEVTR0NsRVA1aVVuU3VFM0k5VlYtQmdja190S2dGQ194R1NqSm93?oc=5",
+      "descricao": "Programa de pontos que você troca por recompensas Livelo",
+      "consultado_em": "2026-10-17T18:26:45-03:00",
+      "status_validacao": "pendente",
+      "observacao": "Resultado de busca é apenas pista. Confirmar a campanha, datas e regras na página oficial antes de publicar."
+    },
+    {
+      "consulta": "site:livelo.com.br transferência bonificada milhas",
+      "titulo": "Bônus na transferência de pontos Livelo: como calcular o valor final - Livelo",
+      "publicador": "Livelo",
+      "publicado_em": "Wed, 26 Aug 2026 19:14:25 GMT",
+      "link_resultado": "https://news.google.com/rss/articles/CBMifkFVX3lxTE0xOHRzWFdFNWhHZjQxUDRCTFpKbUg3MENWc21xaENLalV3RmhNTTdtRDRGLUx4X1VMSTJsLUNGWUxUTzZoWlZhODh3WHFNSGp5eGtkWENseFllSjBWdHY3VERoQnBjTEVseW9oWGs4UFphSFZiQjNMeFRPblk2dw?oc=5",
+      "descricao": "Bônus na transferência de pontos Livelo: como calcular o valor final Livelo",
+      "consultado_em": "2026-10-17T18:26:45-03:00",
+      "status_validacao": "pendente",
+      "observacao": "Resultado de busca é apenas pista. Confirmar a campanha, datas e regras na página oficial antes de publicar."
+    },
+    {
+      "consulta": "site:livelo.com.br transferência bonificada milhas",
+      "titulo": "Transferindo para LATAM Pass - Livelo",
+      "publicador": "Livelo",
+      "publicado_em": "Fri, 23 May 2025 09:07:51 GMT",
+      "link_resultado": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9LanhEdzUxM2doWFdVTVI5UkhHNWVfQzFXcE1MNEF6TUQ1SnBFbXRVa0M4anR5STByNjRjMnBRazZWUDNYSlJERkJ5ZWI3OEVDYXVVR3BVOFNST0UzYWZsRFVLYWZLQjFhQjJMNjY0UWlEZlE?oc=5",
+      "descricao": "Transferindo para LATAM Pass Livelo",
+      "consultado_em": "2026-10-17T18:26:45-03:00",
+      "status_validacao": "pendente",
+      "observacao": "Resultado de busca é apenas pista. Confirmar a campanha, datas e regras na página oficial antes de publicar."
+    },
+    {
+      "consulta": "site:livelo.com.br transferência bonificada milhas",
+      "titulo": "Transferência para parceiros - Livelo",
+      "publicador": "Livelo",
+      "publicado_em": "Tue, 03 Jun 2025 18:56:56 GMT",
+      "link_resultado": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBBb0xROVhsM2QtYUdyRFJ4cmU0V2xkS2lCS0tOeEliUTJMYzN3U2V5Y2VkckhCQURwSEV2VzU4ejdRNDVlbFJSZFprX1BLeWp1MkNXbTlQTHM2WHc?oc=5",
+      "descricao": "Transferência para parceiros Livelo",
+      "consultado_em": "2026-10-17T18:26:45-03:00",
+      "status_validacao": "pendente",
+      "observacao": "Resultado de busca é apenas pista. Confirmar a campanha, datas e regras na página oficial antes de publicar."
+    },
+    {
+      "consulta": "site:livelo.com.br transferência bonificada milhas",
+      "titulo": "Smiles lança funcionalidade de transferência expressa de milhas entre programas de fidelidade - Livelo",
+      "publicador": "Livelo",
+      "publicado_em": "Fri, 23 May 2025 08:37:41 GMT",
+      "link_resultado": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5lMXhqckZlbXR4VFp3V3BidnN2eXRRcUtjajZHNkozaEJDR1J1eUV2UFI2QjJ2MzFzQ2lNb210b0Rhb0NLOE1SX1FOVGtXYlU1cnJXMEp0d1k2ODNsVEhxTU1aNnRabjNvU1ZSd2VsSHR2Z3J6WE9HSnJIRzIwQQ?oc=5",
+      "descricao": "Smiles lança funcionalidade de transferência expressa de milhas entre programas de fidelidade Livelo",
+      "consultado_em": "2026-10-17T18:26:45-03:00",
+      "status_validacao": "pendente",
+      "observacao": "Resultado de busca é apenas pista. Confirmar a campanha, datas e regras na página oficial antes de publicar."
+    },
+    {
+      "consulta": "site:livelo.com.br transferência bonificada milhas",
+      "titulo": "Transferindo para Smiles - Livelo",
+      "publicador": "Livelo",
+      "publicado_em": "Fri, 23 May 2025 09:48:46 GMT",
+      "link_resultado": "https://news.google.com/rss/articles/CBMidEFVX3lxTE4weWNfMGFIVHAyenhzYmdoUjBuRExrTGt5U18xOUJjNlFqc0ZJZkhiWV9WSTdOZ08wR01vLWlqd2hDNkVVZUsyNXJCT0tjUWZnODN4WHlzbjliZnZUcERveWNhenQ3T0IwTTFld0V4bldUWjlv?oc=5",
+      "descricao": "Transferindo para Smiles Livelo",
+      "consultado_em": "2026-10-17T18:26:45-03:00",
+      "status_validacao": "pendente",
+      "observacao": "Resultado de busca é apenas pista. Confirmar a campanha, datas e regras na página oficial antes de publicar."
+    },
+    {
+      "consulta": "site:esfera.com.vc transferência bonificada milhas",
+      "titulo": "Esfera: O programa de pontos e recompensas do Santander - Esfera",
+      "publicador": "Esfera",
+      "publicado_em": "Mon, 14 Oct 2019 00:55:39 GMT",
+      "link_resultado": "https://news.google.com/rss/articles/CBMiP0FVX3lxTFB1Z0VQeGFvaWwxbnJHb1JzSlZaMGx3Q0Y2Q0J6Q2ViQk1KZ3Y2cGlEMl9ma1pvVWEtS0ZmRVhobw?oc=5",
+      "descricao": "Esfera: O programa de pontos e recompensas do Santander Esfera",
+      "consultado_em": "2026-10-17T18:26:45-03:00",
+      "status_validacao": "pendente",
+      "observacao": "Resultado de busca é apenas pista. Confirmar a campanha, datas e regras na página oficial antes de publicar."
+    },
+    {
+      "consulta": "site:esfera.com.vc transferência bonificada milhas",
+      "titulo": "Transfira pontos Esfera - Esfera",
+      "publicador": "Esfera",
+      "publicado_em": "Mon, 05 Jun 2023 06:35:54 GMT",
+      "link_resultado": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE1sOVhTbF9xNEUycGtURFRpRzJheUI2OWFTTlAyRmpxbElzWnp3SWdKTThaYjdLUDZQT2hXR2RvbXRTSkJHVVNzS3ZwN0FoU2d4MmVJN2thYkUyZjE4WHc?oc=5",
+      "descricao": "Transfira pontos Esfera Esfera",
+      "consultado_em": "2026-10-17T18:26:45-03:00",
+      "status_validacao": "pendente",
+      "observacao": "Resultado de busca é apenas pista. Confirmar a campanha, datas e regras na página oficial antes de publicar."
+    },
+    {
+      "consulta": "site:esfera.com.vc transferência bonificada milhas",
+      "titulo": "Compra de Pontos - Esfera",
+      "publicador": "Esfera",
+      "publicado_em": "Wed, 29 Jan 2020 15:11:27 GMT",
+      "link_resultado": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE5zWlBtT0VieFJxaEx0eW5JdVNGNlJWNXRmRFdJN2R6WHRtMm9RaHdhVE1saUZyTEZYR25taTFRbURMak0zUVdjUHRnVzVBRFFiUFJYckJ4Rnhwc2RuOGZweWxXdDlidw?oc=5",
+      "descricao": "Compra de Pontos Esfera",
+      "consultado_em": "2026-10-17T18:26:45-03:00",
+      "status_validacao": "pendente",
+      "observacao": "Resultado de busca é apenas pista. Confirmar a campanha, datas e regras na página oficial antes de publicar."
+    },
+    {
+      "consulta": "bônus transferência pontos milhas assinantes clube outubro 2026",
+      "titulo": "Azul Fidelidade e Banestes oferecem até 100% de bônus na transferência de pontos + 2.000 pontos extras - Pontos pra Voar",
+      "publicador": "Pontos pra Voar",
+      "publicado_em": "Wed, 14 Oct 2026 17:00:18 GMT",
+      "link_resultado": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNQjRBc2gtTUNraEdlRXZpWThhOFhRaUM0bmJFdTFrcHNSZEdSUzhxaGtqdlJqSHdGSGNxUFNucUxueDdqZnZBR1N4QzBQSDUwR3FRdE55VFdMYmt2OWtxWk1OYzExTFAySVNBTTctLXFrXzh6bTF4ZlpwQktBdUZ4T0VmMVpRUDRvVVhOWUxEcjNoSzJ5QmxWWExPYXRROXBjZ0ZXZWM2ZG9NYVNuelZJNGlFQUt1TmFXQkZiZl9CeXM?oc=5",
+      "descricao": "Azul Fidelidade e Banestes oferecem até 100% de bônus na transferência de pontos + 2.000 pontos extras Pontos pra Voar",
+      "consultado_em": "2026-10-17T18:26:45-03:00",
+      "status_validacao": "pendente",
+      "observacao": "Resultado de busca é apenas pista. Confirmar a campanha, datas e regras na página oficial antes de publicar."
+    },
+    {
+      "consulta": "bônus transferência pontos milhas assinantes clube outubro 2026",
+      "titulo": "Latam Pass: ganhe 25% de bônus no envio de pontos Itaú e Credicard - Melhores Destinos",
+      "publicador": "Melhores Destinos",
+      "publicado_em": "Mon, 05 Oct 2026 07:00:00 GMT",
+      "link_resultado": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQbDdScGZGQ1ZUb2tUbEhCZGpPUFgyaUxneEx4VDlkMFRmUVphLTVBcmc5bnl1YmN5MHNrbGNmamNmSDBNekZ2VE1yNktRRjcwbkpLc21oYnNVWTFvUEN1ZFhSc01BYWZ1VmtYbE9HRlVzMkx0eXNpbTlWMWNCeDBJZGZjZU5WcXJRRTBB?oc=5",
+      "descricao": "Latam Pass: ganhe 25% de bônus no envio de pontos Itaú e Credicard Melhores Destinos",
+      "consultado_em": "2026-10-17T18:26:45-03:00",
+      "status_validacao": "pendente",
+      "observacao": "Resultado de busca é apenas pista. Confirmar a campanha, datas e regras na página oficial antes de publicar."
+    },
+    {
+      "consulta": "bônus transferência pontos milhas assinantes clube outubro 2026",
+      "titulo": "Azul Fidelidade oferece até 100% de bônus nas transferências de pontos Livelo - Passageiro de Primeira",
+      "publicador": "Passageiro de Primeira",
+      "publicado_em": "Mon, 05 Oct 2026 07:00:00 GMT",
+      "link_resultado": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNeXk4MTFsRFJpa210VDBPZC1Ma1ZjMUI2azNJM0xWVm9DV3ZKWjhpTnptTUQ1X1RPVzlrNHhwSEdlYjBaZTBDUkh1cE1WWnBrbU1YSm9Ya0tRN0h3ekV0UEVSV1p4NXFhNGRrVzVrZy1HQVZnakJSS3JXQWVkbnJuWERFMTk4eDVWYnFDRnk5MVhXdmRCRE1mU29tNWxrSzE0R1JJbkdyNmRJbDVqQ1dR?oc=5",
+      "descricao": "Azul Fidelidade oferece até 100% de bônus nas transferências de pontos Livelo Passageiro de Primeira",
+      "consultado_em": "2026-10-17T18:26:45-03:00",
+      "status_validacao": "pendente",
+      "observacao": "Resultado de busca é apenas pista. Confirmar a campanha, datas e regras na página oficial antes de publicar."
+    },
+    {
+      "consulta": "bônus transferência pontos milhas assinantes clube outubro 2026",
+      "titulo": "Últimas horas! Transfira pontos do Sem Parar Mais para Smiles com até 80% de bônus - Pontos pra Voar",
+      "publicador": "Pontos pra Voar",
+      "publicado_em": "Wed, 14 Oct 2026 21:00:27 GMT",
+      "link_resultado": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQMENiQ0VaN1JTbTIwbG5YamxSTm8tTlJ4QlVJX2hwYTgxTkRQMHZFbWY0dTZ5ckJCVEx2b2lQLVgzRlJBNDJUVGNQZTFyaUhPekFFWU9XYk1kODNMQWxvQjE2bU1wcWEtNWFmX0gtWFJ0SGh5cVhmMG04bUJqQnVkSGNOajlocDNDOV9EYUsxanhSeExTMF95SzMwSEdWcFV0b3Rr?oc=5",
+      "descricao": "Últimas horas! Transfira pontos do Sem Parar Mais para Smiles com até 80% de bônus Pontos pra Voar",
+      "consultado_em": "2026-10-17T18:26:45-03:00",
+      "status_validacao": "pendente",
+      "observacao": "Resultado de busca é apenas pista. Confirmar a campanha, datas e regras na página oficial antes de publicar."
+    },
+    {
+      "consulta": "bônus transferência pontos milhas assinantes clube outubro 2026",
+      "titulo": "Smiles oferece até 80% de bônus nas transferências de pontos do Banestes - Passageiro de Primeira",
+      "publicador": "Passageiro de Primeira",
+      "publicado_em": "Thu, 08 Oct 2026 07:00:00 GMT",
+      "link_resultado": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPbnM4LUpvcDRMVnZqYUJfcUp3MmY4UURIMmp3aDBOSElBOF9NUjFxV2RLT1IxcUk0eGVZbjBEQU1OUVlvM29XN2ZzTjhueXNMcHpRNG9BWFE3WHdoNmVzRWRsdFZrZjZKalhGV250cnBBVEtpek5ZOW5SREpQYWNjbTlnVk5XRXBqVFVXRXFIc0xGRWdDUjZYOTVkOEtaQWszQzYtZzNHeGQ?oc=5",
+      "descricao": "Smiles oferece até 80% de bônus nas transferências de pontos do Banestes Passageiro de Primeira",
+      "consultado_em": "2026-10-17T18:26:45-03:00",
+      "status_validacao": "pendente",
+      "observacao": "Resultado de busca é apenas pista. Confirmar a campanha, datas e regras na página oficial antes de publicar."
+    },
+    {
+      "consulta": "bônus transferência pontos milhas assinantes clube outubro 2026",
+      "titulo": "Prorrogado! Smiles oferece até 80% de bônus na transferência de pontos Livelo - Melhores Destinos",
+      "publicador": "Melhores Destinos",
+      "publicado_em": "Fri, 18 Sep 2026 07:00:00 GMT",
+      "link_resultado": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9aZFlYV1Btb3BJTF83VWg1WlFnWXkwdVAtR0RCVDFoOXRyLWVTNmx1aFNkMnRfTTJkNGUweHNLd2dDQTVZVVVlLURWTHZtdUgzWEZtQjh1cjhrbWtlQ3BKQ2dqdkphWEt1azY5N05wa0RBNlVhMzFaaGRLZw?oc=5",
+      "descricao": "Prorrogado! Smiles oferece até 80% de bônus na transferência de pontos Livelo Melhores Destinos",
+      "consultado_em": "2026-10-17T18:26:45-03:00",
+      "status_validacao": "pendente",
+      "observacao": "Resultado de busca é apenas pista. Confirmar a campanha, datas e regras na página oficial antes de publicar."
+    },
+    {
+      "consulta": "bônus transferência pontos milhas assinantes clube outubro 2026",
+      "titulo": "Confira promoções no Azul Fidelidade, Esfera e LATAM Pass que acabam hoje - Pontos pra Voar",
+      "publicador": "Pontos pra Voar",
+      "publicado_em": "Fri, 16 Oct 2026 22:00:32 GMT",
+      "link_resultado": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQSlVlU3JJUE14a0xZR2ZPal9Wb0R0dWlNb2ZtRTdHZnJaTzAxc0N0b1FDY09oZlB2UXFmUFpkTlhZcmNfMEo3all5OG5iN2FGVzVtZWhZbGNfcWkxWGU2clpmSy1wN0g5dE9TNU9IZlFCNFpZRUQ4R2JUUTVrZ09Pby1yOVAtelc4cWJDNjRrY180Q2FV?oc=5",
+      "descricao": "Confira promoções no Azul Fidelidade, Esfera e LATAM Pass que acabam hoje Pontos pra Voar",
+      "consultado_em": "2026-10-17T18:26:45-03:00",
+      "status_validacao": "pendente",
+      "observacao": "Resultado de busca é apenas pista. Confirmar a campanha, datas e regras na página oficial antes de publicar."
+    },
+    {
+      "consulta": "bônus transferência pontos milhas assinantes clube outubro 2026",
+      "titulo": "Smiles oferece até 70% de bônus nas transferências de pontos do Banco do Nordeste - Passageiro de Primeira",
+      "publicador": "Passageiro de Primeira",
+      "publicado_em": "Thu, 08 Oct 2026 07:00:00 GMT",
+      "link_resultado": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQNkkxdjJVbFFiZUVyUTRNaTVQYkdMa1k2MjRuRDdGRHFMNGJTanQ5R21jOEVzSVhENVVoX2d5UE1vVm5GQ1dQV3FIWEFHQXpSaWM1WTRKMV9pOWdjc2NzRUhmQTdmNER0Sy02VGNwck9XVE9vRUdscjJJRTI2NTFwSk55VnBtZmFkOGpIcXgwREQ4LVVNM05TUWQzVGdUVUI5WGIw?oc=5",
+      "descricao": "Smiles oferece até 70% de bônus nas transferências de pontos do Banco do Nordeste Passageiro de Primeira",
+      "consultado_em": "2026-10-17T18:26:45-03:00",
+      "status_validacao": "pendente",
+      "observacao": "Resultado de busca é apenas pista. Confirmar a campanha, datas e regras na página oficial antes de publicar."
+    }
+  ]
+}
