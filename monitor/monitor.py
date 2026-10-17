@@ -196,7 +196,7 @@ def discover_news(query, checked_at):
     except Exception as e:
         return {"consulta": query, "resultado": "erro_consulta", "fonte": provider, "erro": f"{type(e).__name__}: {str(e)[:220]}", "tentativas_anteriores": attempts, "candidatos": []}
 def discover_direct_source(source, checked_at):
-    """Busca artigos na pesquisa interna de um portal especializado."""
+    """Busca artigos no portal e extrai metadados sem usar regexes com aspas conflitantes."""
     base = source['url'].rstrip('/')
     search_url = base + '/?s=' + quote_plus('transferência bonificada milhas')
     results = []
@@ -214,37 +214,36 @@ def discover_direct_source(source, checked_at):
             if not (TRANSFER_RE.search(title) and BONUS_RE.search(title)):
                 continue
             seen.add(href)
-            article_title = title
-            published_at = ""
-            description = ""
-            article_status = "nao_consultado"
+            article_title, published_at, description = title, '', ''
+            article_status = 'nao_consultado'
             try:
                 article_status_code, _article_type, article_body = http_get(href)
                 article_status = str(article_status_code)
-                # Priorizar metadados estruturados da publicação, sem inferir data pela busca.
-                for date_pattern in (
-                    r'<meta[^>]+property=["\\']article:published_time["\\'][^>]+content=["\\']([^"\\']+)',
-                    r'<meta[^>]+name=["\\']datePublished["\\'][^>]+content=["\\']([^"\\']+)',
-                    r'"datePublished"\\s*:\\s*"([^"]+)"',
-                    r'<time[^>]+datetime=["\\']([^"\\']+)',
-                ):
+                # Captura metadados com aspas simples ou duplas usando grupos independentes.
+                date_patterns = [
+                    r"<meta[^>]+property=['\"]article:published_time['\"][^>]+content=['\"]([^'\"]+)",
+                    r"<meta[^>]+name=['\"]datePublished['\"][^>]+content=['\"]([^'\"]+)",
+                    r'"datePublished"\s*:\s*"([^"]+)"',
+                    r"<time[^>]+datetime=['\"]([^'\"]+)",
+                ]
+                for date_pattern in date_patterns:
                     date_match = re.search(date_pattern, article_body, re.I)
                     if date_match:
                         published_at = date_match.group(1).strip()
                         break
-                og_title = re.search(r'<meta[^>]+property=["\\']og:title["\\'][^>]+content=["\\']([^"\\']+)', article_body, re.I)
+                og_title = re.search(r"<meta[^>]+property=['\"]og:title['\"][^>]+content=['\"]([^'\"]+)", article_body, re.I)
                 if og_title:
                     article_title = html.unescape(og_title.group(1)).strip() or article_title
                 article_parser = TextExtractor()
                 article_parser.feed(article_body)
-                description = re.sub(r'\\s+', ' ', ' '.join(article_parser.parts)).strip()[:700]
+                description = re.sub(r'\s+', ' ', ' '.join(article_parser.parts)).strip()[:700]
             except Exception:
                 pass
             results.append({'consulta': search_url, 'titulo': article_title[:300], 'publicador': source['nome'],
                 'publicado_em': published_at, 'link_resultado': href, 'descricao': description, 'consultado_em': checked_at,
                 'fonte_busca': 'busca_direta_site', 'status_validacao': 'pendente_confirmacao_oficial',
                 'http_artigo': article_status,
-                'observacao': 'Artigo encontrado diretamente; data obtida apenas de metadados explícitos. Confirmar validade no regulamento oficial.'})
+                'observacao': 'Artigo encontrado diretamente; confirmar validade no regulamento oficial.'})
             if len(results) >= MAX_RESULTS_PER_QUERY:
                 break
         return {'consulta': search_url, 'resultado': 'consultado', 'fonte': source['nome'],
