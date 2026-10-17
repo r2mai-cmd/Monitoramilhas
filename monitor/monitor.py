@@ -206,7 +206,7 @@ def extract_campaign_end_date(text, published):
 
 
 def resolve_article_url(url):
-    """Tenta resolver links intermediários do Google Notícias para o artigo original."""
+    """Tenta resolver links do Google Notícias sem interromper o monitor."""
     if "news.google.com/" not in (url or ""):
         return url, None
     try:
@@ -217,11 +217,12 @@ def resolve_article_url(url):
         with urlopen(req, timeout=TIMEOUT_SECONDS) as response:
             body = response.read(MAX_BYTES).decode(response.headers.get_content_charset() or "utf-8", errors="replace")
             final_url = response.geturl()
-        # Algumas páginas intermediárias expõem o destino no canonical/og:url.
+        parser = TextExtractor()
+        parser.feed(body)
         for pattern in (
-            r'<link[^>]+rel=["\\']canonical["\\'][^>]+href=["\\']([^"\\']+)',
-            r'<meta[^>]+property=["\\']og:url["\\'][^>]+content=["\\']([^"\\']+)',
-            r'<meta[^>]+content=["\\']([^"\\']+)["\\'][^>]+property=["\\']og:url["\\']',
+            r"<link[^>]+rel=[\"\']canonical[\"\'][^>]+href=[\"\']([^\"\']+)",
+            r"<meta[^>]+property=[\"\']og:url[\"\'][^>]+content=[\"\']([^\"\']+)",
+            r"<meta[^>]+content=[\"\']([^\"\']+)[\"\'][^>]+property=[\"\']og:url[\"\']",
         ):
             match = re.search(pattern, body, re.I)
             if match and "news.google.com/" not in match.group(1):
