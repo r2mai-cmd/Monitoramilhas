@@ -544,9 +544,6 @@ def classify_candidates(news_results, now):
             queries.update(item.get('consultas_encontradas', [item.get('consulta', '')]))
             existing['consultas_encontradas'] = sorted(q for q in queries if q)
             if len(item.get('descricao', '')) > len(existing.get('descricao', '')):
-                existing['descricao'] = item.get('descricao', '')
-            # Preferir a versão com texto do artigo original.
-            if len(item.get('descricao', '')) > len(existing.get('descricao', '')):
                 existing.update({k: v for k, v in item.items() if v not in ('', None)})
         else:
             deduplicated[canonical_key] = item
