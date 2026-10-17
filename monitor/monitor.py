@@ -214,10 +214,37 @@ def discover_direct_source(source, checked_at):
             if not (TRANSFER_RE.search(title) and BONUS_RE.search(title)):
                 continue
             seen.add(href)
-            results.append({'consulta': search_url, 'titulo': title[:300], 'publicador': source['nome'],
-                'publicado_em': '', 'link_resultado': href, 'descricao': '', 'consultado_em': checked_at,
+            article_title = title
+            published_at = ""
+            description = ""
+            article_status = "nao_consultado"
+            try:
+                article_status_code, _article_type, article_body = http_get(href)
+                article_status = str(article_status_code)
+                # Priorizar metadados estruturados da publicação, sem inferir data pela busca.
+                for date_pattern in (
+                    r'<meta[^>]+property=["\\']article:published_time["\\'][^>]+content=["\\']([^"\\']+)',
+                    r'<meta[^>]+name=["\\']datePublished["\\'][^>]+content=["\\']([^"\\']+)',
+                    r'"datePublished"\\s*:\\s*"([^"]+)"',
+                    r'<time[^>]+datetime=["\\']([^"\\']+)',
+                ):
+                    date_match = re.search(date_pattern, article_body, re.I)
+                    if date_match:
+                        published_at = date_match.group(1).strip()
+                        break
+                og_title = re.search(r'<meta[^>]+property=["\\']og:title["\\'][^>]+content=["\\']([^"\\']+)', article_body, re.I)
+                if og_title:
+                    article_title = html.unescape(og_title.group(1)).strip() or article_title
+                article_parser = TextExtractor()
+                article_parser.feed(article_body)
+                description = re.sub(r'\\s+', ' ', ' '.join(article_parser.parts)).strip()[:700]
+            except Exception:
+                pass
+            results.append({'consulta': search_url, 'titulo': article_title[:300], 'publicador': source['nome'],
+                'publicado_em': published_at, 'link_resultado': href, 'descricao': description, 'consultado_em': checked_at,
                 'fonte_busca': 'busca_direta_site', 'status_validacao': 'pendente_confirmacao_oficial',
-                'observacao': 'Artigo encontrado na busca interna; confirmar data e regulamento oficial.'})
+                'http_artigo': article_status,
+                'observacao': 'Artigo encontrado diretamente; data obtida apenas de metadados explícitos. Confirmar validade no regulamento oficial.'})
             if len(results) >= MAX_RESULTS_PER_QUERY:
                 break
         return {'consulta': search_url, 'resultado': 'consultado', 'fonte': source['nome'],
@@ -233,7 +260,10 @@ def parse_publication_date(value):
     if not value:
         return None
     try:
-        parsed = parsedate_to_datetime(value)
+        try:
+            parsed = parsedate_to_datetime(value)
+        except (TypeError, ValueError, OverflowError):
+            parsed = datetime.fromisoformat(value.replace("Z", "+00:00"))
         if parsed.tzinfo is None:
             parsed = parsed.replace(tzinfo=timezone.utc)
         return parsed.astimezone(TZ)
