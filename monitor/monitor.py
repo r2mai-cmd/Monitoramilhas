@@ -346,8 +346,13 @@ def inspect_candidate_article(item, now):
             return item
         parser = TextExtractor()
         parser.feed(body)
-        article_text = re.sub(r"\\s+", " ", " ".join(parser.parts)).strip()
-        # Limitar o texto guardado no relatório e manter a evidência rastreável.
+        full_text = re.sub(r"\\s+", " ", " ".join(parser.parts)).strip()
+        # Priorizar o trecho próximo ao título do artigo. O restante da página costuma
+        # conter cupons, banners e ofertas laterais com datas que não pertencem à campanha.
+        article_title = re.sub(r"\\s+", " ", item.get("titulo", "")).strip()
+        title_position = full_text.casefold().find(article_title.casefold()) if article_title else -1
+        article_text = full_text[title_position:title_position + 6500] if title_position >= 0 else full_text[:6500]
+        # Limitar o texto analisado ao corpo próximo ao artigo e manter evidência rastreável.
         published = parse_publication_date(item.get("publicado_em", "")) or now
         end_date = extract_campaign_end_date(article_text, published)
         item["verificacao_artigo"] = {
