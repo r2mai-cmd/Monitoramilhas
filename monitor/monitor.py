@@ -304,7 +304,7 @@ def extract_campaign_end_date(text, published):
         return None
 
 
-def resolve_article_url(url):
+def resolve_article_url(url, publisher=''):
     """Resolve redirecionadores de notícias para a página original do artigo."""
     if not url:
         return url, None
@@ -332,6 +332,23 @@ def resolve_article_url(url):
             match = re.search(pattern, body, re.I)
             if match and "news.google.com" not in match.group(1).casefold():
                 return html.unescape(match.group(1)), final_url
+        # Alguns links do Google Notícias não redirecionam nem expõem canonical.
+        # Procurar links externos no HTML que correspondam ao publicador conhecido.
+        publisher_domains = {
+            "Passageiro de Primeira": ("passageirodeprimeira.com",),
+            "Melhores Destinos": ("melhoresdestinos.com.br",),
+            "Mestre das Milhas": ("mestredasmilhas.com",),
+            "Pontos pra Voar": ("pontospravoar.com",),
+            "Melhores Cartões": ("melhorescartoes.com.br",),
+        }
+        expected_domains = publisher_domains.get(publisher, ())
+        if expected_domains:
+            external_links = re.findall(r"""href=["'](https?://[^"']+)["']""", body, re.I)
+            for candidate_url in external_links:
+                candidate_url = html.unescape(candidate_url).replace("&amp;", "&")
+                candidate_host = (urlparse(candidate_url).netloc or "").casefold()
+                if any(domain in candidate_host for domain in expected_domains):
+                    return candidate_url, final_url
         if "news.google.com" not in final_url.casefold():
             return final_url, final_url
         return url, final_url
@@ -346,7 +363,7 @@ def inspect_candidate_article(item, now):
         item["verificacao_artigo"] = {"resultado": "sem_link"}
         return item
     try:
-        original_url, resolved_url = resolve_article_url(url)
+        original_url, resolved_url = resolve_article_url(url, item.get('publicador', ''))
         status, content_type, body = http_get(original_url, "text/html,application/xhtml+xml,*/*")
         if "news.google.com" in original_url.casefold():
             item["verificacao_artigo"] = {"resultado": "link_intermediario_nao_resolvido", "url_artigo_resolvida": original_url, "url_intermediaria_resolvida": resolved_url, "http_status": status, "texto_extraido": False}
