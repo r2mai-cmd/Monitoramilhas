@@ -244,7 +244,12 @@ def discover_news(query, checked_at):
 def discover_direct_source(source, checked_at):
     """Procura artigos por RSS de busca e usa a pesquisa HTML como fallback."""
     base = source["url"].rstrip("/")
+    # Consultas específicas primeiro aumentam a chance de recuperar a URL direta
+    # das campanhas atuais que o RSS agregado traz apenas via Google Notícias.
     search_terms = [
+        "Banco BV Azul bônus transferência pontos",
+        "Banestes transferência pontos bônus outubro 2026",
+        "C6 Bank LATAM Pass transferência bonificada",
         "transferência bonificada outubro 2026",
         "bônus transferência pontos outubro 2026",
         "transferência bonificada milhas",
