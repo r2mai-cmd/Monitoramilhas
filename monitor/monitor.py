@@ -415,15 +415,18 @@ def inspect_candidate_article(item, now):
         parser.feed(body)
         full_text = " ".join(parser.parts).strip()
         scoped_text = " ".join(parser.article_parts).strip()
-        # Prefere o corpo semântico do artigo; evita banners e cupons laterais.
         article_title = item.get("titulo", "").strip()
         h1_text = " ".join(parser.h1_parts).strip()
-        if scoped_text:
-            article_text = scoped_text[:12000]
+        # Ancorar a leitura no título principal antes de procurar datas. Muitos portais
+        # têm outros elementos <article> em recomendações e listas antes da matéria.
+        title_for_anchor = h1_text or article_title
+        title_position = full_text.casefold().find(title_for_anchor.casefold()) if title_for_anchor else -1
+        if title_position >= 0:
+            article_text = full_text[title_position:title_position + 9000]
+        elif scoped_text:
+            article_text = scoped_text[:9000]
         else:
-            title_for_anchor = h1_text or article_title
-            title_position = full_text.casefold().find(title_for_anchor.casefold()) if title_for_anchor else -1
-            article_text = full_text[title_position:title_position + 5000] if title_position >= 0 else ""
+            article_text = ""
         # Limitar o texto analisado ao corpo próximo ao artigo e manter evidência rastreável.
         published = parse_publication_date(item.get("publicado_em", "")) or now
         end_date = extract_campaign_end_date(article_text, published)
