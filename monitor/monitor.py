@@ -50,6 +50,9 @@ NEWS_QUERIES = [
     'bônus transferência pontos milhas assinantes clube outubro 2026',
     'site:voeazul.com.br Banco BV transferência pontos bônus outubro 2026',
     'C6 Átomos transferência bonificada milhas outubro 2026',
+    'site:melhoresdestinos.com.br/milhas transferência bonificada milhas outubro 2026',
+    'site:mestredasmilhas.com transferência bonificada milhas outubro 2026',
+    'site:passageirodeprimeira.com transferência bonificada milhas outubro 2026',
 ]
 
 KEYWORDS = ("transfer", "bônus", "bonus", "milhas", "pontos", "clube", "assinante", "promoção", "promocao")
@@ -306,6 +309,8 @@ def main():
             "idade_maxima_dias": MAX_AGE_DAYS,
             "exige_sinal_de_transferencia": True,
             "exige_sinal_de_bonus": True,
+            "fontes_secundarias": ["Melhores Destinos", "Mestre das Milhas", "Passageiro de Primeira"],
+            "uso_das_fontes_secundarias": "Descoberta de pistas; não confirma atividade sem validade/regulamento.",
             "deduplicacao": "título normalizado sem acentos e pontuação",
             "datas_de_encerramento": "descarta candidatos quando encontra data explícita já vencida",
             "publicacao_automatica": False
