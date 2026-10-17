@@ -242,6 +242,11 @@ def discover_direct_source(source, checked_at):
                     description = re.sub(r'\s+', ' ', ' '.join(article_parser.parts)).strip()[:700]
                 except Exception:
                     pass
+                publication_dt = parse_publication_date(published_at) if published_at else None
+                checked_dt = parse_publication_date(checked_at) if checked_at else None
+                if publication_dt and checked_dt and (checked_dt - publication_dt).days > MAX_AGE_DAYS:
+                    # Artigos antigos ficam no histórico das buscas, mas não entram na descoberta de oportunidades recentes.
+                    continue
                 results.append({'consulta': search_url, 'titulo': article_title[:300], 'publicador': source['nome'],
                     'publicado_em': published_at, 'link_resultado': href, 'descricao': description, 'consultado_em': checked_at,
                     'fonte_busca': 'busca_direta_site', 'status_validacao': 'pendente_confirmacao_oficial',
