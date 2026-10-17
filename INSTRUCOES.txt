@@ -1,0 +1,17 @@
+# Atualização do Monitoramilhas — Conversões padrão
+
+Esta atualização adiciona a seção **Conversões de pontos**, independente das promoções com bônus. Inclui apenas paridades encontradas em páginas oficiais do LATAM Pass:
+- Livelo → LATAM Pass: 1:1; mínimo de 12.000 pontos nos canais Livelo.
+- Esfera → LATAM Pass: 1:1; mínimo padrão informado de 30.000 pontos (podem existir condições diferentes conforme plano).
+- UAU Caixa → LATAM Pass: 1:1; mínimo de 2.000 pontos.
+
+As fontes oficiais e a data de consulta são mostradas em cada cartão. As regras podem mudar; o site orienta o visitante a confirmar os termos antes de transferir.
+
+## Como publicar no GitHub
+1. Baixe e extraia o ZIP.
+2. No repositório `Monitoramilhas`, substitua os arquivos `index.html`, `styles.css` e `app.js` na raiz.
+3. Crie a pasta `data` se não existir e envie `data/conversoes.json` para dentro dela. **Não apague nem substitua** `data/promocoes.json`, `monitor/` ou `.github/workflows/`.
+4. Faça commit das alterações e aguarde o GitHub Pages atualizar.
+5. Abra o site e atualize a página. Se o navegador mantiver a versão antiga, teste em aba anônima.
+
+Esta atualização não altera o monitor de promoções nem o workflow existente.

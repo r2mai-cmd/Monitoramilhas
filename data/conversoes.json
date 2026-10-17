@@ -1,0 +1,38 @@
+{
+  "verificado_em": "2026-10-17",
+  "conversoes": [
+    {
+      "id": "livelo-latam",
+      "origem": "Livelo",
+      "destino": "LATAM Pass",
+      "paridade": "1 ponto = 1 milha",
+      "condicoes": "Mínimo de 12.000 pontos pelos canais Livelo. Transferência para conta de mesma titularidade.",
+      "fonte_nome": "LATAM Pass — parceria Livelo",
+      "url_fonte": "https://latampass.latam.com/br/pt/parceiros/livelo",
+      "verificado_em": "2026-10-17",
+      "status": "confirmada"
+    },
+    {
+      "id": "esfera-latam",
+      "origem": "Esfera",
+      "destino": "LATAM Pass",
+      "paridade": "1 ponto = 1 milha",
+      "condicoes": "Mínimo padrão informado de 30.000 pontos; pode haver condição diferente conforme o plano Clube Esfera. Mesma titularidade.",
+      "fonte_nome": "LATAM Pass — parceria Esfera",
+      "url_fonte": "https://latampass.latam.com/br/pt/parceiros/esfera",
+      "verificado_em": "2026-10-17",
+      "status": "confirmada"
+    },
+    {
+      "id": "uau-latam",
+      "origem": "UAU Caixa",
+      "destino": "LATAM Pass",
+      "paridade": "1 ponto = 1 milha",
+      "condicoes": "Transferência a partir de 2.000 pontos. A conta de destino deve pertencer ao titular dos pontos.",
+      "fonte_nome": "LATAM Pass — parceria UAU Caixa",
+      "url_fonte": "https://latampass.latam.com/br/pt/parceiros/uau-caixa",
+      "verificado_em": "2026-10-17",
+      "status": "confirmada"
+    }
+  ]
+}

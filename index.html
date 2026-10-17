@@ -11,7 +11,7 @@
 <body>
   <header class="topbar">
     <a class="brand" href="#"><span class="brand-icon">✈</span><span>Monitor<span class="brand-accent">amilhas</span></span></a>
-    <nav><a class="active" href="#inicio">Início</a><a href="#promocoes">Promoções</a><a href="#programas">Programas</a><a href="#como-funciona">Como funciona</a></nav>
+    <nav><a class="active" href="#inicio">Início</a><a href="#promocoes">Promoções</a><a href="#conversoes">Conversões</a><a href="#programas">Programas</a><a href="#como-funciona">Como funciona</a></nav>
     <a class="button button-small" href="#alertas">↗ Receber alertas</a>
   </header>
   <main>
@@ -51,6 +51,17 @@
         <div class="empty-state"><div class="empty-icon">✈</div><h3>Estamos preparando a decolagem</h3><p>As promoções aparecerão aqui quando o monitor identificar campanhas ativas em fontes verificáveis. Não exibimos ofertas fictícias.</p><span class="empty-chip">Monitor em fase de configuração</span></div>
       </div>
       <p class="disclaimer">Percentuais, prazos e elegibilidade serão exibidos somente quando constarem em uma fonte verificável. Confirma sempre as regras no site oficial antes de transferir pontos.</p>
+    </section>
+    <section class="section conversions-section" id="conversoes">
+      <div class="section-heading">
+        <div><span class="section-kicker">PARIDADE PADRÃO</span><h2>Conversões de pontos <span class="spark">↗</span></h2><p>Veja quantos pontos viram milhas mesmo quando não há bônus promocional.</p></div>
+        <div class="status"><span class="status-dot"></span><span id="conversion-check">Consultando conversões confirmadas</span></div>
+      </div>
+      <div class="conversion-note"><span class="conversion-note-icon">i</span><p>Estas são as paridades padrão publicadas pelos programas. Promoções podem acrescentar bônus temporários; confirme sempre o regulamento e as condições antes de transferir.</p></div>
+      <div id="conversion-list" class="conversion-grid">
+        <div class="conversion-loading">Carregando conversões confirmadas…</div>
+      </div>
+      <p class="disclaimer">Exibimos apenas paridades com fonte oficial identificada. O lote mínimo, a titularidade exigida e o prazo de crédito podem variar. A data de consulta não garante que as regras permaneçam inalteradas.</p>
     </section>
     <section class="travel-banner" id="alertas">
       <div class="banner-icon">✉</div>
