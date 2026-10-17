@@ -71,12 +71,26 @@ class LinkExtractor(HTMLParser):
     def __init__(self):
         super().__init__(convert_charrefs=True)
         self.links = []
+        self.current_anchor = None
+
     def handle_starttag(self, tag, attrs):
         if tag.lower() == 'a':
             data = dict(attrs)
             href = data.get('href', '')
             if href:
-                self.links.append({'href': href, 'title': data.get('title', '')})
+                self.current_anchor = {'href': href, 'title_attr': data.get('title', ''), 'text_parts': []}
+
+    def handle_data(self, data):
+        if self.current_anchor is not None:
+            text_value = re.sub(r'\s+', ' ', data).strip()
+            if text_value:
+                self.current_anchor['text_parts'].append(text_value)
+
+    def handle_endtag(self, tag):
+        if tag.lower() == 'a' and self.current_anchor is not None:
+            title = self.current_anchor['title_attr'] or ' '.join(self.current_anchor['text_parts'])
+            self.links.append({'href': self.current_anchor['href'], 'title': re.sub(r'\s+', ' ', title).strip()})
+            self.current_anchor = None
 
 
 class TextExtractor(HTMLParser):
@@ -655,6 +669,7 @@ def main():
         {'nome': 'Melhores Destinos', 'url': 'https://www.melhoresdestinos.com.br'},
         {'nome': 'Mestre das Milhas', 'url': 'https://mestredasmilhas.com'},
         {'nome': 'Passageiro de Primeira', 'url': 'https://passageirodeprimeira.com'},
+        {'nome': 'Pontos pra Voar', 'url': 'https://pontospravoar.com'},
     ]
     direct_results = []
     for i, source in enumerate(direct_sources):
