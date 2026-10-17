@@ -64,7 +64,7 @@ MONTH_NAMES = {"janeiro": 1, "fevereiro": 2, "março": 3, "marco": 3, "abril": 4
 END_DATE_WORD_RE = re.compile(r"(?:válid[oa] até|valida até|até|ate|encerra(?:mento)? em|termina em)\s*(\d{1,2})\s+de\s+(janeiro|fevereiro|março|marco|abril|maio|junho|julho|agosto|setembro|outubro|novembro|dezembro)(?:\s+de\s+(\d{4}))?", re.I)
 END_DATE_CONTEXT_RE = re.compile(r"(?:válid[oa]\s+até|valida\s+até|até|encerra(?:mento)?\s+em|termina\s+em)\s+(?:amanhã[,\s]+\s*)?(?:(?:segunda(?:-feira)?|ter[cç]a(?:-feira)?|quarta(?:-feira)?|quinta(?:-feira)?|sexta(?:-feira)?|s[áa]bado|domingo)[,\s]+\s*)?(\d{1,2})\s+de\s+(janeiro|fevereiro|março|marco|abril|maio|junho|julho|agosto|setembro|outubro|novembro|dezembro)(?:\s+de\s+(\d{4}))?", re.I)
 END_DATE_TOMORROW_RE = re.compile(r"\b(?:válid[oa]\s+)?(?:até|encerra(?:mento)?(?:\s+em)?|termina(?:\s+em)?)\s+(?:às\s+\d{1,2}(?:[:h]\d{2})?\s*(?:h|horas)?\s+)?(?:de\s+)?amanhã(?:\s*,?\s*\(?(\d{1,2})\)?)?", re.I)
-END_DATE_WEEKDAY_RE = re.compile(r"\bat[eé]\s+(?:na|nesta|esta\s+)?(?:segunda(?:-feira)?|ter[cç]a(?:-feira)?|quarta(?:-feira)?|quinta(?:-feira)?|sexta(?:-feira)?|s[áa]bado|domingo)\s*\(?(\d{1,2})\)?", re.I)
+END_DATE_WEEKDAY_RE = re.compile(r"\bat[eé]\s+(?:(?:a|na|nesta|esta)\s+)?(?:segunda(?:-feira)?|ter[cç]a(?:-feira)?|quarta(?:-feira)?|quinta(?:-feira)?|sexta(?:-feira)?|s[áa]bado|domingo)\s*[,()]?\s*(?:dia\s*)?\(?(\d{1,2})\)?", re.I)
 CAMPAIGN_RE = re.compile(r"transfer|transfira|transferência|transferencia|envio de pontos|enviar pontos", re.I)
 
 
@@ -530,15 +530,35 @@ def inspect_candidate_article(item, now):
         full_text = " ".join(parser.parts).strip()
         scoped_text = " ".join(parser.article_parts).strip()
         article_title = item.get("titulo", "").strip()
-        # Títulos concatenados de vários H1s podem começar por blocos laterais
-        # ("Central de Cupons"). Usar primeiro o título desta pista; depois, o corpo semântico.
+        # RSS e títulos editoriais podem diferir do H1. Ancorar no parceiro citado
+        # e no programa de fidelidade da campanha para incluir o parágrafo de validade.
         title_position = full_text.casefold().find(article_title.casefold()) if article_title else -1
         if title_position >= 0:
-            article_text = full_text[title_position:title_position + 9000]
-        elif scoped_text:
-            article_text = scoped_text[:9000]
+            article_text = full_text[title_position:title_position + 16000]
         else:
-            article_text = ""
+            title_folded = article_title.casefold()
+            partner_aliases = (
+                "banco do nordeste", "banco bv", "banestes", "sicredi",
+                "c6 bank", "livelo", "credicard", "itaú", "itau", "bnb",
+            )
+            partner_positions = [
+                full_text.casefold().find(alias)
+                for alias in partner_aliases
+                if alias in title_folded and full_text.casefold().find(alias) >= 0
+            ]
+            if partner_positions:
+                partner_pos = min(partner_positions)
+                program_positions = [
+                    full_text.casefold().rfind(program, max(0, partner_pos - 700), partner_pos + 1)
+                    for program in ("azul fidelidade", "azul", "latam pass", "smiles")
+                ]
+                program_positions = [pos for pos in program_positions if pos >= 0]
+                anchor_pos = max(program_positions) if program_positions else partner_pos
+                article_text = full_text[max(0, anchor_pos - 180):anchor_pos + 16000]
+            elif scoped_text and article_title.casefold().split(" - ")[0] in scoped_text.casefold():
+                article_text = scoped_text[:16000]
+            else:
+                article_text = scoped_text[:16000] if scoped_text else full_text[:12000]
         published = parse_publication_date(item.get("publicado_em", "")) or now
         end_date, validity_snippet = find_campaign_end_date(article_text, published)
         item["verificacao_artigo"] = {
