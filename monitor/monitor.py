@@ -60,6 +60,8 @@ TRANSFER_RE = re.compile(r"transfer|transfira|transferência|transferencia|envio
 BONUS_RE = re.compile(r"b[oô]nus|bonificad|milhas extras|pontos extras|at[eé] \d{1,3}\s*%", re.I)
 URGENT_ENDING_RE = re.compile(r"últimas horas|ultimas horas|termina hoje|terminam hoje|acaba hoje|acabam hoje|encerra hoje|encerram hoje|último dia|ultimo dia", re.I)
 END_DATE_RE = re.compile(r"(?:válid[oa] até|valida até|até|ate|encerra(?:mento)? em|termina em)\s*(\d{1,2})[/-](\d{1,2})(?:[/-](\d{2,4}))?", re.I)
+MONTH_NAMES = {"janeiro": 1, "fevereiro": 2, "março": 3, "marco": 3, "abril": 4, "maio": 5, "junho": 6, "julho": 7, "agosto": 8, "setembro": 9, "outubro": 10, "novembro": 11, "dezembro": 12}
+END_DATE_WORD_RE = re.compile(r"(?:válid[oa] até|valida até|até|ate|encerra(?:mento)? em|termina em)\s*(\d{1,2})\s+de\s+(janeiro|fevereiro|março|marco|abril|maio|junho|julho|agosto|setembro|outubro|novembro|dezembro)(?:\s+de\s+(\d{4}))?", re.I)
 CAMPAIGN_RE = re.compile(r"transfer|transfira|transferência|transferencia|envio de pontos|enviar pontos", re.I)
 
 
