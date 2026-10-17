@@ -182,17 +182,24 @@ def parse_publication_date(value):
 
 
 def extract_campaign_end_date(text, published):
-    """Extrai datas explícitas de encerramento; sem ano, usa o ano da publicação."""
-    match = END_DATE_RE.search(text or "")
-    if not match:
-        return None
-    day, month, year = match.groups()
+    """Extrai datas explícitas de encerramento em formato numérico ou por extenso."""
+    text = text or ""
+    match = END_DATE_RE.search(text)
+    if match:
+        day, month, year = match.groups()
+        month_num = int(month)
+    else:
+        match = END_DATE_WORD_RE.search(text)
+        if not match:
+            return None
+        day, month_name, year = match.groups()
+        month_num = MONTH_NAMES.get(month_name.casefold())
     year_num = int(year) if year else published.year
     if year_num < 100:
         year_num += 2000
     try:
-        return datetime(year_num, int(month), int(day), 23, 59, tzinfo=TZ)
-    except ValueError:
+        return datetime(year_num, month_num, int(day), 23, 59, tzinfo=TZ)
+    except (ValueError, TypeError):
         return None
 
 
@@ -216,7 +223,7 @@ def inspect_candidate_article(item, now):
             "content_type": content_type,
             "texto_extraido": bool(article_text),
             "trecho_validade": (article_text[max(0, match.start()-100):min(len(article_text), match.end()+180)]
-                                if (match := END_DATE_RE.search(article_text)) else None),
+                                if (match := (END_DATE_RE.search(article_text) or END_DATE_WORD_RE.search(article_text))) else None),
         }
         if end_date:
             item["data_encerramento_detectada"] = end_date.isoformat()
