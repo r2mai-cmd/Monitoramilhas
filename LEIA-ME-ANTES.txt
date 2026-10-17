@@ -1,0 +1,22 @@
+Monitoramilhas — Coletor v2 (consulta oficial + descoberta pública)
+
+O que faz:
+- Consulta 7 páginas oficiais e registra status HTTP, título e trechos encontrados.
+- Consulta 7 buscas públicas do Google Notícias RSS para descobrir possíveis campanhas.
+- Registra candidatos em data/monitor_fontes.json para revisão.
+- NÃO publica candidatos em data/promocoes.json e NÃO declara promoções ativas.
+- Não infere percentuais, validade nem elegibilidade de clubes automaticamente.
+
+Como instalar:
+1. Abra monitor/monitor.py no GitHub, clique no lápis e substitua todo o conteúdo pelo arquivo do pacote.
+2. Abra .github/workflows/monitor.yml e substitua todo o conteúdo pelo arquivo do pacote.
+3. Faça Commit changes em cada arquivo.
+4. Vá em Actions > Monitor de promoções > Run workflow.
+5. Abra Executar monitor e confira os resultados.
+6. Depois, em Code, veja se foi criado/atualizado data/monitor_fontes.json.
+
+Atenção:
+- A agenda permanece às 00h, 06h, 12h e 18h de Brasília.
+- O relatório é de descoberta, não uma lista de ofertas confirmadas.
+- Google Notícias pode devolver resultados antigos, repetidos ou não oficiais; verificar a fonte primária antes de publicar.
+- Se o workflow já tinha outras alterações específicas, compare antes de substituir. Este arquivo mantém o agendamento e os passos principais que vimos no print.
