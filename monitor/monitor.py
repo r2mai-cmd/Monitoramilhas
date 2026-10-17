@@ -196,63 +196,70 @@ def discover_news(query, checked_at):
     except Exception as e:
         return {"consulta": query, "resultado": "erro_consulta", "fonte": provider, "erro": f"{type(e).__name__}: {str(e)[:220]}", "tentativas_anteriores": attempts, "candidatos": []}
 def discover_direct_source(source, checked_at):
-    """Busca artigos no portal e extrai metadados sem usar regexes com aspas conflitantes."""
+    """Busca nos portais especializados usando consultas recentes e genéricas."""
     base = source['url'].rstrip('/')
-    search_url = base + '/?s=' + quote_plus('transferência bonificada milhas')
+    search_terms = ['transferência bonificada outubro 2026', 'bônus transferência pontos 2026', 'transferência bonificada milhas']
     results = []
-    try:
-        status, content_type, body = http_get(search_url)
-        parser = LinkExtractor()
-        parser.feed(body)
-        seen = set()
-        from urllib.parse import urljoin
-        for link in parser.links:
-            href = urljoin(base + '/', html.unescape(link['href']).strip())
-            title = re.sub(r'\s+', ' ', html.unescape(link['title'])).strip()
-            if not href.startswith(base) or href.rstrip('/') == base or href in seen or not title:
-                continue
-            if not (TRANSFER_RE.search(title) and BONUS_RE.search(title)):
-                continue
-            seen.add(href)
-            article_title, published_at, description = title, '', ''
-            article_status = 'nao_consultado'
-            try:
-                article_status_code, _article_type, article_body = http_get(href)
-                article_status = str(article_status_code)
-                # Captura metadados com aspas simples ou duplas usando grupos independentes.
-                date_patterns = [
-                    r"<meta[^>]+property=['\"]article:published_time['\"][^>]+content=['\"]([^'\"]+)",
-                    r"<meta[^>]+name=['\"]datePublished['\"][^>]+content=['\"]([^'\"]+)",
-                    r'"datePublished"\s*:\s*"([^"]+)"',
-                    r"<time[^>]+datetime=['\"]([^'\"]+)",
-                ]
-                for date_pattern in date_patterns:
-                    date_match = re.search(date_pattern, article_body, re.I)
-                    if date_match:
-                        published_at = date_match.group(1).strip()
-                        break
-                og_title = re.search(r"<meta[^>]+property=['\"]og:title['\"][^>]+content=['\"]([^'\"]+)", article_body, re.I)
-                if og_title:
-                    article_title = html.unescape(og_title.group(1)).strip() or article_title
-                article_parser = TextExtractor()
-                article_parser.feed(article_body)
-                description = re.sub(r'\s+', ' ', ' '.join(article_parser.parts)).strip()[:700]
-            except Exception:
-                pass
-            results.append({'consulta': search_url, 'titulo': article_title[:300], 'publicador': source['nome'],
-                'publicado_em': published_at, 'link_resultado': href, 'descricao': description, 'consultado_em': checked_at,
-                'fonte_busca': 'busca_direta_site', 'status_validacao': 'pendente_confirmacao_oficial',
-                'http_artigo': article_status,
-                'observacao': 'Artigo encontrado diretamente; confirmar validade no regulamento oficial.'})
-            if len(results) >= MAX_RESULTS_PER_QUERY:
-                break
-        return {'consulta': search_url, 'resultado': 'consultado', 'fonte': source['nome'],
-                'http_status': status, 'content_type': content_type, 'candidatos': results}
-    except HTTPError as e:
-        return {'consulta': search_url, 'resultado': 'erro_http', 'fonte': source['nome'], 'http_status': e.code, 'candidatos': []}
-    except Exception as e:
-        return {'consulta': search_url, 'resultado': 'erro_consulta', 'fonte': source['nome'],
-                'erro': f'{type(e).__name__}: {str(e)[:180]}', 'candidatos': []}
+    seen = set()
+    attempts = []
+    from urllib.parse import urljoin
+    for term in search_terms:
+        search_url = base + '/?s=' + quote_plus(term)
+        try:
+            status, content_type, body = http_get(search_url)
+            parser = LinkExtractor()
+            parser.feed(body)
+            for link in parser.links:
+                href = urljoin(base + '/', html.unescape(link['href']).strip())
+                title = re.sub(r'\s+', ' ', html.unescape(link['title'])).strip()
+                if not href.startswith(base) or href.rstrip('/') == base or href in seen or not title:
+                    continue
+                # Título deve sinalizar milhas/pontos e bônus; o artigo será validado por data.
+                if not (TRANSFER_RE.search(title) and BONUS_RE.search(title)):
+                    continue
+                seen.add(href)
+                article_title, published_at, description = title, '', ''
+                article_status = 'nao_consultado'
+                try:
+                    article_status_code, _article_type, article_body = http_get(href)
+                    article_status = str(article_status_code)
+                    date_patterns = [
+                        r"<meta[^>]+property=['\"]article:published_time['\"][^>]+content=['\"]([^'\"]+)",
+                        r"<meta[^>]+name=['\"]datePublished['\"][^>]+content=['\"]([^'\"]+)",
+                        r'"datePublished"\s*:\s*"([^"]+)"',
+                        r"<time[^>]+datetime=['\"]([^'\"]+)",
+                    ]
+                    for date_pattern in date_patterns:
+                        date_match = re.search(date_pattern, article_body, re.I)
+                        if date_match:
+                            published_at = date_match.group(1).strip()
+                            break
+                    og_title = re.search(r"<meta[^>]+property=['\"]og:title['\"][^>]+content=['\"]([^'\"]+)", article_body, re.I)
+                    if og_title:
+                        article_title = html.unescape(og_title.group(1)).strip() or article_title
+                    article_parser = TextExtractor()
+                    article_parser.feed(article_body)
+                    description = re.sub(r'\s+', ' ', ' '.join(article_parser.parts)).strip()[:700]
+                except Exception:
+                    pass
+                results.append({'consulta': search_url, 'titulo': article_title[:300], 'publicador': source['nome'],
+                    'publicado_em': published_at, 'link_resultado': href, 'descricao': description, 'consultado_em': checked_at,
+                    'fonte_busca': 'busca_direta_site', 'status_validacao': 'pendente_confirmacao_oficial',
+                    'http_artigo': article_status,
+                    'observacao': 'Artigo encontrado diretamente; confirmar validade no regulamento oficial.'})
+                if len(results) >= MAX_RESULTS_PER_QUERY:
+                    break
+            attempts.append({'consulta': search_url, 'resultado': 'consultado', 'http_status': status, 'itens': len(results)})
+        except HTTPError as e:
+            attempts.append({'consulta': search_url, 'resultado': 'erro_http', 'http_status': e.code})
+        except Exception as e:
+            attempts.append({'consulta': search_url, 'resultado': 'erro_consulta', 'erro': f'{type(e).__name__}: {str(e)[:140]}'})
+        if len(results) >= MAX_RESULTS_PER_QUERY:
+            break
+        time.sleep(0.5)
+    if results:
+        return {'consulta': base, 'resultado': 'consultado', 'fonte': source['nome'], 'tentativas': attempts, 'candidatos': results}
+    return {'consulta': base, 'resultado': 'sem_resultados', 'fonte': source['nome'], 'tentativas': attempts, 'candidatos': []}
 
 
 def parse_publication_date(value):
