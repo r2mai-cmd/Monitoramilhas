@@ -523,6 +523,34 @@ def classify_candidates(news_results, now):
             item["substituido_por_fonte_direta"] = True
             item["observacao_link"] = "Link do agregador substituído por artigo direto da mesma campanha."
 
+    # A substituição de links por fonte direta pode tornar iguais URLs que tinham títulos diferentes.
+    # Deduplicar de novo por URL canônica, mantendo títulos e consultas de origem.
+    deduplicated = {}
+    for item in unique.values():
+        url = item.get('link_resultado', '')
+        parsed_url = urlparse(url) if url else None
+        if parsed_url and 'bing.com' in (parsed_url.netloc or '').casefold() and parsed_url.path.endswith('/news/apiclick.aspx'):
+            target = parse_qs(parsed_url.query).get('url', [''])[0]
+            if target.startswith(('https://', 'http://')):
+                parsed_url = urlparse(target)
+        if parsed_url and parsed_url.scheme in ('http', 'https') and parsed_url.netloc and 'news.google.com' not in parsed_url.netloc.casefold():
+            canonical_key = 'url:' + parsed_url.netloc.casefold() + parsed_url.path.rstrip('/')
+        else:
+            canonical_key = 'title:' + normalize_title(item.get('titulo', ''))
+        if canonical_key in deduplicated:
+            rejected['duplicados'] += 1
+            existing = deduplicated[canonical_key]
+            queries = set(existing.get('consultas_encontradas', [existing.get('consulta', '')]))
+            queries.update(item.get('consultas_encontradas', [item.get('consulta', '')]))
+            existing['consultas_encontradas'] = sorted(q for q in queries if q)
+            if len(item.get('descricao', '')) > len(existing.get('descricao', '')):
+                existing['descricao'] = item.get('descricao', '')
+            # Preferir a versão com texto do artigo original.
+            if len(item.get('descricao', '')) > len(existing.get('descricao', '')):
+                existing.update({k: v for k, v in item.items() if v not in ('', None)})
+        else:
+            deduplicated[canonical_key] = item
+    unique = deduplicated
     candidates = list(unique.values())
     # Uma pista recente não prova que a promoção ainda está ativa. Separe títulos
     # que indicam encerramento iminente para evitar tratá-los como oportunidades.
