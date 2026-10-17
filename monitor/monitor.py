@@ -63,6 +63,7 @@ END_DATE_RE = re.compile(r"(?:válid[oa] até|valida até|até|ate|encerra(?:men
 MONTH_NAMES = {"janeiro": 1, "fevereiro": 2, "março": 3, "marco": 3, "abril": 4, "maio": 5, "junho": 6, "julho": 7, "agosto": 8, "setembro": 9, "outubro": 10, "novembro": 11, "dezembro": 12}
 END_DATE_WORD_RE = re.compile(r"(?:válid[oa] até|valida até|até|ate|encerra(?:mento)? em|termina em)\s*(\d{1,2})\s+de\s+(janeiro|fevereiro|março|marco|abril|maio|junho|julho|agosto|setembro|outubro|novembro|dezembro)(?:\s+de\s+(\d{4}))?", re.I)
 END_DATE_CONTEXT_RE = re.compile(r"(?:válid[oa]\s+até|valida\s+até|até|encerra(?:mento)?\s+em|termina\s+em)\s+(?:amanhã[,\s]+\s*)?(?:(?:segunda(?:-feira)?|ter[cç]a(?:-feira)?|quarta(?:-feira)?|quinta(?:-feira)?|sexta(?:-feira)?|s[áa]bado|domingo)[,\s]+\s*)?(\d{1,2})\s+de\s+(janeiro|fevereiro|março|marco|abril|maio|junho|julho|agosto|setembro|outubro|novembro|dezembro)(?:\s+de\s+(\d{4}))?", re.I)
+END_DATE_TOMORROW_RE = re.compile(r"\b(?:válid[oa]\s+)?(?:até|encerra(?:mento)?(?:\s+em)?|termina(?:\s+em)?)\s+(?:às\s+\d{1,2}(?:[:h]\d{2})?\s*(?:h|horas)?\s+)?(?:de\s+)?amanhã(?:\s*,?\s*\(?(\d{1,2})\)?)?", re.I)
 END_DATE_WEEKDAY_RE = re.compile(r"\bat[eé]\s+(?:na|nesta|esta\s+)?(?:segunda(?:-feira)?|ter[cç]a(?:-feira)?|quarta(?:-feira)?|quinta(?:-feira)?|sexta(?:-feira)?|s[áa]bado|domingo)\s*\(?(\d{1,2})\)?", re.I)
 CAMPAIGN_RE = re.compile(r"transfer|transfira|transferência|transferencia|envio de pontos|enviar pontos", re.I)
 
@@ -328,15 +329,13 @@ def parse_publication_date(value):
 
 
 def extract_campaign_end_date(text, published):
-    """Extrai prazos explícitos em formatos numérico, por extenso e com dia da semana."""
+    """Extrai prazos explícitos por data, dia da semana ou referência a amanhã."""
     text = text or ''
     match = END_DATE_RE.search(text)
     if match:
         day, month, year = match.groups()
         month_num = int(month)
     else:
-        # Captura frases reais de campanha como 'válida até sexta-feira, 9 de outubro'
-        # e 'até amanhã, 14 de outubro'.
         match = END_DATE_CONTEXT_RE.search(text)
         if match:
             day, month_name, year = match.groups()
@@ -347,17 +346,31 @@ def extract_campaign_end_date(text, published):
                 day, month_name, year = match.groups()
                 month_num = MONTH_NAMES.get(month_name.casefold())
             else:
-                match = END_DATE_WEEKDAY_RE.search(text)
-                if not match:
-                    return None
-                day = match.group(1)
-                year = str(published.year)
-                month_num = published.month
-                if int(day) < published.day:
-                    month_num += 1
-                    if month_num > 12:
-                        month_num = 1
-                        year = str(published.year + 1)
+                match = END_DATE_TOMORROW_RE.search(text)
+                if match:
+                    day = match.group(1)
+                    year = str(published.year)
+                    month_num = published.month
+                    if day is None:
+                        tomorrow = published + timedelta(days=1)
+                        day, month_num, year = str(tomorrow.day), tomorrow.month, str(tomorrow.year)
+                    elif int(day) < published.day:
+                        month_num += 1
+                        if month_num > 12:
+                            month_num = 1
+                            year = str(published.year + 1)
+                else:
+                    match = END_DATE_WEEKDAY_RE.search(text)
+                    if not match:
+                        return None
+                    day = match.group(1)
+                    year = str(published.year)
+                    month_num = published.month
+                    if int(day) < published.day:
+                        month_num += 1
+                        if month_num > 12:
+                            month_num = 1
+                            year = str(published.year + 1)
     year_num = int(year) if year else published.year
     if year_num < 100:
         year_num += 2000
@@ -458,7 +471,7 @@ def inspect_candidate_article(item, now):
             "content_type": content_type,
             "texto_extraido": bool(article_text),
             "trecho_validade": (article_text[max(0, match.start()-100):min(len(article_text), match.end()+180)]
-                                if (match := (END_DATE_RE.search(article_text) or END_DATE_CONTEXT_RE.search(article_text) or END_DATE_WORD_RE.search(article_text) or END_DATE_WEEKDAY_RE.search(article_text))) else None),
+                                if (match := (END_DATE_RE.search(article_text) or END_DATE_CONTEXT_RE.search(article_text) or END_DATE_WORD_RE.search(article_text) or END_DATE_TOMORROW_RE.search(article_text) or END_DATE_WEEKDAY_RE.search(article_text))) else None),
         }
         if end_date:
             item["data_encerramento_detectada"] = end_date.isoformat()
@@ -721,7 +734,7 @@ def main():
         "total_buscas_publicas": len(news_results),
         "buscas_publicas_ok": sum(x["resultado"] == "consultado" for x in news_results),
         "total_pistas_brutas": raw_count,
-        "total_candidatos_triados": len(candidates),
+        "total_candidatos_triados": len(candidates) + len(likely_expired),\n        "total_candidatos_para_validacao": len(needs_validation),
         "total_campanhas_provavelmente_encerradas": len(likely_expired),
         "total_campanhas_aguardando_validacao": len(needs_validation),
         "motivos_exclusao": rejected,
@@ -742,7 +755,7 @@ def main():
     print(f"Relatório salvo em: {OUT}")
     print(f"Páginas oficiais acessíveis: {payload['paginas_oficiais_ok']}/{len(official_results)}")
     print(f"Buscas públicas acessíveis: {payload['buscas_publicas_ok']}/{len(news_results)}")
-    print(f"Pistas brutas: {raw_count}; candidatos após triagem: {len(candidates)}")
+    print(f"Pistas brutas: {raw_count}; candidatos triados: {len(candidates) + len(likely_expired)}; pendentes de validação: {len(needs_validation)}; provavelmente encerrados: {len(likely_expired)}")
     print(f"Exclusões: {json.dumps(rejected, ensure_ascii=False)}")
     if payload["paginas_oficiais_ok"] == 0 and payload["buscas_publicas_ok"] == 0:
         raise SystemExit("Nenhuma fonte de consulta respondeu.")
