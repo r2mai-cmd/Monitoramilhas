@@ -4,7 +4,7 @@ name: Monitor de promoções
 on:
   workflow_dispatch:
   schedule:
-        - cron: "0 3,9,15,21 * * *"
+    - cron: "0 3,9,15,21 * * *"
 
 permissions:
   contents: write
@@ -25,15 +25,14 @@ jobs:
       - name: Executar monitor
         run: python monitor/monitor.py
 
-      - name: Salvar dados atualizados
+      - name: Salvar relatório de consultas
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/promocoes.json
+          git add data/monitor_fontes.json
           if ! git diff --cached --quiet; then
-            git commit -m "Atualiza monitor de promoções"
+            git commit -m "Atualiza relatório do monitor"
             git push
           else
-            echo "Nenhuma alteração nos dados."
+            echo "Nenhuma alteração no relatório."
           fi
-
