@@ -413,11 +413,11 @@ def inspect_candidate_article(item, now):
             return item
         parser = TextExtractor()
         parser.feed(body)
-        full_text = re.sub(r"\\s+", " ", " ".join(parser.parts)).strip()
-        scoped_text = re.sub(r"\\s+", " ", " ".join(parser.article_parts)).strip()
+        full_text = " ".join(parser.parts).strip()
+        scoped_text = " ".join(parser.article_parts).strip()
         # Prefere o corpo semântico do artigo; evita banners e cupons laterais.
-        article_title = re.sub(r"\\s+", " ", item.get("titulo", "")).strip()
-        h1_text = re.sub(r"\\s+", " ", " ".join(parser.h1_parts)).strip()
+        article_title = item.get("titulo", "").strip()
+        h1_text = " ".join(parser.h1_parts).strip()
         if scoped_text:
             article_text = scoped_text[:12000]
         else:
