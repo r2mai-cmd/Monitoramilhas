@@ -365,10 +365,10 @@ def parse_publication_date(value):
         return None
 
 
-def extract_campaign_end_date(text, published):
-    """Extrai prazos da campanha, ignorando datas de crédito/validade dos pontos bônus."""
+def find_campaign_end_date(text, published):
+    """Retorna (data, trecho) apenas quando o contexto é de prazo da campanha."""
     text = text or ""
-    # Datas de crédito dos pontos ou validade das milhas não são o fim da campanha.
+    # Remove cláusulas que falam apenas do crédito ou da validade das milhas bônus.
     text = re.sub(
         r"(?is)(?:milhas?\s+|pontos?\s+)?b[oô]nus[^.;!?]{0,220}?(?:ser[aã]o\s+)?creditad[oa]s?[^.;!?]{0,180}",
         " ",
@@ -381,18 +381,30 @@ def extract_campaign_end_date(text, published):
         END_DATE_TOMORROW_RE,
         END_DATE_WEEKDAY_RE,
     )
-    # Tenta cada formato e ignora um possível falso positivo se o contexto indicar
-    # crédito, validade ou expiração das milhas, e não o prazo para transferir.
     matches = []
     for pattern in patterns:
-        matches.extend(pattern.finditer(text))
-    matches.sort(key=lambda match: match.start())
-    for match in matches:
-        before = text[max(0, match.start() - 180):match.start()].casefold()
-        after = text[match.end():min(len(text), match.end() + 100)].casefold()
-        if re.search(r"(?:milhas?|pontos?)\s+b[oô]nus.{0,130}(?:creditad|válid[oa]s?\s+por|expir|venc)", before):
+        matches.extend((match, pattern) for match in pattern.finditer(text))
+    matches.sort(key=lambda pair: pair[0].start())
+
+    for match, pattern in matches:
+        before = text[max(0, match.start() - 240):match.start()].casefold()
+        after = text[match.end():min(len(text), match.end() + 180)].casefold()
+        context = before + " " + after
+
+        # Datas de crédito, expiração ou validade das milhas recebidas não são
+        # prazo para transferir pontos. Ignorar explicitamente esses contextos.
+        if re.search(r"(?:milhas?|pontos?)\s+b[oô]nus.{0,160}(?:creditad|válid[oa]s?\s+por|expir|venc)", before):
             continue
-        if re.search(r"(?:creditad|crédito|validade das milhas|válid[oa]s?\s+por|expira|vencimento).{0,100}$", before):
+        if re.search(r"(?:creditad|crédito|validade das milhas|válid[oa]s?\s+por|expira|vencimento)", before[-140:]):
+            continue
+        if re.search(r"(?:milhas?|pontos?)\s+b[oô]nus.{0,100}(?:creditad|válid[oa]s?\s+por|expir|venc)", context):
+            continue
+
+        # A data precisa estar próxima de uma referência à própria oferta/
+        # campanha/transferência. Datas de cupons e banners laterais ficam de fora.
+        if not re.search(r"transfer|transfira|transferência|transferencia|envio de pontos|enviar pontos|promoção|promocao|campanha|oferta|bonifica|bônus|bonus", context):
+            continue
+        if re.search(r"central de cupons|awardwallet|cashback|seguro viagem", before[-160:] + " " + after[:120]):
             continue
 
         day = month = year = None
@@ -428,10 +440,18 @@ def extract_campaign_end_date(text, published):
         if year_num < 100:
             year_num += 2000
         try:
-            return datetime(year_num, month_num, int(day), 23, 59, tzinfo=TZ)
+            expiry = datetime(year_num, month_num, int(day), 23, 59, tzinfo=TZ)
         except (ValueError, TypeError):
             continue
-    return None
+        snippet = text[max(0, match.start()-100):min(len(text), match.end()+180)]
+        return expiry, snippet
+    return None, None
+
+
+def extract_campaign_end_date(text, published):
+    """Compatibilidade com a triagem: retorna apenas a data de encerramento validada."""
+    expiry, _snippet = find_campaign_end_date(text, published)
+    return expiry
 
 
 
@@ -505,20 +525,17 @@ def inspect_candidate_article(item, now):
         full_text = " ".join(parser.parts).strip()
         scoped_text = " ".join(parser.article_parts).strip()
         article_title = item.get("titulo", "").strip()
-        h1_text = " ".join(parser.h1_parts).strip()
-        # Ancorar a leitura no título principal antes de procurar datas. Muitos portais
-        # têm outros elementos <article> em recomendações e listas antes da matéria.
-        title_for_anchor = h1_text or article_title
-        title_position = full_text.casefold().find(title_for_anchor.casefold()) if title_for_anchor else -1
+        # Títulos concatenados de vários H1s podem começar por blocos laterais
+        # ("Central de Cupons"). Usar primeiro o título desta pista; depois, o corpo semântico.
+        title_position = full_text.casefold().find(article_title.casefold()) if article_title else -1
         if title_position >= 0:
             article_text = full_text[title_position:title_position + 9000]
         elif scoped_text:
             article_text = scoped_text[:9000]
         else:
             article_text = ""
-        # Limitar o texto analisado ao corpo próximo ao artigo e manter evidência rastreável.
         published = parse_publication_date(item.get("publicado_em", "")) or now
-        end_date = extract_campaign_end_date(article_text, published)
+        end_date, validity_snippet = find_campaign_end_date(article_text, published)
         item["verificacao_artigo"] = {
             "resultado": "consultado",
             "url_artigo_resolvida": original_url,
@@ -526,8 +543,7 @@ def inspect_candidate_article(item, now):
             "http_status": status,
             "content_type": content_type,
             "texto_extraido": bool(article_text),
-            "trecho_validade": (article_text[max(0, match.start()-100):min(len(article_text), match.end()+180)]
-                                if (match := (END_DATE_RE.search(article_text) or END_DATE_CONTEXT_RE.search(article_text) or END_DATE_WORD_RE.search(article_text) or END_DATE_TOMORROW_RE.search(article_text) or END_DATE_WEEKDAY_RE.search(article_text))) else None),
+            "trecho_validade": validity_snippet,
         }
         if end_date:
             item["data_encerramento_detectada"] = end_date.isoformat()
