@@ -38,7 +38,7 @@ async function initRadar() {
   const radar = document.querySelector("#radar-grid");
   const status = document.querySelector("#radar-check");
   try {
-    const response = await fetch("data/monitor_fontes.json", {cache:"no-store"});
+    const response = await fetch("/Monitoramilhas/data/monitor_fontes.json?v=20261017-radar2", {cache:"no-store"});
     if (!response.ok) throw new Error("Relatório indisponível");
     const report = await response.json();
     const now = new Date();
