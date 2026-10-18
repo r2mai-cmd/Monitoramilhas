@@ -16,3 +16,11 @@
 .radar-card { border-style:dashed; }
 .radar-card .promo-card-body > p { line-height:1.55; overflow-wrap:anywhere; }
 @media (max-width:700px) { .radar-heading { display:block; } .radar-heading .status { display:block; margin-top:.5rem; } }
+
+
+/* Simetria apenas nos cards de promoções em destaque */
+#promo-grid .promo-card{height:100%;display:flex;flex-direction:column}
+#promo-grid .promo-card-body{flex:1;display:flex;flex-direction:column}
+#promo-grid .promo-card h3{min-height:2.6em}
+#promo-grid .promo-meta{min-height:5.5em}
+#promo-grid .promo-card .button{margin-top:auto}
