@@ -42,9 +42,7 @@ function officialProgramUrl(candidate) {
   if (title.includes("banco bv") && title.includes("azul fidelidade")) {
     return "https://www.voeazul.com.br/br/pt/ofertas/bv";
   }
-  if (title.includes("latam pass") && (title.includes("itaú") || title.includes("itau") || title.includes("credicard"))) {
-    return "https://web.latampass.latam.com/pt_br/promocao/credicard-milhas-extras";
-  }
+}
   return null;
 }
 async function initRadar() {
