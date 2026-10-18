@@ -75,7 +75,7 @@ async function initRadar() {
       const expiry = p.data_encerramento_detectada ? new Date(p.data_encerramento_detectada).toLocaleDateString("pt-BR") : "Prazo não identificado";
       const excerpt = p.descricao || p.motivo_status || p.observacao || "Notícia encontrada; confirmar as regras oficiais.";
       const button = officialUrl
-        ? '<a class="button" href="' + escapeHtml(officialUrl) + '" target="_blank" rel="noopener noreferrer">Consultar programa oficial ↗</a>'
+        ? '<a class="button" href="' + escapeHtml(officialUrl) + '" target="_blank" rel="noopener noreferrer">Consultar programa ↗</a>'
         : '<span class="button" aria-disabled="true">Programa oficial não identificado</span>';
       return '<article class="promo-card radar-card"><div class="promo-card-body"><span class="empty-chip">PENDENTE DE VALIDAÇÃO</span><h3>' + escapeHtml(p.titulo) + '</h3><div class="promo-meta">Notícia identificada em: ' + escapeHtml(p.publicador || p.fonte_busca || "Fonte monitorada") + '<br>Publicado em: ' + escapeHtml(published) + '<br>Prazo detectado: ' + escapeHtml(expiry) + '</div><p>' + escapeHtml(excerpt.slice(0, 420)) + '</p>' + button + '</div></article>';
     }).join("");
