@@ -36,13 +36,15 @@ async function init() {
 }
 function officialProgramUrl(candidate) {
   const title = String(candidate.titulo || "").toLowerCase();
-  if (title.includes("latam pass") || title.includes("latampass")) return "https://latampass.latam.com/pt_br/promocoes";
-  if (title.includes("smiles")) return "https://www.smiles.com.br/";
-  if (title.includes("livelo")) return "https://www.livelo.com.br/";
-  if (title.includes("azul")) return "https://www.voeazul.com.br/br/pt/ofertas";
-  if (title.includes("esfera")) return "https://www.esfera.com.vc/";
-  if (title.includes("dotz")) return "https://www.dotz.com.br/";
-  if (title.includes("c6")) return "https://www.c6bank.com.br/";
+  const partner = String(candidate.descricao || "").toLowerCase();
+
+  // Só retornar links de campanhas específicas verificadas. Não usar homepages genéricas.
+  if (title.includes("banco bv") && title.includes("azul fidelidade")) {
+    return "https://www.voeazul.com.br/br/pt/ofertas/bv";
+  }
+  if (title.includes("latam pass") && (title.includes("itaú") || title.includes("itau") || title.includes("credicard"))) {
+    return "https://web.latampass.latam.com/pt_br/promocao/credicard-milhas-extras";
+  }
   return null;
 }
 async function initRadar() {
@@ -75,8 +77,8 @@ async function initRadar() {
       const expiry = p.data_encerramento_detectada ? new Date(p.data_encerramento_detectada).toLocaleDateString("pt-BR") : "Prazo não identificado";
       const excerpt = p.descricao || p.motivo_status || p.observacao || "Notícia encontrada; confirmar as regras oficiais.";
       const button = officialUrl
-        ? '<a class="button" href="' + escapeHtml(officialUrl) + '" target="_blank" rel="noopener noreferrer">Consultar programa ↗</a>'
-        : '<span class="button" aria-disabled="true">Programa oficial não identificado</span>';
+        ? '<a class="button" href="' + escapeHtml(officialUrl) + '" target="_blank" rel="noopener noreferrer">Ver promoção no programa ↗</a>'
+        : '<span class="button" aria-disabled="true">Página específica não localizada</span>';
       return '<article class="promo-card radar-card"><div class="promo-card-body"><span class="empty-chip">PENDENTE DE VALIDAÇÃO</span><h3>' + escapeHtml(p.titulo) + '</h3><div class="promo-meta">Notícia identificada em: ' + escapeHtml(p.publicador || p.fonte_busca || "Fonte monitorada") + '<br>Publicado em: ' + escapeHtml(published) + '<br>Prazo detectado: ' + escapeHtml(expiry) + '</div><p>' + escapeHtml(excerpt.slice(0, 420)) + '</p>' + button + '</div></article>';
     }).join("");
   } catch {
