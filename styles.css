@@ -7,3 +7,12 @@
 .conversions-section{padding-top:25px}.conversion-note{display:flex;align-items:flex-start;gap:12px;background:#eaf4ff;border:1px solid #d7eaff;border-radius:14px;padding:15px 17px;margin:0 0 20px;color:#496583}.conversion-note-icon{display:grid;place-items:center;flex:0 0 24px;width:24px;height:24px;border-radius:50%;background:#d3e9ff;color:#0759b3;font-weight:800;font-family:Manrope,sans-serif}.conversion-note p{font-size:12px;line-height:1.65;margin:2px 0}.conversion-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.conversion-card{background:white;border:1px solid var(--line);border-radius:18px;padding:20px;box-shadow:0 6px 20px #0e37600a;display:flex;flex-direction:column;min-width:0}.conversion-pair{display:flex;align-items:center;gap:9px;font-weight:800;font-family:Manrope,sans-serif;font-size:14px;line-height:1.4}.conversion-pair .arrow{color:#7e9ab8;font-size:20px;flex:0 0 auto}.conversion-rate{font:800 28px/1.2 Manrope,sans-serif;color:#0879a8;margin:18px 0 4px;letter-spacing:-.8px}.conversion-rate small{font:600 12px "DM Sans",sans-serif;color:#70849c;letter-spacing:0}.conversion-minimum{font-size:12px;color:#536b86;line-height:1.6;margin:9px 0 13px}.conversion-footer{margin-top:auto;padding-top:13px;border-top:1px solid #edf2f8;display:flex;flex-direction:column;gap:8px}.conversion-source{font-size:11px;color:#72849a;line-height:1.5}.conversion-date{font-size:10px;color:#8a9ab0}.conversion-link{display:inline-flex;align-items:center;gap:7px;color:#0879f9;font-weight:800;font-size:12px;margin-top:4px}.conversion-loading,.conversion-empty{grid-column:1/-1;padding:30px;background:white;border:1px dashed #cbd9e9;border-radius:16px;text-align:center;color:var(--muted);font-size:13px;line-height:1.6}
 @media(max-width:900px){.conversion-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){.conversions-section{padding-top:15px}.conversion-grid{grid-template-columns:1fr}.conversion-card{padding:18px}.conversion-rate{font-size:26px}}
+
+
+/* Radar de teste: pistas automáticas ainda não confirmadas */
+.radar-heading { display:flex; justify-content:space-between; align-items:flex-end; gap:1rem; margin:2rem 0 1rem; }
+.radar-heading h3 { margin:.35rem 0; }
+.radar-heading p { max-width:760px; margin:.35rem 0; }
+.radar-card { border-style:dashed; }
+.radar-card .promo-card-body > p { line-height:1.55; overflow-wrap:anywhere; }
+@media (max-width:700px) { .radar-heading { display:block; } .radar-heading .status { display:block; margin-top:.5rem; } }
