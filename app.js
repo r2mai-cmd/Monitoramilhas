@@ -36,13 +36,11 @@ async function init() {
 }
 function officialProgramUrl(candidate) {
   const title = String(candidate.titulo || "").toLowerCase();
-  const partner = String(candidate.descricao || "").toLowerCase();
 
   // Só retornar links de campanhas específicas verificadas. Não usar homepages genéricas.
   if (title.includes("banco bv") && title.includes("azul fidelidade")) {
     return "https://www.voeazul.com.br/br/pt/ofertas/bv";
   }
-}
   return null;
 }
 async function initRadar() {
