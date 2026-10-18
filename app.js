@@ -34,6 +34,17 @@ async function init() {
     document.querySelector("#last-check").textContent = "Monitor em fase de configuração";
   }
 }
+function officialProgramUrl(candidate) {
+  const title = String(candidate.titulo || "").toLowerCase();
+  if (title.includes("latam pass") || title.includes("latampass")) return "https://latampass.latam.com/pt_br/promocoes";
+  if (title.includes("smiles")) return "https://www.smiles.com.br/";
+  if (title.includes("livelo")) return "https://www.livelo.com.br/";
+  if (title.includes("azul")) return "https://www.voeazul.com.br/br/pt/ofertas";
+  if (title.includes("esfera")) return "https://www.esfera.com.vc/";
+  if (title.includes("dotz")) return "https://www.dotz.com.br/";
+  if (title.includes("c6")) return "https://www.c6bank.com.br/";
+  return null;
+}
 async function initRadar() {
   const radar = document.querySelector("#radar-grid");
   const status = document.querySelector("#radar-check");
@@ -58,11 +69,15 @@ async function initRadar() {
       return;
     }
     radar.innerHTML = items.map(p => {
+      const officialUrl = officialProgramUrl(p);
       const date = p.publicado_em ? new Date(p.publicado_em) : null;
       const published = date && !Number.isNaN(date.getTime()) ? date.toLocaleDateString("pt-BR") : "Data não identificada";
       const expiry = p.data_encerramento_detectada ? new Date(p.data_encerramento_detectada).toLocaleDateString("pt-BR") : "Prazo não identificado";
       const excerpt = p.descricao || p.motivo_status || p.observacao || "Notícia encontrada; confirmar as regras oficiais.";
-      return '<article class="promo-card radar-card"><div class="promo-card-body"><span class="empty-chip">PENDENTE DE VALIDAÇÃO</span><h3>' + escapeHtml(p.titulo) + '</h3><div class="promo-meta">Fonte: ' + escapeHtml(p.publicador || p.fonte_busca || "Fonte monitorada") + '<br>Publicado em: ' + escapeHtml(published) + '<br>Prazo detectado: ' + escapeHtml(expiry) + '</div><p>' + escapeHtml(excerpt.slice(0, 420)) + '</p><a class="button" href="' + escapeHtml(p.link_resultado) + '" target="_blank" rel="noopener noreferrer">Ler notícia ↗</a></div></article>';
+      const button = officialUrl
+        ? '<a class="button" href="' + escapeHtml(officialUrl) + '" target="_blank" rel="noopener noreferrer">Consultar programa oficial ↗</a>'
+        : '<span class="button" aria-disabled="true">Programa oficial não identificado</span>';
+      return '<article class="promo-card radar-card"><div class="promo-card-body"><span class="empty-chip">PENDENTE DE VALIDAÇÃO</span><h3>' + escapeHtml(p.titulo) + '</h3><div class="promo-meta">Notícia identificada em: ' + escapeHtml(p.publicador || p.fonte_busca || "Fonte monitorada") + '<br>Publicado em: ' + escapeHtml(published) + '<br>Prazo detectado: ' + escapeHtml(expiry) + '</div><p>' + escapeHtml(excerpt.slice(0, 420)) + '</p>' + button + '</div></article>';
     }).join("");
   } catch {
     status.textContent = "Não foi possível carregar o relatório";
