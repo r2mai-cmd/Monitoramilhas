@@ -34,6 +34,41 @@ async function init() {
     document.querySelector("#last-check").textContent = "Monitor em fase de configuração";
   }
 }
+async function initRadar() {
+  const radar = document.querySelector("#radar-grid");
+  const status = document.querySelector("#radar-check");
+  try {
+    const response = await fetch("data/monitor_fontes.json", {cache:"no-store"});
+    if (!response.ok) throw new Error("Relatório indisponível");
+    const report = await response.json();
+    const now = new Date();
+    const items = (report.campanhas_aguardando_validacao || report.candidatos || [])
+      .filter(p => {
+        if (!p.link_resultado || !p.titulo) return false;
+        if (!p.data_encerramento_detectada) return true;
+        const end = new Date(p.data_encerramento_detectada);
+        return Number.isNaN(end.getTime()) || end >= now;
+      })
+      .slice(0, 12);
+    status.textContent = report.atualizado_em
+      ? "Relatório atualizado em " + new Date(report.atualizado_em).toLocaleString("pt-BR")
+      : "Relatório do monitor";
+    if (!items.length) {
+      radar.innerHTML = '<div class="empty-state"><h3>Nenhuma pista pendente recente</h3><p>O monitor não encontrou candidatos com prazo futuro ou ainda não identificado nesta execução.</p></div>';
+      return;
+    }
+    radar.innerHTML = items.map(p => {
+      const date = p.publicado_em ? new Date(p.publicado_em) : null;
+      const published = date && !Number.isNaN(date.getTime()) ? date.toLocaleDateString("pt-BR") : "Data não identificada";
+      const expiry = p.data_encerramento_detectada ? new Date(p.data_encerramento_detectada).toLocaleDateString("pt-BR") : "Prazo não identificado";
+      const excerpt = p.descricao || p.motivo_status || p.observacao || "Notícia encontrada; confirmar as regras oficiais.";
+      return '<article class="promo-card radar-card"><div class="promo-card-body"><span class="empty-chip">PENDENTE DE VALIDAÇÃO</span><h3>' + escapeHtml(p.titulo) + '</h3><div class="promo-meta">Fonte: ' + escapeHtml(p.publicador || p.fonte_busca || "Fonte monitorada") + '<br>Publicado em: ' + escapeHtml(published) + '<br>Prazo detectado: ' + escapeHtml(expiry) + '</div><p>' + escapeHtml(excerpt.slice(0, 420)) + '</p><a class="button" href="' + escapeHtml(p.link_resultado) + '" target="_blank" rel="noopener noreferrer">Ler notícia ↗</a></div></article>';
+    }).join("");
+  } catch {
+    status.textContent = "Não foi possível carregar o relatório";
+    radar.innerHTML = '<div class="empty-state"><h3>Relatório ainda indisponível</h3><p>O site não conseguiu ler data/monitor_fontes.json. Atualiza a página depois que o workflow terminar.</p></div>';
+  }
+}
 async function initConversions() {
   try {
     const response = await fetch("data/conversoes.json", {cache:"no-store"});
@@ -54,3 +89,4 @@ async function initConversions() {
 }
 init();
 initConversions();
+initRadar();
