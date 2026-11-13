@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-11-13T07:44:27-03:00",
+  "atualizado_em": "2026-11-13T18:19:09-03:00",
   "fuso_horario": "America/Sao_Paulo",
   "criterios_triagem": {
     "idade_maxima_dias": 14,
@@ -19,13 +19,13 @@
   "paginas_oficiais_ok": 2,
   "total_buscas_publicas": 16,
   "buscas_publicas_ok": 15,
-  "total_pistas_brutas": 100,
+  "total_pistas_brutas": 102,
   "total_candidatos_triados": 1,
   "total_candidatos_para_validacao": 1,
   "total_campanhas_provavelmente_encerradas": 0,
   "total_campanhas_aguardando_validacao": 1,
   "motivos_exclusao": {
-    "antigos": 72,
+    "antigos": 74,
     "data_ausente_ou_invalida": 17,
     "sem_sinal_de_transferencia_bonificada": 9,
     "provavelmente_encerrados": 1,
@@ -37,7 +37,7 @@
       "programa": "Azul Fidelidade",
       "parceiro": "Banco BV",
       "url": "https://www.voeazul.com.br/br/pt/ofertas/bv",
-      "consultado_em": "2026-11-13T07:44:27-03:00",
+      "consultado_em": "2026-11-13T18:19:09-03:00",
       "tipo": "pagina_oficial",
       "resultado": "erro_http",
       "http_status": 403,
@@ -47,7 +47,7 @@
       "programa": "Azul Fidelidade",
       "parceiro": "Ofertas Azul",
       "url": "https://www.voeazul.com.br/br/pt/ofertas",
-      "consultado_em": "2026-11-13T07:44:27-03:00",
+      "consultado_em": "2026-11-13T18:19:09-03:00",
       "tipo": "pagina_oficial",
       "resultado": "erro_http",
       "http_status": 403,
@@ -57,7 +57,7 @@
       "programa": "LATAM Pass",
       "parceiro": "Promoções LATAM Pass",
       "url": "https://latampass.latam.com/pt_br/promocoes",
-      "consultado_em": "2026-11-13T07:44:27-03:00",
+      "consultado_em": "2026-11-13T18:19:09-03:00",
       "tipo": "pagina_oficial",
       "resultado": "erro_http",
       "http_status": 403,
@@ -67,7 +67,7 @@
       "programa": "LATAM Pass",
       "parceiro": "Promoções de bancos LATAM Pass",
       "url": "https://web.latampass.latam.com/pt_br/promocao/bancos-milhas-extras",
-      "consultado_em": "2026-11-13T07:44:27-03:00",
+      "consultado_em": "2026-11-13T18:19:09-03:00",
       "tipo": "pagina_oficial",
       "resultado": "erro_http",
       "http_status": 403,
@@ -77,7 +77,7 @@
       "programa": "Smiles",
       "parceiro": "Campanhas Smiles",
       "url": "https://www.smiles.com.br/portal/campanhas",
-      "consultado_em": "2026-11-13T07:44:27-03:00",
+      "consultado_em": "2026-11-13T18:19:09-03:00",
       "tipo": "pagina_oficial",
       "resultado": "erro_http",
       "http_status": 404,
@@ -87,7 +87,7 @@
       "programa": "Livelo",
       "parceiro": "Livelo",
       "url": "https://www.livelo.com.br/",
-      "consultado_em": "2026-11-13T07:44:27-03:00",
+      "consultado_em": "2026-11-13T18:19:09-03:00",
       "tipo": "pagina_oficial",
       "resultado": "consultado",
       "http_status": 200,
@@ -97,7 +97,8 @@
         "transfer",
         "milhas",
         "pontos",
-        "clube"
+        "clube",
+        "promoção"
       ],
       "trechos_para_revisao": [
         "$ 9,90 usando pontos! Participe agora Participe agora Criar Conta Fazer login Ofertas Pink Friday Trocar pontos Juntar pontos Shopping Livelo Viagens Clube Livelo Compra e Turbo Central de ajuda Para empresas Encontre as melhores oportunidades de viagem com a Livelo! Voos Hotéis Carros Pacotes Radar de Voos Ida e volta 1 viajante Econômica Exibir valor em: Pontos ou pontos + dinheiro Somente em dinheir",
@@ -111,7 +112,7 @@
       "programa": "Esfera",
       "parceiro": "Esfera",
       "url": "https://www.esfera.com.vc/",
-      "consultado_em": "2026-11-13T07:44:27-03:00",
+      "consultado_em": "2026-11-13T18:19:09-03:00",
       "tipo": "pagina_oficial",
       "resultado": "consultado",
       "http_status": 200,
@@ -152,7 +153,7 @@
           "publicado_em": "Thu, 05 Mar 2026 08:00:00 GMT",
           "link_resultado": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNdDVaZFExbDgtUVNMN29zWEJrY3NXaEozdEFNbWVGazM2dFpNYlRmRHZrTnQ2cVJYSjhlV0llYlBmZ3FBb2lmakFwcGtEdWxnMDVUUGhvVHROczZybTRfbU9vM2x1bVptN0dHbTBRbkRHaGUwcW9HQjE2aVJPQkx3NUhzRlNWclJ0Y3hoYg?oc=5",
           "descricao": "Azul, Smiles e Latam Pass: 3 ofertas de transferência com até 133% de bônus que terminam hoje! Melhores Cartões",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "Google News RSS",
           "status_validacao": "pendente",
           "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
@@ -164,7 +165,7 @@
           "publicado_em": "Sat, 05 Sep 2026 07:00:00 GMT",
           "link_resultado": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE50RVVkbXJiQ0x5WXZHT3hOMWR5emlOdlFHWG5jSXZuTTlVTGdDY1kzZ0otSFFxc1RJc3ZXS1NDamR2TjRCRTR3MUJRbWhINFNMSWxFYWh1Tm4xRVhpM0l0dnNweVBGOUF4?oc=5",
           "descricao": "Setembro das milhas: 7 datas que merecem entrar no radar Pontos pra Voar",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "Google News RSS",
           "status_validacao": "pendente",
           "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
@@ -176,7 +177,7 @@
           "publicado_em": "Sat, 10 Jan 2026 08:00:00 GMT",
           "link_resultado": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOWVFYS2dWUFFTak1FS2RkWjRScE9TMEFOX0s5UFZIWkhWVEFjbzExWjBScW9MMVRHUWNDVGgxcTgwTDhFR2JEcEFadm9LSzZBQzJzVUd4UWdKNEwyMVRKVVRlSHFfdVlKb0E1SlFKbDROYTNmQlo4MXlwbVhxMC1KblhlaC1CVVk?oc=5",
           "descricao": "Valor das milhas: qual o melhor preço para conseguir milhas Azul, Latam e Smiles em 2026? Melhores Destinos",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "Google News RSS",
           "status_validacao": "pendente",
           "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
@@ -188,7 +189,7 @@
           "publicado_em": "Fri, 09 Oct 2026 07:00:00 GMT",
           "link_resultado": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPRFB3UnV2YzN5YjJSSmtwQ1BYTGkxT3NETng3Um00V19JOWswUmNOaV9Xdi1NdVFWM0J6b2QxcUo1a0E3djVsOThtOGVHekRxakdrMExTM1JTTTh4Qkh1emVYMzZtbkdSWjhkWFNNWEVwQXVkckVGRm4tcC00WWkxTEl1cFQxbVBxQ09UZm4xZVR0dmdtS0xtOQ?oc=5",
           "descricao": "Últimas horas! Confira as promoções de transferência de pontos que terminam hoje Pontos pra Voar",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "Google News RSS",
           "status_validacao": "pendente",
           "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
@@ -200,7 +201,7 @@
           "publicado_em": "Fri, 09 Jan 2026 08:00:00 GMT",
           "link_resultado": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQWkIwMEJ5YVZ2RzdNNjZJbEVkX2xMZTBhV1laQkFSclRfUXdyMVBCZlVVc1NacTF3bVVtcmFXUWQwX25VT2lnUXN5S3ozR3BRS2E1WTNSWElFbEk2SVg1MWNLU0pTNVN5c3FkMG1taFFrWnF2MUM5OXNOanFBdTdoaXQ0djFfX2V0WlE?oc=5",
           "descricao": "Vem aí! Aniversário da Caixa promete até 165% de bônus nas transferências de pontos - veja o que já sabemos! Melhores Destinos",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "Google News RSS",
           "status_validacao": "pendente",
           "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
@@ -212,7 +213,7 @@
           "publicado_em": "Thu, 01 Jan 2026 08:00:00 GMT",
           "link_resultado": "https://news.google.com/rss/articles/CBMib0FVX3lxTFAtcVpGdTJuTVdtZUYtRTV1YkZ3aGRzYktlVE1MUUFHcEl0a3JQUFNzakRhTVJ4VE1zaHBpM1FPcUZrUHpjSFMteVJfekRVTWdkc2JOMlVzci1VeTJ4ZU9tN0s1Vm9MMnhDeUtGWHdXQQ?oc=5",
           "descricao": "Calendário das Milhas: melhores datas para acumular pontos em 2026 Melhores Cartões",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "Google News RSS",
           "status_validacao": "pendente",
           "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
@@ -224,7 +225,7 @@
           "publicado_em": "Tue, 06 Jan 2026 08:00:00 GMT",
           "link_resultado": "https://news.google.com/rss/articles/CBMibEFVX3lxTE8zWWRydGFPaHJQX3FtZEdEdGltVWozTDlFOS1ucVJOLWVTaWJZcThzc2RDWFlwTjJ0RnpzMnRSODdyZ0xtVkhWdWpzeWVuR29RRHRrMGVfX2Nac3ExczJCU3pQNE8tRm1sMTBoVA?oc=5",
           "descricao": "Calendário de milhas 2026: Acumule mais gastando menos! Mobills",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "Google News RSS",
           "status_validacao": "pendente",
           "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
@@ -236,7 +237,7 @@
           "publicado_em": "Mon, 04 May 2026 07:00:00 GMT",
           "link_resultado": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNSG0za3E2Sm10c0lwbkpVNGRJWVItRkhkOHhTNGR2bjU3OXFFcFdFUkFSNkJWSUw5S2FLekhMYW1aMGgyaklvcV8tQ0xoWXlJbUVRcXdTbmZyZG5ZU2JPREpNRXg4dEV1UTBfNHpqZEIwOG5QVWRpeURIdTNfX0hVbHRhaw?oc=5",
           "descricao": "Voltou! Smiles oferece até 365% de bônus na compra de milhas Melhores Cartões",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "Google News RSS",
           "status_validacao": "pendente",
           "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
@@ -251,23 +252,23 @@
           "fonte": "Google News RSS",
           "http_status": 200,
           "pistas": 4
-        }
-      ],
-      "tentativas": [
+        },
         {
           "fonte": "Bing News RSS",
-          "erro": "ParseError: not well-formed (invalid token): line 1, column 41"
+          "http_status": 200,
+          "pistas": 0
         }
       ],
+      "tentativas": [],
       "candidatos": [
         {
           "consulta": "site:voeazul.com.br bônus transferência pontos clube Azul Fidelidade",
-          "titulo": "Descubra quantos pontos você pode receber com sua compra: - Azul",
+          "titulo": "Compre Pontos com até 320% de bônus | VoeAzul - Azul",
           "publicador": "Azul",
           "publicado_em": "Mon, 09 Nov 2026 14:37:21 GMT",
           "link_resultado": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9pU3lGTnNLMTJHYUJqa2R6MS1xR080N01tMG8xNlFiWFlNUEg0NENNQWJTRHEtRjZ1RnBCcjJuOTdOTzdmOGFFbHFWanpQbTlyTG9kcmVycUxYYW05Q2VuVWpMNURuODlyUkk0dXdheDQ?oc=5",
-          "descricao": "Descubra quantos pontos você pode receber com sua compra: Azul",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "descricao": "Compre Pontos com até 320% de bônus | VoeAzul Azul",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "Google News RSS",
           "status_validacao": "pendente",
           "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
@@ -279,7 +280,7 @@
           "publicado_em": "Thu, 06 Nov 2025 13:32:08 GMT",
           "link_resultado": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5zbmNTOEdUTkM3VFpPUk5ySWR0ZkVtcEFXRGhfZTJ1V01uUnlLVTc3VGlpY0pVdFZiZmtfNTgtNUtYRkQxVV8xRWtpU2h3VW14MURZdWpTTER4andjM2t6Nw?oc=5",
           "descricao": "Azul Friday: promoção de pontos, bônus e ofertas | Azul Fidelidade Azul",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "Google News RSS",
           "status_validacao": "pendente",
           "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
@@ -291,7 +292,7 @@
           "publicado_em": "Wed, 03 May 2023 20:54:23 GMT",
           "link_resultado": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBYazlkbEFjMWdXcF9BUjkxT2EweFVPTm01OEtObUNVMU8tS0JSVnFnZGZPcHhVVTM4eDFwU1hrS3BUcXZIMHBkc25oVXlDak9NUlRseHZIbk1jTmR1bHBlUVhPY3ZlTzBwV19WOHNfR2k?oc=5",
           "descricao": "Clube Azul Azul",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "Google News RSS",
           "status_validacao": "pendente",
           "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
@@ -303,7 +304,7 @@
           "publicado_em": "Wed, 30 Jul 2025 02:31:03 GMT",
           "link_resultado": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE16Sk9YTnp4ZXpTQS1DQzFReFRyM0JaRmRvNUgzRlEzcmdLLVRfeEtvYjQ4QjNWYURsd2l5QzZGeTI5a3pHeXU4X1EyT19fNWF5YW5JbkhFdw?oc=5",
           "descricao": "Transfira pontos BRB p/ Azul: 120% de bônus | VoeAzul Azul",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "Google News RSS",
           "status_validacao": "pendente",
           "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
@@ -317,7 +318,7 @@
         {
           "fonte": "Google News RSS",
           "http_status": 200,
-          "pistas": 6
+          "pistas": 5
         },
         {
           "fonte": "Bing News RSS",
@@ -331,34 +332,10 @@
           "consulta": "site:smiles.com.br bônus transferência pontos Clube Smiles",
           "titulo": "Transferência de Pontos - Smiles",
           "publicador": "Smiles",
-          "publicado_em": "Fri, 13 Nov 2026 10:09:07 GMT",
+          "publicado_em": "Fri, 13 Nov 2026 19:14:58 GMT",
           "link_resultado": "https://news.google.com/rss/articles/CBMidEFVX3lxTE4xbld1R25VZUNUQVhjUzB3TFE0WEVYdnpsc0pzNU9YNnZSYWdsZ2tGUzFYbFkydmdQVE5EdkRNSWRZajVFeFktQnkwRG53TFI3SEpYQUVQQUZBaGpSTnluU09obmtxckwxejRodUhnVUxpNzFQ?oc=5",
           "descricao": "Transferência de Pontos Smiles",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
-          "fonte_busca": "Google News RSS",
-          "status_validacao": "pendente",
-          "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
-        },
-        {
-          "consulta": "site:smiles.com.br bônus transferência pontos Clube Smiles",
-          "titulo": "Transferir Milhas - Smiles",
-          "publicador": "Smiles",
-          "publicado_em": "Fri, 23 Oct 2026 15:53:31 GMT",
-          "link_resultado": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOb3hTa0lmMkxPcml3Qm16OTBtMVBVNVQtNmY2SmRzeVB0elpza09pZU1uSFRGZnFJdWI4YXd6TXdmb053R040YXhOVlFLUk1EV0x4Tkw3d0xQek9FUHNFdDZZZlFvUDlXSXhaWWNHR2Z3bGVGanpwY2tyOXQ3eFpVazJPbw?oc=5",
-          "descricao": "Transferir Milhas Smiles",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
-          "fonte_busca": "Google News RSS",
-          "status_validacao": "pendente",
-          "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
-        },
-        {
-          "consulta": "site:smiles.com.br bônus transferência pontos Clube Smiles",
-          "titulo": "Por que ser Clube Smiles - Smiles",
-          "publicador": "Smiles",
-          "publicado_em": "Wed, 04 Nov 2026 19:20:35 GMT",
-          "link_resultado": "https://news.google.com/rss/articles/CBMib0FVX3lxTE40QlA4elk4enlsOHRDeGxxUTFjVURUSXVlbWJSekRsRm9heFdOay0tS1hVSWJTMFN5cVBHbmlKeVpIOW9kaWF6QU5TaUlhNnkwTzNxRkNvcS1qVVB6aE9HMEN0V2lSdXNJdzBwdHl6MA?oc=5",
-          "descricao": "Por que ser Clube Smiles Smiles",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "Google News RSS",
           "status_validacao": "pendente",
           "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
@@ -370,7 +347,19 @@
           "publicado_em": "Wed, 15 Mar 2006 23:47:53 GMT",
           "link_resultado": "https://news.google.com/rss/articles/CBMiP0FVX3lxTE0tdlhLZGxSSnpTMlRTUVNQVldsdFVELVAyUjl6d0Y2MHZ3UV9uclk1aFhIdXp1OFE1cE1yejBGNA?oc=5",
           "descricao": "Milhas para quem é feito de viagens - Smiles Smiles",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
+          "fonte_busca": "Google News RSS",
+          "status_validacao": "pendente",
+          "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
+        },
+        {
+          "consulta": "site:smiles.com.br bônus transferência pontos Clube Smiles",
+          "titulo": "Comprar Milhas - Smiles",
+          "publicador": "Smiles",
+          "publicado_em": "Wed, 21 Oct 2026 14:50:12 GMT",
+          "link_resultado": "https://news.google.com/rss/articles/CBMiekFVX3lxTE5GdHVNbk53TDlXWE94MTZLTUVja2ZqV3Z6RHNCcnVJT0F5YTdKT1dUR3B6LTVYZC0tb1FxYTVodDk1dVM5b2dsLVdpaUtoSElFUmpMMnNqMG55VjhhUnNZZk1Bd3REM2ZQd215WFVEZDliWWxld3pqOExR?oc=5",
+          "descricao": "Comprar Milhas Smiles",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "Google News RSS",
           "status_validacao": "pendente",
           "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
@@ -382,19 +371,19 @@
           "publicado_em": "Tue, 30 Dec 2014 12:13:28 GMT",
           "link_resultado": "https://news.google.com/rss/articles/CBMiREFVX3lxTFB1eXc3U1h6dWVuZmpabDcyb0RreHlNVVpWRGhYMGFLZXpCS1VzZi1ZcFdfSGtMNzFrbjRsYzJkLTNOajIw?oc=5",
           "descricao": "Milhas para quem é feito de viagens Smiles",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "Google News RSS",
           "status_validacao": "pendente",
           "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
         },
         {
           "consulta": "site:smiles.com.br bônus transferência pontos Clube Smiles",
-          "titulo": "Transferir Pontos do Cartão: Mais Milhas para Viajar - Smiles",
+          "titulo": "Milhas Cartão Itaú: Trocar Pontos por Milhas - Smiles",
           "publicador": "Smiles",
-          "publicado_em": "Wed, 22 Jul 2026 03:11:55 GMT",
-          "link_resultado": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9ZR3JiMGloQ3lLY0VjSkRmamVGeXJUbzlYcGtlR3ZuaEVuZ0lQVGVLTXFkbXlUSGM0MFdlVFEyS2JFSGNUYXJZYkFyUVNYQVlWNjhLczIxelpYNENuc3BLeC1LNS00UXg3?oc=5",
-          "descricao": "Transferir Pontos do Cartão: Mais Milhas para Viajar Smiles",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "publicado_em": "Sat, 05 Sep 2026 10:40:05 GMT",
+          "link_resultado": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFA1RmJBcmpNZHZsMzJleDc5ZTJ5YlZqZTQxazFzdHZ0aFExbDkzMlFiSFIzX3JGQnplVUJnc0NqSXY5TzBDazU2YmpiMW13LUhfN2JrNW13?oc=5",
+          "descricao": "Milhas Cartão Itaú: Trocar Pontos por Milhas Smiles",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "Google News RSS",
           "status_validacao": "pendente",
           "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
@@ -408,7 +397,7 @@
         {
           "fonte": "Google News RSS",
           "http_status": 200,
-          "pistas": 7
+          "pistas": 8
         },
         {
           "fonte": "Bing News RSS",
@@ -420,12 +409,12 @@
       "candidatos": [
         {
           "consulta": "site:latampass.latam.com bônus transferência pontos clube LATAM Pass",
-          "titulo": "Milhas extras com Itaú - LATAM Pass",
+          "titulo": "Esquenta LATAM Friday: ofertas em milhas - LATAM Pass",
           "publicador": "LATAM Pass",
-          "publicado_em": "Sun, 13 Sep 2026 23:28:01 GMT",
-          "link_resultado": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1hTzBnWkJpWngwWkVDcm95SWtPV1g4dktCSHNWRjd1dmNpcTF1SDBIY3AxSVMwZWZyamtrbUlQaVBYdG5hRXBIQlV6b0Q2OWduLU1fa2lHUmJSU2VtdWlLVDdyVmltUWg3MmtPMDQ2Zw?oc=5",
-          "descricao": "Milhas extras com Itaú LATAM Pass",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "publicado_em": "Mon, 09 Nov 2026 19:06:19 GMT",
+          "link_resultado": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBzNjRmWmEwWFhUN1hjZXAwZHRZcFVTY1daby1abWEtQmFjcEtReGlha0ZGSVgtQl9aNGJOczAzaVB4d1lUdWd4UjhQNlZwNURVX0JkdXg2dzYyQQ?oc=5",
+          "descricao": "Esquenta LATAM Friday: ofertas em milhas LATAM Pass",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "Google News RSS",
           "status_validacao": "pendente",
           "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
@@ -437,19 +426,7 @@
           "publicado_em": "Fri, 04 Sep 2026 08:39:13 GMT",
           "link_resultado": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9MV2VlZm9xdjdubkt4MXQtM3R1RXhYd2dLVU1ieENaQ3UxbjFLSVBqaUpjSUE0WkFmLWdoMUlsZl9saUtMNWV4UHIxU1Q3bEZRYUhwMjV6dktsNkY0VmdaaHFNalFUS1hHdU1z?oc=5",
           "descricao": "Clube LATAM Pass: Preços e Planos LATAM Pass",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
-          "fonte_busca": "Google News RSS",
-          "status_validacao": "pendente",
-          "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
-        },
-        {
-          "consulta": "site:latampass.latam.com bônus transferência pontos clube LATAM Pass",
-          "titulo": "Multiplicar milhas - LATAM Pass",
-          "publicador": "LATAM Pass",
-          "publicado_em": "Wed, 09 Sep 2026 02:48:28 GMT",
-          "link_resultado": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9yZmJudFplbWpRTkF2ak9JblcyVVZ0ZmFHVmRibTIyVTVYV1hwTjhVdkwweGlzZnRhanhGbUtXSDhtWGsyaUxITnJIeDAyYmtKRXlHVnY4d2ZmeGhlOFhnWndVaF95LUxQN1RDY2ZPNy1PaEE?oc=5",
-          "descricao": "Multiplicar milhas LATAM Pass",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "Google News RSS",
           "status_validacao": "pendente",
           "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
@@ -461,7 +438,7 @@
           "publicado_em": "Fri, 04 Sep 2026 08:39:12 GMT",
           "link_resultado": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBwRFpZNkQwaW1LTEhUYzFhM1dJTUp5Z2tiaTNTWEI4ZDQtUnhqSEdNM0pPSDVMVDd3MjZreWdpT3NvZURVZXBwRXFxNmVaVmdwVXBLYlZR?oc=5",
           "descricao": "Assine o Clube LATAM Pass e Acumule Milhas Mensais LATAM Pass",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "Google News RSS",
           "status_validacao": "pendente",
           "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
@@ -473,7 +450,31 @@
           "publicado_em": "Thu, 17 Sep 2026 14:05:59 GMT",
           "link_resultado": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBPS1ptdWhGVFdzR1pRV2tSbHJzZFdSbjJfbDZSUUFRVU5BNVRFNUJFOHZxdlBkRDNFSF9rU1J2QXRjalNqUVl0NUV5UFpIeEJJN1c4NE81djRaQnh5?oc=5",
           "descricao": "Cartão LATAM Pass Itaú: acumule milhas LATAM Pass",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
+          "fonte_busca": "Google News RSS",
+          "status_validacao": "pendente",
+          "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
+        },
+        {
+          "consulta": "site:latampass.latam.com bônus transferência pontos clube LATAM Pass",
+          "titulo": "Multiplicar milhas - LATAM Pass",
+          "publicador": "LATAM Pass",
+          "publicado_em": "Wed, 09 Sep 2026 02:48:28 GMT",
+          "link_resultado": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9yZmJudFplbWpRTkF2ak9JblcyVVZ0ZmFHVmRibTIyVTVYV1hwTjhVdkwweGlzZnRhanhGbUtXSDhtWGsyaUxITnJIeDAyYmtKRXlHVnY4d2ZmeGhlOFhnWndVaF95LUxQN1RDY2ZPNy1PaEE?oc=5",
+          "descricao": "Multiplicar milhas LATAM Pass",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
+          "fonte_busca": "Google News RSS",
+          "status_validacao": "pendente",
+          "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
+        },
+        {
+          "consulta": "site:latampass.latam.com bônus transferência pontos clube LATAM Pass",
+          "titulo": "Milhas extras com Itaú - LATAM Pass",
+          "publicador": "LATAM Pass",
+          "publicado_em": "Sun, 13 Sep 2026 23:28:01 GMT",
+          "link_resultado": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1hTzBnWkJpWngwWkVDcm95SWtPV1g4dktCSHNWRjd1dmNpcTF1SDBIY3AxSVMwZWZyamtrbUlQaVBYdG5hRXBIQlV6b0Q2OWduLU1fa2lHUmJSU2VtdWlLVDdyVmltUWg3MmtPMDQ2Zw?oc=5",
+          "descricao": "Milhas extras com Itaú LATAM Pass",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "Google News RSS",
           "status_validacao": "pendente",
           "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
@@ -485,7 +486,7 @@
           "publicado_em": "Tue, 08 Sep 2026 18:54:39 GMT",
           "link_resultado": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE03Z0lzejhHcm1jSlFqcG91OEhqVWhxbldTc1RKeEFsaEdmbXd1UFo4SWEwLXdSREhTZjhJbDVkeHBROThBQ3VpNDIxdzl6YkJSNHgySVM0NXd6ZE40ODRqcmdMTkM?oc=5",
           "descricao": "Pontos Qualificáveis e categorias Elite LATAM Pass",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "Google News RSS",
           "status_validacao": "pendente",
           "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
@@ -497,7 +498,7 @@
           "publicado_em": "Mon, 05 Oct 2026 13:38:58 GMT",
           "link_resultado": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5RdExrR0k2bTMwR1dJQVZjelRHR1RNZG9qOHZqY1dWTHVWcUZMWUJGOXN4VWt5OTVnZ2FpQ1hPbzQ4cFlDeWtRRXZGWkpYY1N0c3U3THpTZ1FTc2ZwSTlwQXAxMG9Dak41ejN2Q0tYdzNtRjg0dWc?oc=5",
           "descricao": "Milhas extras com Credicard LATAM Pass",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "Google News RSS",
           "status_validacao": "pendente",
           "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
@@ -512,14 +513,14 @@
           "fonte": "Google News RSS",
           "http_status": 200,
           "pistas": 6
-        }
-      ],
-      "tentativas": [
+        },
         {
           "fonte": "Bing News RSS",
-          "erro": "ParseError: not well-formed (invalid token): line 1, column 41"
+          "http_status": 200,
+          "pistas": 0
         }
       ],
+      "tentativas": [],
       "candidatos": [
         {
           "consulta": "site:livelo.com.br transferência bonificada milhas",
@@ -528,7 +529,7 @@
           "publicado_em": "Fri, 23 May 2025 09:48:46 GMT",
           "link_resultado": "https://news.google.com/rss/articles/CBMidEFVX3lxTE4weWNfMGFIVHAyenhzYmdoUjBuRExrTGt5U18xOUJjNlFqc0ZJZkhiWV9WSTdOZ08wR01vLWlqd2hDNkVVZUsyNXJCT0tjUWZnODN4WHlzbjliZnZUcERveWNhenQ3T0IwTTFld0V4bldUWjlv?oc=5",
           "descricao": "Transfira seus Pontos Livelo para Smiles e Aproveite Benefícios Exclusivos Livelo",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "Google News RSS",
           "status_validacao": "pendente",
           "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
@@ -540,7 +541,7 @@
           "publicado_em": "Tue, 03 Jun 2025 14:13:48 GMT",
           "link_resultado": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE4tYV9LenpaYlBHbXlfYTN2c1Rvc1VTLTVVdGFKbmpIdVBEZU5Jc3d3c3RHVUJQTE1UV3JVaVE2bkpGNGhOWjVCM3dseFRscUJMdXBEMVRuS0ZwQnlTamY5eUJsVnpfbGM?oc=5",
           "descricao": "Pontos Viram Dinheiro (online) Livelo",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "Google News RSS",
           "status_validacao": "pendente",
           "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
@@ -552,7 +553,7 @@
           "publicado_em": "Tue, 02 Aug 2016 19:33:48 GMT",
           "link_resultado": "https://news.google.com/rss/articles/CBMiP0FVX3lxTFAwQ240QXVQYVZGRnl6a2hWOXZTc2lxS0hNcWlBTVVrV2F1a25BTHA0eVozYkw3UXY2RzN2STJiNA?oc=5",
           "descricao": "Livelo: Programa de Pontos e Milhas Livelo",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "Google News RSS",
           "status_validacao": "pendente",
           "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
@@ -564,7 +565,7 @@
           "publicado_em": "Mon, 13 Sep 2021 13:28:25 GMT",
           "link_resultado": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE5lakZiUWhzUU1LaDR5Mjc4VGdSQmdETmt5QjhtTnRiOTNJMjkta2NoQ1I0eE5BTmhybWU5MDgtR3NfalloV2c?oc=5",
           "descricao": "Programa de pontos que você troca por recompensas Livelo",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "Google News RSS",
           "status_validacao": "pendente",
           "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
@@ -576,19 +577,19 @@
           "publicado_em": "Sat, 10 May 2025 23:56:51 GMT",
           "link_resultado": "https://news.google.com/rss/articles/CBMibEFVX3lxTE4tc0prNXVVTjZDbGFJRkszNUI3VVYxRklHcDMxUTBPaXcxWXdsdGJCQ2ZBd0ZGNXlxWDNHS09FWEhMalQ2TkwwMy1URUhQMDVlZTYtTXlFX2VPdFFvTUFnZzItN3lsQzVtUnkzSg?oc=5",
           "descricao": "Compre na Magalu e acumule pontos Livelo Livelo",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "Google News RSS",
           "status_validacao": "pendente",
           "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
         },
         {
           "consulta": "site:livelo.com.br transferência bonificada milhas",
-          "titulo": "Compre na Aliexpress e acumule pontos Livelo - Livelo",
+          "titulo": "Compre pontos - Livelo",
           "publicador": "Livelo",
-          "publicado_em": "Sun, 11 May 2025 01:33:16 GMT",
-          "link_resultado": "https://news.google.com/rss/articles/CBMickFVX3lxTE8xUldNXzJYMldlalg0TkhhV3p4LVJYbzMtT1ViT0owMXdMWTlEUjVta2MtcDFzRk4wR090TW9wdjF3NEZUZGpGTUhUQ2xzWHRiZEJndFdNRnUxbm5ZQ2JLNkV6QzRjWWh4N1YxaUp4Zm14UQ?oc=5",
-          "descricao": "Compre na Aliexpress e acumule pontos Livelo Livelo",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "publicado_em": "Tue, 17 Dec 2019 02:21:24 GMT",
+          "link_resultado": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9penk5bVd6LTVldW1WWUVhSXVoS2hPNXNPdEdZMGlqZTFiMktmaG84SHBvb1lGT3pHUFZjY3J0aENZSFlyaU11dFR2WFVBT3hzVmh6WFFaZ1RXamhVQ2E5RXVPZ1VRczl5aE9ZWFNaakk0WUJtakFr?oc=5",
+          "descricao": "Compre pontos Livelo",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "Google News RSS",
           "status_validacao": "pendente",
           "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
@@ -603,14 +604,14 @@
           "fonte": "Google News RSS",
           "http_status": 200,
           "pistas": 4
-        },
-        {
-          "fonte": "Bing News RSS",
-          "http_status": 200,
-          "pistas": 0
         }
       ],
-      "tentativas": [],
+      "tentativas": [
+        {
+          "fonte": "Bing News RSS",
+          "erro": "ParseError: not well-formed (invalid token): line 1, column 41"
+        }
+      ],
       "candidatos": [
         {
           "consulta": "site:esfera.com.vc transferência bonificada milhas",
@@ -619,7 +620,7 @@
           "publicado_em": "Thu, 17 Oct 2019 22:29:04 GMT",
           "link_resultado": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9DcENiejRIV3NHY0lLRXZyYkFTR25hbFd2dEl6UTd1aUtLWVotOTlpaE5Rc2VzUmRUaE9nalJyN2dnUFpONnMwcnF0X20tbUlaeVdtY21NZE4?oc=5",
           "descricao": "Transferir para Smiles Esfera",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "Google News RSS",
           "status_validacao": "pendente",
           "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
@@ -631,7 +632,7 @@
           "publicado_em": "Mon, 14 Oct 2019 00:55:39 GMT",
           "link_resultado": "https://news.google.com/rss/articles/CBMiP0FVX3lxTFB1Z0VQeGFvaWwxbnJHb1JzSlZaMGx3Q0Y2Q0J6Q2ViQk1KZ3Y2cGlEMl9ma1pvVWEtS0ZmRVhobw?oc=5",
           "descricao": "Esfera: O programa de pontos e recompensas do Santander Esfera",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "Google News RSS",
           "status_validacao": "pendente",
           "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
@@ -643,7 +644,7 @@
           "publicado_em": "Wed, 03 Jul 2024 23:48:39 GMT",
           "link_resultado": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9IemJCOGJPVk5BcDdLY1ZNaElFTFFWMXN3TlRCbXFkdXp6cEdacm94cVpMRy1xa2tUR1NFQ2FINU9wVzBMRU9EbVpUZ2o1UExQTzlzbkdDVDMyV0lf?oc=5",
           "descricao": "Transferir para ALL - Accor Live Limitless Esfera",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "Google News RSS",
           "status_validacao": "pendente",
           "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
@@ -655,7 +656,7 @@
           "publicado_em": "Mon, 07 Dec 2020 15:50:30 GMT",
           "link_resultado": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE5TMmd6UzNubXhYR0ZFZFRUMHkxT1pBOHdHMEF3UUZSVFdWdlYtUmdfX3BxaC1zcHNhN3c0QmRUaFBiY2pyQkE?oc=5",
           "descricao": "Clube Esfera Esfera",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "Google News RSS",
           "status_validacao": "pendente",
           "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
@@ -670,14 +671,14 @@
           "fonte": "Google News RSS",
           "http_status": 200,
           "pistas": 8
-        }
-      ],
-      "tentativas": [
+        },
         {
           "fonte": "Bing News RSS",
-          "erro": "ParseError: not well-formed (invalid token): line 1, column 41"
+          "http_status": 200,
+          "pistas": 2
         }
       ],
+      "tentativas": [],
       "candidatos": [
         {
           "consulta": "bônus transferência pontos milhas assinantes clube outubro 2026",
@@ -686,7 +687,7 @@
           "publicado_em": "Wed, 28 Oct 2026 22:10:29 GMT",
           "link_resultado": "https://news.google.com/rss/articles/CBMingFBVV95cUxPQ3hlS0FxODd3SlB0T24tWDlSdnFGMTZYZTZiS2w1LTdaLVVoaG9NYWloUkI3YWtNcHdzWllQMGZPdHNzWE14MmVSVkt5bENmeU9RNHdFeF83WG0yZ2p6NmtMRy1zbUFfQmZ5d2RndjRnXy1OWU9LRThIeUFpb1Z5Y0ZoOW9UbE1SRnlaUG5ZMTl1a2dwcTNhRklXSFN3UQ?oc=5",
           "descricao": "Última chance! Confira 3 promoções de milhas e pontos que encerram hoje Pontos pra Voar",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "Google News RSS",
           "status_validacao": "pendente",
           "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
@@ -698,7 +699,7 @@
           "publicado_em": "Fri, 23 Oct 2026 07:00:00 GMT",
           "link_resultado": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPZThUMlJCQWN4MXlUMXBfeV9wVkxoRmpVUHBFTTQ1VEYzbnpZLTN1S2ZOMnR0NWZ4dmR2M19WS0djWkJlV2lWMDA5aDdrUmxfZ2lmUzJkRFRlNlE1VWxRRm5jM2llclFzSXVZelRmLV9wanN5cURsX2JER3RZcWRxVjVhQ3pxMng1UWVINk5DeW96SnZXTWVCZXg1TjRscFZrUXZDNnZIcWhLRVhzNDMyQndMOWVUUEJqcVhaR2R2SVdRZ3VGd1daSg?oc=5",
           "descricao": "Prorrogado! Smiles oferece até 70% de bônus nas transferências de pontos dos cartões de crédito Passageiro de Primeira",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "Google News RSS",
           "status_validacao": "pendente",
           "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
@@ -710,19 +711,19 @@
           "publicado_em": "Fri, 18 Sep 2026 07:00:00 GMT",
           "link_resultado": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9aZFlYV1Btb3BJTF83VWg1WlFnWXkwdVAtR0RCVDFoOXRyLWVTNmx1aFNkMnRfTTJkNGUweHNLd2dDQTVZVVVlLURWTHZtdUgzWEZtQjh1cjhrbWtlQ3BKQ2dqdkphWEt1azY5N05wa0RBNlVhMzFaaGRLZw?oc=5",
           "descricao": "Prorrogado! Smiles oferece até 80% de bônus na transferência de pontos Livelo Melhores Destinos",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "Google News RSS",
           "status_validacao": "pendente",
           "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
         },
         {
           "consulta": "bônus transferência pontos milhas assinantes clube outubro 2026",
-          "titulo": "Smiles oferece até 70% de bônus nas transferências de pontos do Banco do Nordeste - Passageiro de Primeira",
+          "titulo": "Smiles oferece até 80% de bônus nas transferências de pontos do Banestes - Passageiro de Primeira",
           "publicador": "Passageiro de Primeira",
           "publicado_em": "Thu, 08 Oct 2026 07:00:00 GMT",
-          "link_resultado": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQNkkxdjJVbFFiZUVyUTRNaTVQYkdMa1k2MjRuRDdGRHFMNGJTanQ5R21jOEVzSVhENVVoX2d5UE1vVm5GQ1dQV3FIWEFHQXpSaWM1WTRKMV9pOWdjc2NzRUhmQTdmNER0Sy02VGNwck9XVE9vRUdscjJJRTI2NTFwSk55VnBtZmFkOGpIcXgwREQ4LVVNM05TUWQzVGdUVUI5WGIw?oc=5",
-          "descricao": "Smiles oferece até 70% de bônus nas transferências de pontos do Banco do Nordeste Passageiro de Primeira",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "link_resultado": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPbnM4LUpvcDRMVnZqYUJfcUp3MmY4UURIMmp3aDBOSElBOF9NUjFxV2RLT1IxcUk0eGVZbjBEQU1OUVlvM29XN2ZzTjhueXNMcHpRNG9BWFE3WHdoNmVzRWRsdFZrZjZKalhGV250cnBBVEtpek5ZOW5SREpQYWNjbTlnVk5XRXBqVFVXRXFIc0xGRWdDUjZYOTVkOEtaQWszQzYtZzNHeGQ?oc=5",
+          "descricao": "Smiles oferece até 80% de bônus nas transferências de pontos do Banestes Passageiro de Primeira",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "Google News RSS",
           "status_validacao": "pendente",
           "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
@@ -734,7 +735,31 @@
           "publicado_em": "Fri, 09 Oct 2026 07:00:00 GMT",
           "link_resultado": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPRFB3UnV2YzN5YjJSSmtwQ1BYTGkxT3NETng3Um00V19JOWswUmNOaV9Xdi1NdVFWM0J6b2QxcUo1a0E3djVsOThtOGVHekRxakdrMExTM1JTTTh4Qkh1emVYMzZtbkdSWjhkWFNNWEVwQXVkckVGRm4tcC00WWkxTEl1cFQxbVBxQ09UZm4xZVR0dmdtS0xtOQ?oc=5",
           "descricao": "Últimas horas! Confira as promoções de transferência de pontos que terminam hoje Pontos pra Voar",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
+          "fonte_busca": "Google News RSS",
+          "status_validacao": "pendente",
+          "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
+        },
+        {
+          "consulta": "bônus transferência pontos milhas assinantes clube outubro 2026",
+          "titulo": "Smiles oferece até 70% de bônus nas transferências de pontos do Banco do Nordeste - Passageiro de Primeira",
+          "publicador": "Passageiro de Primeira",
+          "publicado_em": "Thu, 08 Oct 2026 07:00:00 GMT",
+          "link_resultado": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQNkkxdjJVbFFiZUVyUTRNaTVQYkdMa1k2MjRuRDdGRHFMNGJTanQ5R21jOEVzSVhENVVoX2d5UE1vVm5GQ1dQV3FIWEFHQXpSaWM1WTRKMV9pOWdjc2NzRUhmQTdmNER0Sy02VGNwck9XVE9vRUdscjJJRTI2NTFwSk55VnBtZmFkOGpIcXgwREQ4LVVNM05TUWQzVGdUVUI5WGIw?oc=5",
+          "descricao": "Smiles oferece até 70% de bônus nas transferências de pontos do Banco do Nordeste Passageiro de Primeira",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
+          "fonte_busca": "Google News RSS",
+          "status_validacao": "pendente",
+          "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
+        },
+        {
+          "consulta": "bônus transferência pontos milhas assinantes clube outubro 2026",
+          "titulo": "Cartões Latam Pass: prorrogado acúmulo turbinado de milhas para assinantes do Clube - Melhores Cartões",
+          "publicador": "Melhores Cartões",
+          "publicado_em": "Fri, 02 Oct 2026 07:00:00 GMT",
+          "link_resultado": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQNndnaGh3eHZxRGIxa1FTU2RnZjhiZGQxamxhdXV3dnc1QVdveXM4VGx1SzZwdFo1SzBCTUp2YmVmM2R2blZVVEludmJiMjU5VzRiLXJ1UXFCeWlpVThNbVRDY2hwNG1KQTg5RVF0YWd6YnJRaklKWmtrVllmd0xvN3FhZEpfRFhFQmRkOGptc1JCOVhvX0ZmQmxDNndhdGwy?oc=5",
+          "descricao": "Cartões Latam Pass: prorrogado acúmulo turbinado de milhas para assinantes do Clube Melhores Cartões",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "Google News RSS",
           "status_validacao": "pendente",
           "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
@@ -746,32 +771,32 @@
           "publicado_em": "Fri, 09 Oct 2026 07:00:00 GMT",
           "link_resultado": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5CUmxheV81clZaTmV1SjMwbVlmdlpqb2NwbDJvb2p4Sl8wVGRjYTlFZDEzLW9oVC1kSXU1SGs4OTNqeTF3U0ZYRW8yOVFoV2JvWG1GbUkzY3F5OWlYdkJ5TGtTWERubzE0WmltY3dXOW9BQ2lVWUE?oc=5",
           "descricao": "Smiles oferece até 70% de bônus na transferência de pontos UAU Caixa Melhores Cartões",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "Google News RSS",
           "status_validacao": "pendente",
           "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
         },
         {
           "consulta": "bônus transferência pontos milhas assinantes clube outubro 2026",
-          "titulo": "Smiles oferece até 80% de bônus nas transferências de pontos do Itaú - Passageiro de Primeira",
-          "publicador": "Passageiro de Primeira",
-          "publicado_em": "Thu, 13 Aug 2026 07:00:00 GMT",
-          "link_resultado": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOTmdKem1rQV9USlZEWUxYRXhRSHJSUHJlQVAtLTVDbnZnaE9EbVB4YV9PQlFJUm40MFdTSDlEZkhwdFJTY3FDOVNBX1lxWHNUZWFhTVFZU3A5Z2RCWkU1UGc4SDVNd29jVWhZVFd5SVNDazFEVTZoQ3M3bDhwS2pHcDNIMVdqT3k2UG9OVlpsanE?oc=5",
-          "descricao": "Smiles oferece até 80% de bônus nas transferências de pontos do Itaú Passageiro de Primeira",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
-          "fonte_busca": "Google News RSS",
+          "titulo": "Latam Pass lança Clube Week com até 195 mil milhas para novos assinantes",
+          "publicador": "",
+          "publicado_em": "Mon, 18 Aug 2025 06:32:00 GMT",
+          "link_resultado": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af77ee2bb1e4daf90aee6b7f440b020&url=https%3a%2f%2fwww.msn.com%2fpt-br%2fviagem%2fviagens-a%25C3%25A9reas%2flatam-pass-lan%25C3%25A7a-clube-week-com-at%25C3%25A9-195-mil-milhas-para-novos-assinantes%2far-AA1KJJmA&c=15228083017607705716&mkt=en-us",
+          "descricao": "O Latam Pass, programa de fidelidade da Latam, deu início nesta segunda-feira, 18, à aguardada Clube Week —uma semana recheada de promoções imperdíveis para quem já é ou deseja se tornar assinante do ...",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
+          "fonte_busca": "Bing News RSS",
           "status_validacao": "pendente",
           "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
         },
         {
           "consulta": "bônus transferência pontos milhas assinantes clube outubro 2026",
-          "titulo": "Prorrogado! Smiles oferece até 70% de bônus na transferência de pontos de todos os parceiros - Pontos pra Voar",
-          "publicador": "Pontos pra Voar",
-          "publicado_em": "Wed, 30 Sep 2026 07:00:00 GMT",
-          "link_resultado": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQMWhHYjFwLUgzb3dkcmJpbVdBVHJGUkcyQlRUYUIxWGFPWFgzNE1IcU94XzhQUE5aSHNmT0xYRjJCNDk1ZVFaVHA5emJkWHRMMjdRRHJtQ2xRczNVUjBwODJLdUNjOUo2QWt0SElHVkV2QmE5Rkx6dzQ3X1lzaVV5cERsU1ljVVNZMHdqUmdhX3FPWktsRzBFOGI1cC1qcGlRd3RCZ3V3LUg0dW82ajBweA?oc=5",
-          "descricao": "Prorrogado! Smiles oferece até 70% de bônus na transferência de pontos de todos os parceiros Pontos pra Voar",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
-          "fonte_busca": "Google News RSS",
+          "titulo": "LATAM Pass faz 7 anos com bônus de até 80 mil milhas",
+          "publicador": "",
+          "publicado_em": "Mon, 14 Sep 2026 12:46:00 GMT",
+          "link_resultado": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af77ee2bb1e4daf90aee6b7f440b020&url=https%3a%2f%2fwww.msn.com%2fpt-br%2fdinheiro%2fgeral%2flatam-pass-faz-7-anos-com-b%25C3%25B4nus-de-at%25C3%25A9-80-mil-milhas%2far-AA2ccRm3&c=6362490706693086199&mkt=en-us",
+          "descricao": "O LATAM Pass completa sete anos no Brasil em 30 de setembro e lançou uma campanha de aniversário com benefícios para os clientes. A ação começou nesta segunda-feira (14) e reúne promoções para quem ...",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
+          "fonte_busca": "Bing News RSS",
           "status_validacao": "pendente",
           "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
         }
@@ -785,14 +810,14 @@
           "fonte": "Google News RSS",
           "http_status": 200,
           "pistas": 0
-        }
-      ],
-      "tentativas": [
+        },
         {
           "fonte": "Bing News RSS",
-          "erro": "ParseError: not well-formed (invalid token): line 1, column 41"
+          "http_status": 200,
+          "pistas": 0
         }
       ],
+      "tentativas": [],
       "candidatos": []
     },
     {
@@ -819,7 +844,7 @@
           "publicado_em": "Wed, 28 Oct 2026 07:00:00 GMT",
           "link_resultado": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBZUk56RF82NzRKTGM0bTNSRUJ5VFA4SHhJbEtNTFByY3NYeDAyUlNaU3pwZmhIYV82aURBVjdJRXZuWTJLaFQyLUtfcFBES2hNc3RSR2p2WEFPamQtZEZIMW1EU1cwVFVmQ2hzTmNiUWJJelVxTDhnRg?oc=5",
           "descricao": "Smiles oferece até 70% de bônus na transferência de pontos do C6 Bank Melhores Cartões",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "Google News RSS",
           "status_validacao": "pendente",
           "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
@@ -831,7 +856,7 @@
           "publicado_em": "Wed, 14 Oct 2026 07:00:00 GMT",
           "link_resultado": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQQzNzVGF2MERGNnhjcGg0VlZiZFBSWEJFMW1MNUM1N19fQjZDWldnUkdzcm1CWmlRUG9YWXNSREVLbzJnR2VLWTB4TXRPTFRaYUFBTFpGTTNFQTduV2R5clhDeHdRc1lKd05TX3RvZ0hPRy13cGpsbjZPVmZ3Y1UtMS1rT25ic3ZaUS1SRUVDNA?oc=5",
           "descricao": "C6 Bank e LATAM Pass: transfira pontos e ganhe 25% de bônus Pontos pra Voar",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "Google News RSS",
           "status_validacao": "pendente",
           "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
@@ -843,7 +868,19 @@
           "publicado_em": "Fri, 31 Jul 2026 07:00:00 GMT",
           "link_resultado": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNeTVoTnhfaklsamR1aktLdGNxelNMTGJIb3BTbTVtVXlvZVVBMkw5VVhDR1NPczlZeExueEFsTlBrQ25aN1RqZUNjOEZnMjlmRjlGSlRUU25hcDl0OU01MHh3UjN5Q0lzYV9ETWJuWVNtOUY3RnlOc04tejZKUklscXJlUQ?oc=5",
           "descricao": "Como acumular milhas no TAP Miles&Go em 2026? Passageiro de Primeira",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
+          "fonte_busca": "Google News RSS",
+          "status_validacao": "pendente",
+          "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
+        },
+        {
+          "consulta": "C6 Átomos transferência bonificada milhas outubro 2026",
+          "titulo": "Smiles libera até 70% de bônus na transferência de pontos do cartão - Mobills",
+          "publicador": "Mobills",
+          "publicado_em": "Thu, 29 Oct 2026 07:00:00 GMT",
+          "link_resultado": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPZjd3eFR6VTdSMTFXenJLNGN6cFpSQkRVajQyeWRYU0VaNzQ0anBHeUlTQTR1OEhLWkFvNGJZMWJoS1V0SDVqcmdubVE3Vmh6SzJwYXUtT3VxRzJpMEhjcEVwV0d5Qk4xcGVSRnp2d0VqblVtbWl0YUZwbGZMRF9PMmZiX24?oc=5",
+          "descricao": "Smiles libera até 70% de bônus na transferência de pontos do cartão Mobills",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "Google News RSS",
           "status_validacao": "pendente",
           "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
@@ -855,7 +892,7 @@
           "publicado_em": "Thu, 24 Sep 2026 07:00:00 GMT",
           "link_resultado": "https://news.google.com/rss/articles/CBMieEFVX3lxTFB2MmxRRWl2ZHlid090V2lFaXdNS3E0Vnk3NmVKcXVQTHZZcUtZTGQ4QWNXOEI0LXJobWFaSDI2TTVpZDlxZEJuYVFSbmdIUnF2S2tKTGVPc1d1aVpUX0pHREg5NEFYS0RFQmxzQkFXSDlGa2pqc00wTw?oc=5",
           "descricao": "Smiles e C6 Bank: ganhe até 80% de bônus na transferência de pontos Melhores Cartões",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "Google News RSS",
           "status_validacao": "pendente",
           "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
@@ -867,7 +904,7 @@
           "publicado_em": "Thu, 18 Jun 2026 19:26:39 GMT",
           "link_resultado": "https://news.google.com/rss/articles/CBMickFVX3lxTE1wZUJRc295UklDWkpQVzBqTEpmbnFFQ1JHSFJvS0NIcFlzSzJzdHNQX2ZTVjNyWTY0OVpDR2pkNk5mTmp0NWF3ZU5uRkE2QWUtQWxUdDRRR1VVckNqZENSQ2hHSmw4aGVXYVVIeHBxc05zdw?oc=5",
           "descricao": "Milheiro Livelo em 2026: qual o melhor preço para conseguir pontos e economizar na viagem? Melhores Destinos",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "Google News RSS",
           "status_validacao": "pendente",
           "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
@@ -879,19 +916,7 @@
           "publicado_em": "Tue, 28 Jan 2025 08:00:00 GMT",
           "link_resultado": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9ZeHlGb0tySEV6cnB6UXM5bkR1aEV5MUc3T0cwUkRGNTRUUEU5YTlxX3ZZUFBER1JUNy1tM2QwMkRPTWVwQVJRVExGVE1vcmYzTHlMSDhyM2F2SHVnQnpDOGxhT0ViUnlHamZRYXYwc00?oc=5",
           "descricao": "Cartões C6 Bank são eleitos os melhores de 2025 considerando milhas, cashback e anuidade C6 Bank",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
-          "fonte_busca": "Google News RSS",
-          "status_validacao": "pendente",
-          "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
-        },
-        {
-          "consulta": "C6 Átomos transferência bonificada milhas outubro 2026",
-          "titulo": "Calendário de milhas 2026: Acumule mais gastando menos! - Mobills",
-          "publicador": "Mobills",
-          "publicado_em": "Tue, 06 Jan 2026 08:00:00 GMT",
-          "link_resultado": "https://news.google.com/rss/articles/CBMibEFVX3lxTE8zWWRydGFPaHJQX3FtZEdEdGltVWozTDlFOS1ucVJOLWVTaWJZcThzc2RDWFlwTjJ0RnpzMnRSODdyZ0xtVkhWdWpzeWVuR29RRHRrMGVfX2Nac3ExczJCU3pQNE8tRm1sMTBoVA?oc=5",
-          "descricao": "Calendário de milhas 2026: Acumule mais gastando menos! Mobills",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "Google News RSS",
           "status_validacao": "pendente",
           "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
@@ -922,7 +947,7 @@
           "publicado_em": "Fri, 18 Sep 2026 07:00:00 GMT",
           "link_resultado": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9aZFlYV1Btb3BJTF83VWg1WlFnWXkwdVAtR0RCVDFoOXRyLWVTNmx1aFNkMnRfTTJkNGUweHNLd2dDQTVZVVVlLURWTHZtdUgzWEZtQjh1cjhrbWtlQ3BKQ2dqdkphWEt1azY5N05wa0RBNlVhMzFaaGRLZw?oc=5",
           "descricao": "Prorrogado! Smiles oferece até 80% de bônus na transferência de pontos Livelo Melhores Destinos",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "Google News RSS",
           "status_validacao": "pendente",
           "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
@@ -934,7 +959,7 @@
           "publicado_em": "Thu, 22 Oct 2026 07:00:00 GMT",
           "link_resultado": "https://news.google.com/rss/articles/CBMifEFVX3lxTE5jcW1vZlZidS1hM0U3SDVCZVZBcU9VZ2d3bU9POU91aXVWdXVZaG5KRTlyNjVaeFBoeXJJajBaaHNTckpHYkNYMExzZ3FzYlVpbEhpbEIzSGJoR1dmblJHZjEzTEItZmhWc3NOdmdCVTZVQkNDeEFaMTBYQkg?oc=5",
           "descricao": "Muito bom! Latam Pass oferece 25% de bônus na transferência de pontos Livelo Melhores Destinos",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "Google News RSS",
           "status_validacao": "pendente",
           "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
@@ -946,7 +971,7 @@
           "publicado_em": "Wed, 21 Oct 2026 22:47:28 GMT",
           "link_resultado": "https://news.google.com/rss/articles/CBMibkFVX3lxTE43TkJlZWppQWg1UVN5bWcyQ1dXLTVhLXlJR1FYOVJ2clFDNWJlVFZka2xYQUVUQUtNdFNsckhiREFpSmdiVTZQMk9hdzVwM0pCeUF0b2JNMVh2UjVNVlNBN3N2SzRDdFhtb3hDZE5n?oc=5",
           "descricao": "Smiles oferece até 70% de bônus na transferência de pontos do cartão de crédito 21/10/26 Melhores Destinos",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "Google News RSS",
           "status_validacao": "pendente",
           "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
@@ -958,31 +983,7 @@
           "publicado_em": "Sat, 31 Oct 2026 07:00:00 GMT",
           "link_resultado": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBVamNPOTBaSmZKd3h1STVXVjE2LUJWTWkxWTl2YUR0c2h1TDJveFFDUFFqUndVdFlhZ0x0STBVcUJoN2hNYTlsRTBSdHZkNG9fR0JzbkhnQS11XzU2LVlXYXQwMFR5bzd3cUh0dl9Sb2JMbHc5Q284ay00QmFmcEE?oc=5",
           "descricao": "Último dia! Latam Pass oferece 25% de bônus na transferência de pontos do cartão de crédito Melhores Destinos",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
-          "fonte_busca": "Google News RSS",
-          "status_validacao": "pendente",
-          "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
-        },
-        {
-          "consulta": "site:melhoresdestinos.com.br/milhas transferência bonificada milhas outubro 2026",
-          "titulo": "Prorrogado! Até 70% de bônus na transferência de pontos do cartão de crédito para a Smiles - Melhores Destinos",
-          "publicador": "Melhores Destinos",
-          "publicado_em": "Wed, 30 Sep 2026 07:00:00 GMT",
-          "link_resultado": "https://news.google.com/rss/articles/CBMickFVX3lxTE51NDNEZkdOWE1CT0l4MkhyMnFBV2Z5SFQ1M1RCbTVOS21PM25hLUdsNHoyRDFjZGsyNXYtdjU5ZUhjVWtZd0ZkMjNnMEVJR1dKMjNuVW41Tld6c21sWkxkcUN1S1dDUU1RYkJaYkJBQmluZw?oc=5",
-          "descricao": "Prorrogado! Até 70% de bônus na transferência de pontos do cartão de crédito para a Smiles Melhores Destinos",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
-          "fonte_busca": "Google News RSS",
-          "status_validacao": "pendente",
-          "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
-        },
-        {
-          "consulta": "site:melhoresdestinos.com.br/milhas transferência bonificada milhas outubro 2026",
-          "titulo": "Milheiro Latam Pass por R$ 23,99: envie pontos Livelo com bônus usando pontos mais dinheiro - Melhores Destinos",
-          "publicador": "Melhores Destinos",
-          "publicado_em": "Thu, 22 Oct 2026 07:00:00 GMT",
-          "link_resultado": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPdnEtRWZyZ20ydDFNT252UXdlNXNVa2k3WlZUQjB2dlZJY2JHYjVFaUo5YmJVUlc4b1h0NC1qVVFyTmNGa2FnbGEzSFJmREZJbWNINzZFNVplU1RBQnJCNFBhVjQtdVFMa1VwcFN2dVV1Vm84S2NrZFAzR1JLOGJoQVVBS0l2c3VnT1E?oc=5",
-          "descricao": "Milheiro Latam Pass por R$ 23,99: envie pontos Livelo com bônus usando pontos mais dinheiro Melhores Destinos",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "Google News RSS",
           "status_validacao": "pendente",
           "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
@@ -994,7 +995,31 @@
           "publicado_em": "Wed, 28 Oct 2026 07:00:00 GMT",
           "link_resultado": "https://news.google.com/rss/articles/CBMickFVX3lxTE5hS2xCcDZzSGdxdGNkTFViZUxqdUZLMFZXSC0yQWZ6ODFWNFRCelBBVW9Ubnk5SnFPNGJsdE91Qksyak4yYi10aU5KNkVwdVRjZTY4YW9PcFJHLTFFMXBaQW04ZThvU2cwMk9qWXQtdVFfdw?oc=5",
           "descricao": "Smiles oferece até 70% de bônus na transferência de pontos do cartão de crédito Melhores Destinos",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
+          "fonte_busca": "Google News RSS",
+          "status_validacao": "pendente",
+          "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
+        },
+        {
+          "consulta": "site:melhoresdestinos.com.br/milhas transferência bonificada milhas outubro 2026",
+          "titulo": "Milheiro Latam Pass por R$ 23,99: envie pontos Livelo com bônus usando pontos mais dinheiro - Melhores Destinos",
+          "publicador": "Melhores Destinos",
+          "publicado_em": "Thu, 22 Oct 2026 07:00:00 GMT",
+          "link_resultado": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPdnEtRWZyZ20ydDFNT252UXdlNXNVa2k3WlZUQjB2dlZJY2JHYjVFaUo5YmJVUlc4b1h0NC1qVVFyTmNGa2FnbGEzSFJmREZJbWNINzZFNVplU1RBQnJCNFBhVjQtdVFMa1VwcFN2dVV1Vm84S2NrZFAzR1JLOGJoQVVBS0l2c3VnT1E?oc=5",
+          "descricao": "Milheiro Latam Pass por R$ 23,99: envie pontos Livelo com bônus usando pontos mais dinheiro Melhores Destinos",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
+          "fonte_busca": "Google News RSS",
+          "status_validacao": "pendente",
+          "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
+        },
+        {
+          "consulta": "site:melhoresdestinos.com.br/milhas transferência bonificada milhas outubro 2026",
+          "titulo": "Prorrogado! Até 70% de bônus na transferência de pontos do cartão de crédito para a Smiles - Melhores Destinos",
+          "publicador": "Melhores Destinos",
+          "publicado_em": "Wed, 30 Sep 2026 07:00:00 GMT",
+          "link_resultado": "https://news.google.com/rss/articles/CBMickFVX3lxTE51NDNEZkdOWE1CT0l4MkhyMnFBV2Z5SFQ1M1RCbTVOS21PM25hLUdsNHoyRDFjZGsyNXYtdjU5ZUhjVWtZd0ZkMjNnMEVJR1dKMjNuVW41Tld6c21sWkxkcUN1S1dDUU1RYkJaYkJBQmluZw?oc=5",
+          "descricao": "Prorrogado! Até 70% de bônus na transferência de pontos do cartão de crédito para a Smiles Melhores Destinos",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "Google News RSS",
           "status_validacao": "pendente",
           "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
@@ -1006,7 +1031,7 @@
           "publicado_em": "Tue, 08 Sep 2026 07:00:00 GMT",
           "link_resultado": "https://news.google.com/rss/articles/CBMiekFVX3lxTFA0bkVCMHFYRmdqSno5RkVWQlVOZlpEYjZwSGV3VTBRMEIwcXVkbndWUEdIQzVZLV9waTcwdE1ZRXN1QzJmX2doWjdTUFROSnRkaFN1NVpRaExNM1Nxa1gxdkdzS3UyRzQ0RjBkb2NRdG5uMGh0Mmh3a1RR?oc=5",
           "descricao": "Ganhe até 120% de bônus na transferência de pontos Livelo para o Azul Fidelidade Melhores Destinos",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "Google News RSS",
           "status_validacao": "pendente",
           "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
@@ -1016,9 +1041,9 @@
           "titulo": "Joanesburgo! Voos diretos por R$ 1.318 ou 83 mil milhas Smiles o trecho mais taxas",
           "publicador": "",
           "publicado_em": "Fri, 30 Oct 2026 06:04:00 GMT",
-          "link_resultado": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af6ea2298bc497387fb8a4c897165e9&url=https%3a%2f%2fwww.melhoresdestinos.com.br%2fmilhas%2fvoos-sao-jnb-smiles-out26&c=10140400475228907864&mkt=en-us",
+          "link_resultado": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af77ee7f1764ad3a89955bc586379df&url=https%3a%2f%2fwww.melhoresdestinos.com.br%2fmilhas%2fvoos-sao-jnb-smiles-out26&c=10140400475228907864&mkt=en-us",
           "descricao": "A Smiles está com voos diretos de São Paulo para Joanesburgo, na África do Sul, a partir de 83.900 milhas o trecho, mais taxas aeroportuárias. Os voos são operados pela parceira South African Airways ...",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "Bing News RSS",
           "status_validacao": "pendente",
           "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
@@ -1028,9 +1053,9 @@
           "titulo": "Nova York! Voos com bagagem a partir de R$ 958 ou 61 mil milhas Smiles o trecho mais taxas",
           "publicador": "",
           "publicado_em": "Fri, 30 Oct 2026 04:09:00 GMT",
-          "link_resultado": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af6ea2298bc497387fb8a4c897165e9&url=https%3a%2f%2fwww.melhoresdestinos.com.br%2fmilhas%2fvoos-aa-sao-nyc-smiles-out26&c=2637133642805308518&mkt=en-us",
+          "link_resultado": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af77ee7f1764ad3a89955bc586379df&url=https%3a%2f%2fwww.melhoresdestinos.com.br%2fmilhas%2fvoos-aa-sao-nyc-smiles-out26&c=2637133642805308518&mkt=en-us",
           "descricao": "A Smiles está com voos diretos de São Paulo para Nova York a partir de 61 mil milhas o trecho, mais taxas aeroportuárias. Os voos são operados pela parceira American Airlines e já incluem uma bagagem ...",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "Bing News RSS",
           "status_validacao": "pendente",
           "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
@@ -1040,9 +1065,9 @@
           "titulo": "Valor das milhas: qual o melhor preço para conseguir milhas Azul, Latam e Smiles em 2026?",
           "publicador": "",
           "publicado_em": "Sat, 01 Aug 2026 02:00:00 GMT",
-          "link_resultado": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af6ea2298bc497387fb8a4c897165e9&url=https%3a%2f%2fwww.melhoresdestinos.com.br%2fmilhas%2fvalor-milheiro-azul-latam-smiles-2026&c=18317501249079420076&mkt=en-us",
+          "link_resultado": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af77ee7f1764ad3a89955bc586379df&url=https%3a%2f%2fwww.melhoresdestinos.com.br%2fmilhas%2fvalor-milheiro-azul-latam-smiles-2026&c=18317501249079420076&mkt=en-us",
           "descricao": "Já passamos da metade de 2026 e, assim como o ano, também não podemos ficar parados. Por isso, chegou a hora de atualizar o nosso cálculo para usar as milhas para viajar mais gastando cada vez menos!",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "Bing News RSS",
           "status_validacao": "pendente",
           "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
@@ -1052,9 +1077,9 @@
           "titulo": "Milheiro por R$ 23,99! Transfira da Livelo para o Latam Pass com bônus usando pontos mais dinheiro",
           "publicador": "",
           "publicado_em": "Thu, 16 Apr 2026 02:59:00 GMT",
-          "link_resultado": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af6ea2298bc497387fb8a4c897165e9&url=https%3a%2f%2fwww.melhoresdestinos.com.br%2fmilhas%2fpontos-dinheiro-latam-livelo-abr26&c=15662542942587312200&mkt=en-us",
+          "link_resultado": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af77ee7f1764ad3a89955bc586379df&url=https%3a%2f%2fwww.melhoresdestinos.com.br%2fmilhas%2fpontos-dinheiro-latam-livelo-abr26&c=15662542942587312200&mkt=en-us",
           "descricao": "Para quem estava esperando, finalmente chegou uma promoção de transferência bonificada de pontos Livelo para o Latam Pass (confira aqui). A oferta é válida somente hoje e, quem utilizar a opção pontos ...",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "Bing News RSS",
           "status_validacao": "pendente",
           "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
@@ -1064,9 +1089,9 @@
           "titulo": "Milheiro Latam Pass por R$ 23,99: envie pontos Livelo com bônus usando pontos mais dinheiro",
           "publicador": "",
           "publicado_em": "Thu, 22 Oct 2026 03:15:00 GMT",
-          "link_resultado": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af6ea2298bc497387fb8a4c897165e9&url=https%3a%2f%2fwww.melhoresdestinos.com.br%2fmilhas%2flatam-pass-livelo-pontos-dinheiro-out26&c=12129989130755076367&mkt=en-us",
+          "link_resultado": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af77ee7f1764ad3a89955bc586379df&url=https%3a%2f%2fwww.melhoresdestinos.com.br%2fmilhas%2flatam-pass-livelo-pontos-dinheiro-out26&c=12129989130755076367&mkt=en-us",
           "descricao": "Começou mais uma promoção entre Livelo e Latam Pass! E, se tem transferência bonificada, tem oportunidade de conseguir o milheiro a baixo custo no carrinho. Dessa vez, ao utilizar a opção de ...",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "Bing News RSS",
           "status_validacao": "pendente",
           "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
@@ -1076,9 +1101,9 @@
           "titulo": "Nordeste com Smiles! Voos da Gol para João Pessoa a partir de R$ 276 ou 18 mil milhas o trecho mais taxas",
           "publicador": "",
           "publicado_em": "Wed, 29 Jul 2026 10:12:00 GMT",
-          "link_resultado": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af6ea2298bc497387fb8a4c897165e9&url=https%3a%2f%2fwww.melhoresdestinos.com.br%2fmilhas%2fpassagens-smiles-joao-pessoa-jul26&c=4449792111257701216&mkt=en-us",
+          "link_resultado": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af77ee7f1764ad3a89955bc586379df&url=https%3a%2f%2fwww.melhoresdestinos.com.br%2fmilhas%2fpassagens-smiles-joao-pessoa-jul26&c=4449792111257701216&mkt=en-us",
           "descricao": "Que tal curtir as belas praias de João Pessoa? A Smiles está com bons preços de passagens aéreas para a capital da Paraíba a partir de 18.100 milhas ou R$ 276,93 o trecho + taxas aeroportuárias. São ...",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "Bing News RSS",
           "status_validacao": "pendente",
           "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
@@ -1088,9 +1113,9 @@
           "titulo": "Voos de Brasília para o Rio de Janeiro por R$ 292 ou 18 mil milhas Smiles o trecho mais taxas",
           "publicador": "",
           "publicado_em": "Thu, 29 Oct 2026 10:30:00 GMT",
-          "link_resultado": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af6ea2298bc497387fb8a4c897165e9&url=https%3a%2f%2fwww.melhoresdestinos.com.br%2fmilhas%2fvoos-smiles-bsb-rio-out26&c=17550238176515794293&mkt=en-us",
+          "link_resultado": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af77ee7f1764ad3a89955bc586379df&url=https%3a%2f%2fwww.melhoresdestinos.com.br%2fmilhas%2fvoos-smiles-bsb-rio-out26&c=17550238176515794293&mkt=en-us",
           "descricao": "A Smiles está com voos diretos de Brasília para o Rio de Janeiro a partir de 18.600 milhas o trecho, mais taxas aeroportuárias. Resgate agora clicando aqui. Os menores valores são para clientes Clube ...",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "Bing News RSS",
           "status_validacao": "pendente",
           "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
@@ -1100,9 +1125,9 @@
           "titulo": "Receba as ofertas mais quentes no seu e-mail",
           "publicador": "",
           "publicado_em": "Sun, 07 Sep 2025 17:00:00 GMT",
-          "link_resultado": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af6ea2298bc497387fb8a4c897165e9&url=https%3a%2f%2fwww.melhoresdestinos.com.br%2fmilhas%2fpage%2f44&c=14187213965454967482&mkt=en-us",
+          "link_resultado": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af77ee7f1764ad3a89955bc586379df&url=https%3a%2f%2fwww.melhoresdestinos.com.br%2fmilhas%2fpage%2f44&c=14187213965454967482&mkt=en-us",
           "descricao": "Se tem promoção de transferência bonificada na área, tem condição boa para comprar milhas mais baratas, ainda que de maneira indireta! A Smiles está oferecendo até 90% de bônus na transferência de ...",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "Bing News RSS",
           "status_validacao": "pendente",
           "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
@@ -1146,48 +1171,36 @@
       "candidatos": [
         {
           "consulta": "site:passageirodeprimeira.com transferência bonificada milhas outubro 2026",
+          "titulo": "Passageiro de Primeira | O maior portal de milhas e fidelidade do Brasil - Passageiro de Primeira",
+          "publicador": "Passageiro de Primeira",
+          "publicado_em": "Wed, 01 Jan 2014 05:06:06 GMT",
+          "link_resultado": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE1QTlFBamN2R3prTjdNczNsNmtjR1FDWDFhNmpfUW9YcXVpR1phbUViNEZ5bUJYY3pMaGlrNjM0ZWZGaWZyYmhLdQ?oc=5",
+          "descricao": "Passageiro de Primeira | O maior portal de milhas e fidelidade do Brasil Passageiro de Primeira",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
+          "fonte_busca": "Google News RSS",
+          "status_validacao": "pendente",
+          "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
+        },
+        {
+          "consulta": "site:passageirodeprimeira.com transferência bonificada milhas outubro 2026",
+          "titulo": "Melhores resgates para aproveitar a transferência da Livelo para a Qatar Airways - Passageiro de Primeira",
+          "publicador": "Passageiro de Primeira",
+          "publicado_em": "Mon, 09 Nov 2026 17:44:53 GMT",
+          "link_resultado": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOdUtuYXVKRnJfRUNQOHdfSVNvZE8wY05HTkZUSFVHQi1CczRldUNYYUlwbTFSUllMSURqeHdtLUVFME1nZV8yd3E0Y0hrdmJzcXBiOEx3ampiOHRJdXBJUHk2NEZNY1NiVTg5enUwcW1iUDZDTVU0RHhpR3U3bld4dFFLMUpOT3hQWHI5LTRiUlIxcGdJdnJOeGFKVTROeVhTYTBNT3g1SUZIc3dIOURHUnBPUkY?oc=5",
+          "descricao": "Melhores resgates para aproveitar a transferência da Livelo para a Qatar Airways Passageiro de Primeira",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
+          "fonte_busca": "Google News RSS",
+          "status_validacao": "pendente",
+          "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
+        },
+        {
+          "consulta": "site:passageirodeprimeira.com transferência bonificada milhas outubro 2026",
           "titulo": "Turbina saldo! Esfera oferece até 14 pontos por real gasto na Insider, Polishop e mais - Passageiro de Primeira",
           "publicador": "Passageiro de Primeira",
           "publicado_em": "Mon, 09 Nov 2026 13:31:08 GMT",
           "link_resultado": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNREZ3a2dLWDVhX1hRX3hRX3JUYWFweHpqTTg4TmFlRDJqU3FOZTFzOHg0S0YtQ0MzYllCZS1aTVZFN0hqc08zd1RKWkR6NFVadko1Q0tqX2ZKS19uNVZvYlRqaFJOeGVYS1hyZnVrRUZPYW4zQmRiRzBRX1N6ODhrQ0I4em00WTV0N0F6c2F5Q3NiOE9ZZnZwemRNTTBqWjZrUXBYalVYY04tcE51dl9NMHlXOXJ4WVNnQnc?oc=5",
           "descricao": "Turbina saldo! Esfera oferece até 14 pontos por real gasto na Insider, Polishop e mais Passageiro de Primeira",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
-          "fonte_busca": "Google News RSS",
-          "status_validacao": "pendente",
-          "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
-        },
-        {
-          "consulta": "site:passageirodeprimeira.com transferência bonificada milhas outubro 2026",
-          "titulo": "Smiles oferece até 70% de bônus nas transferências de pontos do Uau CAIXA - Passageiro de Primeira",
-          "publicador": "Passageiro de Primeira",
-          "publicado_em": "Fri, 09 Oct 2026 07:00:00 GMT",
-          "link_resultado": "https://news.google.com/rss/articles/CBMirAFBVV95cUxObVNHRnpfaTd0aThhM1BtUEJyUmVjY0pibW1PVmZTOFpjM0pmSjh4Vk5QR3IzRVJWT291VU1pS1A0cDVYR2xhRk80aUtzbEVFajBVOTgwcjlaaFo4R29UOUpXbngwXzBxNTU0ZGRiVWJDdnpMVUc1c09FVUZKb0Jmd05jMzVTd1laWGs0eWlBZkl6b0VReUFCeUxCUExveW9NZnFCVk9KNTVZcXVJ?oc=5",
-          "descricao": "Smiles oferece até 70% de bônus nas transferências de pontos do Uau CAIXA Passageiro de Primeira",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
-          "fonte_busca": "Google News RSS",
-          "status_validacao": "pendente",
-          "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
-        },
-        {
-          "consulta": "site:passageirodeprimeira.com transferência bonificada milhas outubro 2026",
-          "titulo": "Livelo oferece 50% de bônus nas transferências para o ConnectMiles - Passageiro de Primeira",
-          "publicador": "Passageiro de Primeira",
-          "publicado_em": "Thu, 01 Oct 2026 07:00:00 GMT",
-          "link_resultado": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQRXRBQlcyT0tKZ1dsT25XbWVxV180Nk04SnBJOVl2bS1RUG1LZGhfNFBJUHZQYzVvUVdhbVJBNTZPY2ZYQk5TaGxLak81TFVBUlZPbU1PTlAyTnY3MTZjNllTZEtBc2RtZUZQZnJoUEN5cDlHbGR5d09UZWZORUQ4QTEtRy1feFAzdXp0bVdnR0JXTldV?oc=5",
-          "descricao": "Livelo oferece 50% de bônus nas transferências para o ConnectMiles Passageiro de Primeira",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
-          "fonte_busca": "Google News RSS",
-          "status_validacao": "pendente",
-          "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
-        },
-        {
-          "consulta": "site:passageirodeprimeira.com transferência bonificada milhas outubro 2026",
-          "titulo": "Último dia! LATAM Pass oferece 25% de bônus nas transferências de pontos Itaú e Credicard - Passageiro de Primeira",
-          "publicador": "Passageiro de Primeira",
-          "publicado_em": "Fri, 09 Oct 2026 07:00:00 GMT",
-          "link_resultado": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNRmZSVWpVSXhGbmM1R0p2eU83WW9DZUF4UjNudnJHWFloSEc3Wm9EeXdkTHo2TDlodXJTalFMS2hRVy0tUlVBRkJMc2lhUTBsbk9oYV95TzBfREI2b3NDaEVMNW1JZXlqNlNHT1o1R2F2QXNfVHdEWGc2T09PTldobHlZNldCLTctZ0tVNzVueFpabXc5MDN5eVo4Tjl2UkNySDRLdUh4dldxYmMyTVdR?oc=5",
-          "descricao": "Último dia! LATAM Pass oferece 25% de bônus nas transferências de pontos Itaú e Credicard Passageiro de Primeira",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "Google News RSS",
           "status_validacao": "pendente",
           "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
@@ -1199,7 +1212,7 @@
           "publicado_em": "Tue, 06 Oct 2026 07:00:00 GMT",
           "link_resultado": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNNXVtRkdBQnZ0bndCLS1ySUpCMTMxY0czanQ5YVFqRUgybkI4Nk1oQk02QTB2ZlhFWC1kS3lrWnlHWHRTVm8xcXh2TWN5UFdSakNiTEwtYkd5aUkzeF9nSUJRbTBHeWZHWkp3RjJ4OGxUZnZMRkhjRlpNejdmRkE5V0xIUzFnQnB0d0gzRmRYQjVvdUY1WWRuZ2dDMUU2Snl2ejdSRExPbzh3V2RXaW9V?oc=5",
           "descricao": "Etihad Guest oferece até 40% de bônus nas transferências de pontos da Revolut Passageiro de Primeira",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "Google News RSS",
           "status_validacao": "pendente",
           "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
@@ -1211,7 +1224,7 @@
           "publicado_em": "Mon, 26 Oct 2026 07:00:00 GMT",
           "link_resultado": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQSFZybFJXVXNBMzdrb3duVENwcFF3cU02dFdUZC1VM19JaVRNNE1tVW9SZENUaXoxWWs5b0FMVlh3OTQ4ZXc3MUhMOW45SzgzLW45aWJpVTgzcm9JTWkyNEdCQkNjM28ta3Q1Ync5UkpqazNBb3BsVTBjNXg1OUczSy1abkdJbGFQSnAwQUdsSzgzdFI0N0NyNENKVV9YT2ljY0VnU25jNkgxVFk?oc=5",
           "descricao": "Pré Black Friday! Envie milhas Smiles para o ALL Accor com até 25% de bônus Passageiro de Primeira",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "Google News RSS",
           "status_validacao": "pendente",
           "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
@@ -1223,7 +1236,7 @@
           "publicado_em": "Thu, 17 Sep 2026 07:00:00 GMT",
           "link_resultado": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNdlJfeWdWcWdWNy1OSno1aHAxV1hzVEp6OGVNS2pGeXFRTUpZUG01ZnVKbzJqSTFyRmtJT1lHRUdaSTlnc1RQdnRDZGxZeGJhWFRIN2xPa2w2T0pQbFNEbk5uZ21jT3VzaldvMDBVTzEzOFR5OW1vV1NydlNReW1qV1BNNFlkOUtFT2Q5ZWtjbEZUN3BJQlV6WDhtQ0lXN0p6cFUtTFJsSTE?oc=5",
           "descricao": "Smiles oferece até 80% de bônus nas transferências de pontos da Livelo Passageiro de Primeira",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "Google News RSS",
           "status_validacao": "pendente",
           "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
@@ -1235,7 +1248,19 @@
           "publicado_em": "Sun, 04 Oct 2026 07:00:00 GMT",
           "link_resultado": "https://news.google.com/rss/articles/CBMie0FVX3lxTE8xdF9vNXRxY3hXQjNma2UxcEV0ZVJ1V2g1TW1ORXRsOGV4dlNrZWVwNU9LeENkZVFtNTRNd3B1X1dIaWxxb0FwMDRrMjBQVWxPeVpEbEZoLU93SlRmN2ZZYlhBRElpMVBxd3FrRGpGN0ROb3c0RjZMTllLYw?oc=5",
           "descricao": "Dá para acumular milhas sem ter cartão de crédito? Passageiro de Primeira",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
+          "fonte_busca": "Google News RSS",
+          "status_validacao": "pendente",
+          "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
+        },
+        {
+          "consulta": "site:passageirodeprimeira.com transferência bonificada milhas outubro 2026",
+          "titulo": "Smiles oferece até 80% de bônus nas transferências de pontos do BB Empresas - Passageiro de Primeira",
+          "publicador": "Passageiro de Primeira",
+          "publicado_em": "Mon, 21 Sep 2026 07:00:00 GMT",
+          "link_resultado": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOUVhRY2xSLXdlSVlyR210RHY3aWczbGVsanFPSndfaXg5UmU2MjVhaUNVa0k4ZzBXUkRtN2xNUDBvQ0tuWVZOaG12eEhWZXA3dkRRQVBkWkFYd05LVko1ejh3NnJBNzFLNnBBQTNhWFBfenVOajJ3cDBIMGt2RFU3WTRiR3BzWXBfem5SQkd0Wjg2dmVlbmhYSzZlNGtDS2lIQng3UGw2UERnTl9E?oc=5",
+          "descricao": "Smiles oferece até 80% de bônus nas transferências de pontos do BB Empresas Passageiro de Primeira",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "Google News RSS",
           "status_validacao": "pendente",
           "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
@@ -1245,9 +1270,9 @@
           "titulo": "Como acumular milhas no Flying Blue",
           "publicador": "",
           "publicado_em": "Sat, 31 Oct 2026 08:01:00 GMT",
-          "link_resultado": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af6ea25aa4244218d8725cf8e0d07b6&url=https%3a%2f%2fpassageirodeprimeira.com%2fcomo-acumular-milhas-no-flying-blue%2f&c=9412151296099696191&mkt=en-us",
+          "link_resultado": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af77eea0cc2441facf4a96e02d8801a&url=https%3a%2f%2fpassageirodeprimeira.com%2fcomo-acumular-milhas-no-flying-blue%2f&c=9412151296099696191&mkt=en-us",
           "descricao": "O Flying Blue é o programa de fidelidade das companhias do grupo Air France/KLM Parcerias com Livelo e Revolut permitem transferências diretas de pontos para o programa A Livelo oferece transferência ...",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "Bing News RSS",
           "status_validacao": "pendente",
           "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
@@ -1257,9 +1282,9 @@
           "titulo": "Flying Blue oferece descontos de até 25% para resgates em destinos selecionados",
           "publicador": "",
           "publicado_em": "Sat, 07 Nov 2026 11:39:00 GMT",
-          "link_resultado": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af6ea25aa4244218d8725cf8e0d07b6&url=https%3a%2f%2fpassageirodeprimeira.com%2fflying-blue-oferece-descontos-de-ate-25-para-resgates-em-destinos-selecionados-2%2f&c=14363961325355497946&mkt=en-us",
+          "link_resultado": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af77eea0cc2441facf4a96e02d8801a&url=https%3a%2f%2fpassageirodeprimeira.com%2fflying-blue-oferece-descontos-de-ate-25-para-resgates-em-destinos-selecionados-2%2f&c=14363961325355497946&mkt=en-us",
           "descricao": "O Flying Blue está com uma oferta imperdível! O programa de fidelidade do Grupo Air France-KLM oferece até 25% de desconto em passagens para destinos selecionados, com trechos a partir de 6.000 milhas ...",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "Bing News RSS",
           "status_validacao": "pendente",
           "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
@@ -1269,9 +1294,9 @@
           "titulo": "Como acumular Avios no Iberia Club",
           "publicador": "",
           "publicado_em": "Wed, 04 Nov 2026 03:40:00 GMT",
-          "link_resultado": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af6ea25aa4244218d8725cf8e0d07b6&url=https%3a%2f%2fpassageirodeprimeira.com%2fcomo-acumular-avios-no-iberia-plus%2f&c=16928217752796989479&mkt=en-us",
+          "link_resultado": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af77eea0cc2441facf4a96e02d8801a&url=https%3a%2f%2fpassageirodeprimeira.com%2fcomo-acumular-avios-no-iberia-plus%2f&c=16928217752796989479&mkt=en-us",
           "descricao": "Iberia Club permite acumular Avios através de parcerias com Livelo, Esfera e Revolut no Brasil Livelo oferece transferência de pontos com deságio de 3,5:1 e parcelamento em até 12 vezes sem juros ...",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "Bing News RSS",
           "status_validacao": "pendente",
           "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
@@ -1281,9 +1306,9 @@
           "titulo": "Como acumular Avios no British Airways Club",
           "publicador": "",
           "publicado_em": "Thu, 29 Oct 2026 07:05:00 GMT",
-          "link_resultado": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af6ea25aa4244218d8725cf8e0d07b6&url=https%3a%2f%2fpassageirodeprimeira.com%2fcomo-acumular-avios-no-british-airways-club%2f&c=17872383488834642092&mkt=en-us",
+          "link_resultado": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af77eea0cc2441facf4a96e02d8801a&url=https%3a%2f%2fpassageirodeprimeira.com%2fcomo-acumular-avios-no-british-airways-club%2f&c=17872383488834642092&mkt=en-us",
           "descricao": "British Airways Club permite acumular Avios através da Livelo e Revolut no Brasil Transferência de pontos pela Livelo oferece conversão de 3,5:1 com deságio para membros Portadores do Bradesco ...",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "Bing News RSS",
           "status_validacao": "pendente",
           "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
@@ -1293,21 +1318,9 @@
           "titulo": "Como receber alertas grátis de passagens com milhas no WhatsApp",
           "publicador": "",
           "publicado_em": "Fri, 30 Oct 2026 14:41:00 GMT",
-          "link_resultado": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af6ea25aa4244218d8725cf8e0d07b6&url=https%3a%2f%2fpassageirodeprimeira.com%2fcomo-receber-alertas-gratis-de-passagens-com-milhas%2f&c=2951061408152287798&mkt=en-us",
+          "link_resultado": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af77eea0cc2441facf4a96e02d8801a&url=https%3a%2f%2fpassageirodeprimeira.com%2fcomo-receber-alertas-gratis-de-passagens-com-milhas%2f&c=2951061408152287798&mkt=en-us",
           "descricao": "Grupo gratuito do Passageiro de Primeira oferece alertas diários de passagens com milhas no WhatsApp Especialistas monitoram programas de fidelidade e enviam oportunidades imperdíveis diretamente para ...",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
-          "fonte_busca": "Bing News RSS",
-          "status_validacao": "pendente",
-          "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
-        },
-        {
-          "consulta": "site:passageirodeprimeira.com transferência bonificada milhas outubro 2026",
-          "titulo": "Quer participar da transferência bonificada? Assine agora o Clube Smiles e ainda ganhe 15 mil milhas",
-          "publicador": "",
-          "publicado_em": "Thu, 13 Mar 2025 14:16:00 GMT",
-          "link_resultado": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af6ea25aa4244218d8725cf8e0d07b6&url=https%3a%2f%2fpassageirodeprimeira.com%2fquer-participar-da-transferencia-bonificada-assine-agora-o-clube-smiles-e-ainda-ganhe-15-mil-milhas%2f&c=4597842180363707756&mkt=en-us",
-          "descricao": "Até sexta-feira (14) está vigente a transferência da Livelo para a Smiles com até 90% de bônus, e para aproveitar o maior bônus e preciso fazer parte do Clube Smiles! Sendo assim, você pode aproveitar ...",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "Bing News RSS",
           "status_validacao": "pendente",
           "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
@@ -1317,9 +1330,21 @@
           "titulo": "Os 10 cartões de crédito que mais acumulam pontos e milhas [atualizado 2026]",
           "publicador": "",
           "publicado_em": "Sat, 07 Nov 2026 05:05:00 GMT",
-          "link_resultado": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af6ea25aa4244218d8725cf8e0d07b6&url=https%3a%2f%2fpassageirodeprimeira.com%2fmelhores-cartoes-pontos-milhas%2f&c=17900623894053627123&mkt=en-us",
+          "link_resultado": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af77eea0cc2441facf4a96e02d8801a&url=https%3a%2f%2fpassageirodeprimeira.com%2fmelhores-cartoes-pontos-milhas%2f&c=17900623894053627123&mkt=en-us",
           "descricao": "Qual cartão de crédito possui a maior pontuação em 2026? Nesta matéria, listamos os 10 cartões de crédito nacionais que mais acumulam pontos e milhas.",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
+          "fonte_busca": "Bing News RSS",
+          "status_validacao": "pendente",
+          "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
+        },
+        {
+          "consulta": "site:passageirodeprimeira.com transferência bonificada milhas outubro 2026",
+          "titulo": "Quer participar da transferência bonificada? Assine agora o Clube Smiles e ainda ganhe 15 mil milhas",
+          "publicador": "",
+          "publicado_em": "Thu, 13 Mar 2025 14:16:00 GMT",
+          "link_resultado": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af77eea0cc2441facf4a96e02d8801a&url=https%3a%2f%2fpassageirodeprimeira.com%2fquer-participar-da-transferencia-bonificada-assine-agora-o-clube-smiles-e-ainda-ganhe-15-mil-milhas%2f&c=4597842180363707756&mkt=en-us",
+          "descricao": "Até sexta-feira (14) está vigente a transferência da Livelo para a Smiles com até 90% de bônus, e para aproveitar o maior bônus e preciso fazer parte do Clube Smiles! Sendo assim, você pode aproveitar ...",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "Bing News RSS",
           "status_validacao": "pendente",
           "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
@@ -1329,9 +1354,9 @@
           "titulo": "Dá para acumular milhas sem ter cartão de crédito?",
           "publicador": "",
           "publicado_em": "Sun, 04 Oct 2026 12:00:00 GMT",
-          "link_resultado": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af6ea25aa4244218d8725cf8e0d07b6&url=https%3a%2f%2fpassageirodeprimeira.com%2facumular-milhas-sem-cartao-de-credito%2f&c=14187654299835542222&mkt=en-us",
+          "link_resultado": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6af77eea0cc2441facf4a96e02d8801a&url=https%3a%2f%2fpassageirodeprimeira.com%2facumular-milhas-sem-cartao-de-credito%2f&c=14187654299835542222&mkt=en-us",
           "descricao": "Acumular milhas não depende apenas do uso de cartão de crédito, mas de compras bonificadas Participar de programas de fidelidade de companhias aéreas gera pontos ao voar, conforme diversos fatores ...",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "Bing News RSS",
           "status_validacao": "pendente",
           "observacao": "Pista de busca; confirmar campanha, validade e regras em fonte oficial antes de divulgar."
@@ -1367,7 +1392,7 @@
           "publicado_em": "",
           "link_resultado": "https://www.melhoresdestinos.com.br/bonus-azul-abril24.html",
           "descricao": "",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "busca_direta_site",
           "status_validacao": "pendente_confirmacao_oficial",
           "observacao": "Artigo encontrado diretamente; confirmar prazo e regulamento oficial."
@@ -1379,7 +1404,7 @@
           "publicado_em": "",
           "link_resultado": "https://www.melhoresdestinos.com.br/bonus-azul-mar24.html",
           "descricao": "",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "busca_direta_site",
           "status_validacao": "pendente_confirmacao_oficial",
           "observacao": "Artigo encontrado diretamente; confirmar prazo e regulamento oficial."
@@ -1391,7 +1416,7 @@
           "publicado_em": "",
           "link_resultado": "https://www.melhoresdestinos.com.br/azul-bonus-mar24.html",
           "descricao": "",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "busca_direta_site",
           "status_validacao": "pendente_confirmacao_oficial",
           "observacao": "Artigo encontrado diretamente; confirmar prazo e regulamento oficial."
@@ -1403,7 +1428,7 @@
           "publicado_em": "",
           "link_resultado": "https://www.melhoresdestinos.com.br/tudoazul-bonus-110-abril21.html",
           "descricao": "",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "busca_direta_site",
           "status_validacao": "pendente_confirmacao_oficial",
           "observacao": "Artigo encontrado diretamente; confirmar prazo e regulamento oficial."
@@ -1415,7 +1440,7 @@
           "publicado_em": "",
           "link_resultado": "https://www.melhoresdestinos.com.br/tudoazul-110-bonus.html",
           "descricao": "",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "busca_direta_site",
           "status_validacao": "pendente_confirmacao_oficial",
           "observacao": "Artigo encontrado diretamente; confirmar prazo e regulamento oficial."
@@ -1427,7 +1452,7 @@
           "publicado_em": "",
           "link_resultado": "https://www.melhoresdestinos.com.br/tudoazul-promocao-bancos.html",
           "descricao": "",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "busca_direta_site",
           "status_validacao": "pendente_confirmacao_oficial",
           "observacao": "Artigo encontrado diretamente; confirmar prazo e regulamento oficial."
@@ -1439,7 +1464,7 @@
           "publicado_em": "",
           "link_resultado": "https://www.melhoresdestinos.com.br/tudoazul-bonus-90.html",
           "descricao": "",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "busca_direta_site",
           "status_validacao": "pendente_confirmacao_oficial",
           "observacao": "Artigo encontrado diretamente; confirmar prazo e regulamento oficial."
@@ -1451,7 +1476,7 @@
           "publicado_em": "",
           "link_resultado": "https://www.melhoresdestinos.com.br/tudoazul-bonus-jan-2020.html",
           "descricao": "",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "busca_direta_site",
           "status_validacao": "pendente_confirmacao_oficial",
           "observacao": "Artigo encontrado diretamente; confirmar prazo e regulamento oficial."
@@ -1555,7 +1580,7 @@
           "publicado_em": "",
           "link_resultado": "https://mestredasmilhas.com/bonus-na-transferencia-ate-que-ponto-vale-a-pena-transferir/",
           "descricao": "",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "busca_direta_site",
           "status_validacao": "pendente_confirmacao_oficial",
           "observacao": "Artigo encontrado diretamente; confirmar prazo e regulamento oficial."
@@ -1567,11 +1592,11 @@
           "publicado_em": "Wed, 04 Nov 2026 13:17:11 +0000",
           "link_resultado": "https://mestredasmilhas.com/tendencias-de-milhas-e-pontos-para-2026/",
           "descricao": "Resgates premium, transferências bonificadas e desvalorizações: o que esperar do mundo de milhas em 2026. The post Tendências de milhas e pontos para 2026 appeared first on Mestre das Milhas .",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "RSS direto: Mestre das Milhas",
           "status_validacao": "pendente_confirmacao_oficial",
           "observacao": "Publicação recente com sinais de transferência bonificada. Ainda não está confirmada como ativa; verificar regulamento oficial e validade.",
-          "idade_dias": 8,
+          "idade_dias": 9,
           "data_encerramento_detectada": null,
           "consultas_encontradas": [
             "https://mestredasmilhas.com/?s=transfer%C3%AAncia+bonificada+milhas&feed=rss2"
@@ -1693,7 +1718,7 @@
           "publicado_em": "",
           "link_resultado": "https://passageirodeprimeira.com/azul-fidelidade-oferece-ate-100-de-bonus-nas-transferencias-de-pontos-do-banco-bv/",
           "descricao": "",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "busca_direta_site",
           "status_validacao": "pendente_confirmacao_oficial",
           "observacao": "Artigo encontrado diretamente; confirmar prazo e regulamento oficial."
@@ -1705,7 +1730,7 @@
           "publicado_em": "",
           "link_resultado": "https://passageirodeprimeira.com/azul-fidelidade-bonus-transferencias-banco-bv-banrisul/",
           "descricao": "",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "busca_direta_site",
           "status_validacao": "pendente_confirmacao_oficial",
           "observacao": "Artigo encontrado diretamente; confirmar prazo e regulamento oficial."
@@ -1717,7 +1742,7 @@
           "publicado_em": "",
           "link_resultado": "https://passageirodeprimeira.com/azul-fidelidade-oferece-ate-60-de-bonus-nas-transferencias-de-pontos-do-banco-bv-e-do-zaffari-card/",
           "descricao": "",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "busca_direta_site",
           "status_validacao": "pendente_confirmacao_oficial",
           "observacao": "Artigo encontrado diretamente; confirmar prazo e regulamento oficial."
@@ -1729,7 +1754,7 @@
           "publicado_em": "",
           "link_resultado": "https://passageirodeprimeira.com/azul-fidelidade-70-bonus-transferencias-pontos-banco-bv/",
           "descricao": "",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "busca_direta_site",
           "status_validacao": "pendente_confirmacao_oficial",
           "observacao": "Artigo encontrado diretamente; confirmar prazo e regulamento oficial."
@@ -1741,7 +1766,7 @@
           "publicado_em": "",
           "link_resultado": "https://passageirodeprimeira.com/tudoazul-oferece-ate-60-de-bonus-nas-transferencias-de-pontos-do-banco-bv/",
           "descricao": "",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "busca_direta_site",
           "status_validacao": "pendente_confirmacao_oficial",
           "observacao": "Artigo encontrado diretamente; confirmar prazo e regulamento oficial."
@@ -1753,7 +1778,7 @@
           "publicado_em": "",
           "link_resultado": "https://passageirodeprimeira.com/tudoazul-oferece-100-de-bonus-nas-transferencias-de-pontos-do-banco-bv/",
           "descricao": "",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "busca_direta_site",
           "status_validacao": "pendente_confirmacao_oficial",
           "observacao": "Artigo encontrado diretamente; confirmar prazo e regulamento oficial."
@@ -1765,7 +1790,7 @@
           "publicado_em": "",
           "link_resultado": "https://passageirodeprimeira.com/assine-o-clube-smiles-para-participar-da-campanha-de-transferencia-bonificada-e-ainda-ganhar-15-mil-milhas-na-hora/",
           "descricao": "",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "busca_direta_site",
           "status_validacao": "pendente_confirmacao_oficial",
           "observacao": "Artigo encontrado diretamente; confirmar prazo e regulamento oficial."
@@ -1777,7 +1802,7 @@
           "publicado_em": "",
           "link_resultado": "https://passageirodeprimeira.com/quer-participar-da-transferencia-bonificada-assine-agora-o-clube-smiles-e-ainda-ganhe-15-mil-milhas/",
           "descricao": "",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "busca_direta_site",
           "status_validacao": "pendente_confirmacao_oficial",
           "observacao": "Artigo encontrado diretamente; confirmar prazo e regulamento oficial."
@@ -1913,7 +1938,7 @@
           "publicado_em": "",
           "link_resultado": "https://www.melhoresdestinos.com.br/bonus-azul-abril24.html",
           "descricao": "",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "busca_direta_site",
           "status_validacao": "pendente_confirmacao_oficial",
           "observacao": "Artigo encontrado diretamente; confirmar prazo e regulamento oficial."
@@ -1925,7 +1950,7 @@
           "publicado_em": "",
           "link_resultado": "https://www.melhoresdestinos.com.br/bonus-azul-mar24.html",
           "descricao": "",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "busca_direta_site",
           "status_validacao": "pendente_confirmacao_oficial",
           "observacao": "Artigo encontrado diretamente; confirmar prazo e regulamento oficial."
@@ -1937,7 +1962,7 @@
           "publicado_em": "",
           "link_resultado": "https://www.melhoresdestinos.com.br/azul-bonus-mar24.html",
           "descricao": "",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "busca_direta_site",
           "status_validacao": "pendente_confirmacao_oficial",
           "observacao": "Artigo encontrado diretamente; confirmar prazo e regulamento oficial."
@@ -1949,7 +1974,7 @@
           "publicado_em": "",
           "link_resultado": "https://www.melhoresdestinos.com.br/tudoazul-bonus-110-abril21.html",
           "descricao": "",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "busca_direta_site",
           "status_validacao": "pendente_confirmacao_oficial",
           "observacao": "Artigo encontrado diretamente; confirmar prazo e regulamento oficial."
@@ -1961,7 +1986,7 @@
           "publicado_em": "",
           "link_resultado": "https://www.melhoresdestinos.com.br/tudoazul-110-bonus.html",
           "descricao": "",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "busca_direta_site",
           "status_validacao": "pendente_confirmacao_oficial",
           "observacao": "Artigo encontrado diretamente; confirmar prazo e regulamento oficial."
@@ -1973,7 +1998,7 @@
           "publicado_em": "",
           "link_resultado": "https://www.melhoresdestinos.com.br/tudoazul-promocao-bancos.html",
           "descricao": "",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "busca_direta_site",
           "status_validacao": "pendente_confirmacao_oficial",
           "observacao": "Artigo encontrado diretamente; confirmar prazo e regulamento oficial."
@@ -1985,7 +2010,7 @@
           "publicado_em": "",
           "link_resultado": "https://www.melhoresdestinos.com.br/tudoazul-bonus-90.html",
           "descricao": "",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "busca_direta_site",
           "status_validacao": "pendente_confirmacao_oficial",
           "observacao": "Artigo encontrado diretamente; confirmar prazo e regulamento oficial."
@@ -1997,7 +2022,7 @@
           "publicado_em": "",
           "link_resultado": "https://www.melhoresdestinos.com.br/tudoazul-bonus-jan-2020.html",
           "descricao": "",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "busca_direta_site",
           "status_validacao": "pendente_confirmacao_oficial",
           "observacao": "Artigo encontrado diretamente; confirmar prazo e regulamento oficial."
@@ -2101,7 +2126,7 @@
           "publicado_em": "",
           "link_resultado": "https://mestredasmilhas.com/bonus-na-transferencia-ate-que-ponto-vale-a-pena-transferir/",
           "descricao": "",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "busca_direta_site",
           "status_validacao": "pendente_confirmacao_oficial",
           "observacao": "Artigo encontrado diretamente; confirmar prazo e regulamento oficial."
@@ -2113,11 +2138,11 @@
           "publicado_em": "Wed, 04 Nov 2026 13:17:11 +0000",
           "link_resultado": "https://mestredasmilhas.com/tendencias-de-milhas-e-pontos-para-2026/",
           "descricao": "Resgates premium, transferências bonificadas e desvalorizações: o que esperar do mundo de milhas em 2026. The post Tendências de milhas e pontos para 2026 appeared first on Mestre das Milhas .",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "RSS direto: Mestre das Milhas",
           "status_validacao": "pendente_confirmacao_oficial",
           "observacao": "Publicação recente com sinais de transferência bonificada. Ainda não está confirmada como ativa; verificar regulamento oficial e validade.",
-          "idade_dias": 8,
+          "idade_dias": 9,
           "data_encerramento_detectada": null,
           "consultas_encontradas": [
             "https://mestredasmilhas.com/?s=transfer%C3%AAncia+bonificada+milhas&feed=rss2"
@@ -2239,7 +2264,7 @@
           "publicado_em": "",
           "link_resultado": "https://passageirodeprimeira.com/azul-fidelidade-oferece-ate-100-de-bonus-nas-transferencias-de-pontos-do-banco-bv/",
           "descricao": "",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "busca_direta_site",
           "status_validacao": "pendente_confirmacao_oficial",
           "observacao": "Artigo encontrado diretamente; confirmar prazo e regulamento oficial."
@@ -2251,7 +2276,7 @@
           "publicado_em": "",
           "link_resultado": "https://passageirodeprimeira.com/azul-fidelidade-bonus-transferencias-banco-bv-banrisul/",
           "descricao": "",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "busca_direta_site",
           "status_validacao": "pendente_confirmacao_oficial",
           "observacao": "Artigo encontrado diretamente; confirmar prazo e regulamento oficial."
@@ -2263,7 +2288,7 @@
           "publicado_em": "",
           "link_resultado": "https://passageirodeprimeira.com/azul-fidelidade-oferece-ate-60-de-bonus-nas-transferencias-de-pontos-do-banco-bv-e-do-zaffari-card/",
           "descricao": "",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "busca_direta_site",
           "status_validacao": "pendente_confirmacao_oficial",
           "observacao": "Artigo encontrado diretamente; confirmar prazo e regulamento oficial."
@@ -2275,7 +2300,7 @@
           "publicado_em": "",
           "link_resultado": "https://passageirodeprimeira.com/azul-fidelidade-70-bonus-transferencias-pontos-banco-bv/",
           "descricao": "",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "busca_direta_site",
           "status_validacao": "pendente_confirmacao_oficial",
           "observacao": "Artigo encontrado diretamente; confirmar prazo e regulamento oficial."
@@ -2287,7 +2312,7 @@
           "publicado_em": "",
           "link_resultado": "https://passageirodeprimeira.com/tudoazul-oferece-ate-60-de-bonus-nas-transferencias-de-pontos-do-banco-bv/",
           "descricao": "",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "busca_direta_site",
           "status_validacao": "pendente_confirmacao_oficial",
           "observacao": "Artigo encontrado diretamente; confirmar prazo e regulamento oficial."
@@ -2299,7 +2324,7 @@
           "publicado_em": "",
           "link_resultado": "https://passageirodeprimeira.com/tudoazul-oferece-100-de-bonus-nas-transferencias-de-pontos-do-banco-bv/",
           "descricao": "",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "busca_direta_site",
           "status_validacao": "pendente_confirmacao_oficial",
           "observacao": "Artigo encontrado diretamente; confirmar prazo e regulamento oficial."
@@ -2311,7 +2336,7 @@
           "publicado_em": "",
           "link_resultado": "https://passageirodeprimeira.com/assine-o-clube-smiles-para-participar-da-campanha-de-transferencia-bonificada-e-ainda-ganhar-15-mil-milhas-na-hora/",
           "descricao": "",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "busca_direta_site",
           "status_validacao": "pendente_confirmacao_oficial",
           "observacao": "Artigo encontrado diretamente; confirmar prazo e regulamento oficial."
@@ -2323,7 +2348,7 @@
           "publicado_em": "",
           "link_resultado": "https://passageirodeprimeira.com/quer-participar-da-transferencia-bonificada-assine-agora-o-clube-smiles-e-ainda-ganhe-15-mil-milhas/",
           "descricao": "",
-          "consultado_em": "2026-11-13T07:44:27-03:00",
+          "consultado_em": "2026-11-13T18:19:09-03:00",
           "fonte_busca": "busca_direta_site",
           "status_validacao": "pendente_confirmacao_oficial",
           "observacao": "Artigo encontrado diretamente; confirmar prazo e regulamento oficial."
@@ -2437,11 +2462,11 @@
       "publicado_em": "Wed, 04 Nov 2026 13:17:11 +0000",
       "link_resultado": "https://mestredasmilhas.com/tendencias-de-milhas-e-pontos-para-2026/",
       "descricao": "Resgates premium, transferências bonificadas e desvalorizações: o que esperar do mundo de milhas em 2026. The post Tendências de milhas e pontos para 2026 appeared first on Mestre das Milhas .",
-      "consultado_em": "2026-11-13T07:44:27-03:00",
+      "consultado_em": "2026-11-13T18:19:09-03:00",
       "fonte_busca": "RSS direto: Mestre das Milhas",
       "status_validacao": "pendente_confirmacao_oficial",
       "observacao": "Publicação recente com sinais de transferência bonificada. Ainda não está confirmada como ativa; verificar regulamento oficial e validade.",
-      "idade_dias": 8,
+      "idade_dias": 9,
       "data_encerramento_detectada": null,
       "consultas_encontradas": [
         "https://mestredasmilhas.com/?s=transfer%C3%AAncia+bonificada+milhas&feed=rss2"
@@ -2467,11 +2492,11 @@
       "publicado_em": "Wed, 04 Nov 2026 13:17:11 +0000",
       "link_resultado": "https://mestredasmilhas.com/tendencias-de-milhas-e-pontos-para-2026/",
       "descricao": "Resgates premium, transferências bonificadas e desvalorizações: o que esperar do mundo de milhas em 2026. The post Tendências de milhas e pontos para 2026 appeared first on Mestre das Milhas .",
-      "consultado_em": "2026-11-13T07:44:27-03:00",
+      "consultado_em": "2026-11-13T18:19:09-03:00",
       "fonte_busca": "RSS direto: Mestre das Milhas",
       "status_validacao": "pendente_confirmacao_oficial",
       "observacao": "Publicação recente com sinais de transferência bonificada. Ainda não está confirmada como ativa; verificar regulamento oficial e validade.",
-      "idade_dias": 8,
+      "idade_dias": 9,
       "data_encerramento_detectada": null,
       "consultas_encontradas": [
         "https://mestredasmilhas.com/?s=transfer%C3%AAncia+bonificada+milhas&feed=rss2"
